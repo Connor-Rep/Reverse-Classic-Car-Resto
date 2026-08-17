@@ -1,0 +1,131 @@
+
+/* PROJECTS GRID */
+.projects-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.project-card {
+  background-color: var(--eerie-black);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(234, 40, 6, 0.2);
+}
+
+.card-banner {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.card-banner .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .img-cover {
+  transform: scale(1.05);
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--international-orange-engineering);
+  color: var(--white);
+  font-family: var(--ff-chakra-petch);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.card-text {
+  font-size: 1.5rem;
+  color: var(--cadet-blue-creyola);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--white);
+  font-size: 1.3rem;
+  font-family: var(--ff-chakra-petch);
+}
+
+.card-meta-item .material-symbols-rounded {
+  color: var(--international-orange-engineering);
+  font-size: 1.8rem;
+}
+
+/* FILTER MENU */
+.filter-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--ff-chakra-petch);
+  font-weight: 600;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--international-orange-engineering);
+  border-color: var(--international-orange-engineering);
+}
