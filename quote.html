@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafeTay - Request a Quote</title>
+  <title>SafeTay - Restoration Estimate</title>
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,9 +53,9 @@
     <article>
       <section class="section quote-hero">
         <div class="container text-center">
-          <h1 class="h1 section-title">Request Your Quote</h1>
+          <h1 class="h1 section-title">Restoration Estimate</h1>
           <p class="section-text" style="max-width: 600px; margin: 15px auto 0;">
-            Review your selected services below and provide your vehicle details. Our team will get back to you with a custom estimate within 24 hours.
+            Review your selected restoration and detailing services. Provide your vehicle details, and our master craftsmen will prepare a bespoke estimate for your project.
           </p>
         </div>
       </section>
@@ -67,74 +67,74 @@
             <h2 class="h3 form-title">Vehicle & Contact Details</h2>
             
             <form id="quote-form" class="quote-form">
-              <div class="input-row">
-                <div class="input-group">
+              <div class=\"input-row\">
+                <div class=\"input-group\">
                   <label>First Name</label>
-                  <input type="text" required placeholder="John">
+                  <input type=\"text\" required placeholder=\"John\">
                 </div>
-                <div class="input-group">
+                <div class=\"input-group\">
                   <label>Last Name</label>
-                  <input type="text" required placeholder="Doe">
+                  <input type=\"text\" required placeholder=\"Doe\">
                 </div>
               </div>
 
-              <div class="input-row">
-                <div class="input-group">
+              <div class=\"input-row\">
+                <div class=\"input-group\">
                   <label>Email Address</label>
-                  <input type="email" required placeholder="john@example.com">
+                  <input type=\"email\" required placeholder=\"john@example.com\">
                 </div>
-                <div class="input-group">
+                <div class=\"input-group\">
                   <label>Phone Number</label>
-                  <input type="tel" required placeholder="07123 456789">
+                  <input type=\"tel\" required placeholder=\"07123 456789\">
                 </div>
               </div>
 
-              <h3 class="h3 form-subtitle">Vehicle Information</h3>
+              <h3 class=\"h3 form-subtitle\">Vehicle Information</h3>
               
-              <div class="input-row">
-                <div class="input-group">
+              <div class=\"input-row\">
+                <div class=\"input-group\">
                   <label>Make & Model</label>
-                  <input type="text" required placeholder="e.g. Ford Mustang">
+                  <input type=\"text\" required placeholder=\"e.g. 1967 Ford Mustang\">
                 </div>
-                <div class="input-group">
+                <div class=\"input-group\">
                   <label>Year</label>
-                  <input type="number" required placeholder="2018">
+                  <input type=\"number\" required placeholder=\"1967\">
                 </div>
               </div>
 
-              <div class="input-group full-width">
-                <label>Preferred Date (Optional)</label>
-                <input type="date">
+              <div class=\"input-group full-width\">
+                <label>Preferred Project Start Date (Optional)</label>
+                <input type=\"date\">
               </div>
 
-              <div class="input-group full-width">
-                <label>Additional Notes or Questions</label>
-                <textarea rows="4" placeholder="Tell us more about the condition of your vehicle or specific requirements..."></textarea>
+              <div class=\"input-group full-width\">
+                <label>Project Details or Specific Goals</label>
+                <textarea rows=\"4\" placeholder=\"Tell us about the current condition of your classic and your vision for its restoration...\"></textarea>
               </div>
 
-              <button type="submit" class="btn w-100 submit-btn">
-                <span class="span">Submit Request</span>
-                <span class="material-symbols-rounded">send</span>
+              <button type=\"submit\" class=\"btn w-100 submit-btn\">
+                <span class=\"span\">Submit Project Inquiry</span>
+                <span class=\"material-symbols-rounded\">send</span>
               </button>
             </form>
           </div>
 
-          <div class="quote-summary-wrapper">
-            <div class="summary-box">
-              <h2 class="h3 summary-title">Your Basket</h2>
+          <div class=\"quote-summary-wrapper\">
+            <div class=\"summary-box\">
+              <h2 class=\"h3 summary-title\">Your Project</h2>
               
-              <ul id="summary-list" class="summary-list">
+              <ul id=\"summary-list\" class=\"summary-list\">
                 </ul>
 
-              <button id="add-more-services-btn" class="btn w-100 add-more-services-btn" style="display: none;">
-                <span class="span">Add More Services</span>
-                <span class="material-symbols-rounded">add_circle</span>
+              <button id=\"add-more-services-btn\" class=\"btn w-100 add-more-services-btn\" style=\"display: none;\">
+                <span class=\"span\">Add More Services</span>
+                <span class=\"material-symbols-rounded\">add_circle</span>
               </button>
 
-              <div class="summary-empty-state" id="summary-empty-state" style="display: none;">
-                <span class="material-symbols-rounded">shopping_cart</span>
-                <p>Your basket is currently empty.</p>
-                <a href="/services" class="btn-link">Browse Services</a>
+              <div class=\"summary-empty-state\" id=\"summary-empty-state\" style=\"display: none;\">
+                <span class=\"material-symbols-rounded\">shopping_cart</span>
+                <p>Your project list is currently empty.</p>
+                <a href=\"/services\" class=\"btn-link\">Browse Services</a>
               </div>
             </div>
           </div>
@@ -145,45 +145,45 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="footer-top section">
-      <div class="container">
-        <div class="footer-brand">
-          <a href="/" class="logo">
-            <img src="./assets/images/logo.png" width="128" height="63" alt="autofix home">
+  <footer class=\"footer\" id=\"contact\">
+    <div class=\"footer-top section\">
+      <div class=\"container\">
+        <div class=\"footer-brand\">
+          <a href=\"/\" class=\"logo\">
+            <img src=\"./assets/images/logo.png\" width=\"128\" height=\"63\" alt=\"autofix home\">
           </a>
-          <p class="footer-text">Find our Socials below:</p>
-          <ul class="social-list">
-            <li><a href="#" class="social-link"><img src="./assets/images/facebook.svg" alt="facebook"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/instagram.svg" alt="instagram"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/twitter.svg" alt="twitter"></a></li>
+          <p class=\"footer-text\">Find our Socials below:</p>
+          <ul class=\"social-list\">
+            <li><a href=\"#\" class=\"social-link\"><img src=\"./assets/images/facebook.svg\" alt=\"facebook\"></a></li>
+            <li><a href=\"#\" class=\"social-link\"><img src=\"./assets/images/instagram.svg\" alt=\"instagram\"></a></li>
+            <li><a href=\"#\" class=\"social-link\"><img src=\"./assets/images/twitter.svg\" alt=\"twitter\"></a></li>
           </ul>
         </div>
-        <ul class="footer-list">
-          <li><p class="h3">Opening Hours</p></li>
-          <li><p class="p">Monday – Friday</p><span class="span">11:00 – 19:30</span></li>
-          <li><p class="p">Saturday – Sunday</p><span class="span">11:00 - 17:00</span></li>
+        <ul class=\"footer-list\">
+          <li><p class=\"h3\">Opening Hours</p></li>
+          <li><p class=\"p\">Monday – Friday</p><span class=\"span\">11:00 – 19:30</span></li>
+          <li><p class=\"p\">Saturday – Sunday</p><span class=\"span\">11:00 - 17:00</span></li>
         </ul>
-        <ul class="footer-list">
-          <li><p class="h3">Contact Info</p></li>
-          <li><a href="tel:+44" class="footer-link"><span class="material-symbols-rounded">call</span><span class="span">+44</span></a></li>
-          <li><a href="mailto:info@safetay.uk" class="footer-link"><span class="material-symbols-rounded">mail</span><span class="span">info@safetay.uk</span></a></li>
-          <li><address class="footer-link address"><span class="material-symbols-rounded">location_on</span><span class="span">Blairgowrie</span></address></li>
+        <ul class=\"footer-list\">
+          <li><p class=\"h3\">Contact Info</p></li>
+          <li><a href=\"tel:+44\" class=\"footer-link\"><span class=\"material-symbols-rounded\">call</span><span class=\"span\">+44</span></a></li>
+          <li><a href=\"mailto:info@safetay.uk\" class=\"footer-link\"><span class=\"material-symbols-rounded\">mail</span><span class=\"span\">info@safetay.uk</span></a></li>
+          <li><address class=\"footer-link address\"><span class=\"material-symbols-rounded\">location_on</span><span class=\"span\">Blairgowrie</span></address></li>
         </ul>
-        <div class="footer-map">
-          <p class="h3" style="color: var(--white); margin-block-end: 18px;">Find Us</p>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35136.00287413038!2d-3.3762618!3d56.5916962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48866a745863c873%3A0xc3f58a8a30f3a61e!2sBlairgowrie!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class=\"footer-map\">
+          <p class=\"h3\" style=\"color: var(--white); margin-block-end: 18px;\">Find Us</p>
+          <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35136.00287413038!2d-3.3762618!3d56.5916962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48866a745863c873%3A0xc3f58a8a30f3a61e!2sBlairgowrie!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk\" width=\"100%\" height=\"220\" style=\"border:0; border-radius: 8px;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>
         </div>
       </div>
-      <img src="./assets/images/footer-shape-3.png" width="" height="" loading="lazy" alt="" class="shape shape-3 move-anim">
+      <img src=\"./assets/images/footer-shape-3.png\" width=\"\" height=\"\" loading=\"lazy\" alt=\"\" class=\"shape shape-3 move-anim\">
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="copyright">SafeTay © 2026</p>
+    <div class=\"footer-bottom\">
+      <div class=\"container\">
+        <p class=\"copyright\">SafeTay © 2026</p>
       </div>
     </div>
   </footer>
 
-  <script src="./assets/js/quote-script.js"></script>
+  <script src=\"./assets/js/quote-script.js\"></script>
 </body>
 </html>
