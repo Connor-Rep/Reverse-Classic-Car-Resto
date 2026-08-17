@@ -100,5 +100,5 @@ const headerBookingBtn = document.getElementById("header-booking-btn");
 headerBookingBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     // No matter what is in the basket, go straight to the checkout page!
-    window.location.href = "/quote.html"; 
+    window.location.href = "./quote.html"; 
 });
