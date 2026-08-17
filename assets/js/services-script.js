@@ -16,7 +16,7 @@ navToggler?.addEventListener("click", function () {
 document.querySelectorAll("#header-back-btn, #header-logo").forEach(el => {
     el?.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.href = "/";
+        window.location.href = "./index.html";
     });
 });
 
@@ -99,7 +99,7 @@ cards.forEach(card => {
 // 5. Header Booking Button Click (Always go to Quote Page)
 headerBookingBtn?.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "/quote.html"; 
+    window.location.href = "./quote.html"; 
 });
 
 // Clean URLs
