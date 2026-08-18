@@ -9,10 +9,18 @@
 
 .projects-grid-alt {
   display: grid;
-  gap: 40px;
+  gap: 30px;
   grid-template-columns: 1fr;
   list-style: none;
   padding: 0;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .projects-grid-alt {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 992px) {
@@ -27,6 +35,8 @@
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card-alt:hover {
@@ -36,7 +46,8 @@
 
 .card-img-alt {
   position: relative;
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: 220px; /* FIXED HEIGHT TO PREVENT HUGE IMAGES */
   overflow: hidden;
   border-bottom: 2px solid var(--international-orange-engineering);
 }
@@ -44,7 +55,7 @@
 .card-img-alt img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures image fills space without stretching */
   transition: transform 0.5s ease;
 }
 
@@ -53,35 +64,40 @@
 }
 
 .card-info-alt {
-  padding: 25px;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title-alt {
   font-family: var(--ff-chakra-petch);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--white);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .card-text-alt {
   font-family: var(--ff-mulish);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--cadet-blue-creyola);
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .btn-link-alt {
+  margin-top: auto;
   display: inline-block;
   font-family: var(--ff-chakra-petch);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--international-orange-engineering);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   transition: all 0.3s ease;
   position: relative;
+  width: max-content;
 }
 
 .btn-link-alt::after {
