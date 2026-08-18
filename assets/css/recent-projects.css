@@ -1,0 +1,100 @@
+
+/* -----------------------------------*\
+  # RECENT PROJECTS (ALT GRID)
+\*-----------------------------------*/
+
+.recent-projects {
+  padding-block: 80px;
+}
+
+.projects-grid-alt {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  list-style: none;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  .projects-grid-alt {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card-alt {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card-alt:hover {
+  border-color: var(--international-orange-engineering);
+  transform: translateY(-5px);
+}
+
+.card-img-alt {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 2px solid var(--international-orange-engineering);
+}
+
+.card-img-alt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card-alt:hover .card-img-alt img {
+  transform: scale(1.05);
+}
+
+.card-info-alt {
+  padding: 25px;
+}
+
+.card-title-alt {
+  font-family: var(--ff-chakra-petch);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-text-alt {
+  font-family: var(--ff-mulish);
+  font-size: 1.5rem;
+  color: var(--cadet-blue-creyola);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-link-alt {
+  display: inline-block;
+  font-family: var(--ff-chakra-petch);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--international-orange-engineering);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-link-alt::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: var(--international-orange-engineering);
+  transition: width 0.3s ease;
+}
+
+.project-card-alt:hover .btn-link-alt::after {
+  width: 100%;
+}
