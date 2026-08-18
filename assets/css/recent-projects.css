@@ -19,13 +19,7 @@
 
 @media (min-width: 768px) {
   .projects-grid-alt {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .projects-grid-alt {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 GRID FOR TABLET/DESKTOP */
   }
 }
 
@@ -47,7 +41,7 @@
 .card-img-alt {
   position: relative;
   width: 100%;
-  height: 220px; /* FIXED HEIGHT TO PREVENT HUGE IMAGES */
+  height: 280px; /* INCREASED HEIGHT FOR 2x2 LAYOUT */
   overflow: hidden;
   border-bottom: 2px solid var(--international-orange-engineering);
 }
@@ -55,7 +49,7 @@
 .card-img-alt img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills space without stretching */
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -64,7 +58,7 @@
 }
 
 .card-info-alt {
-  padding: 20px;
+  padding: 30px; /* INCREASED PADDING FOR SUBSTANCE */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -72,19 +66,19 @@
 
 .card-title-alt {
   font-family: var(--ff-chakra-petch);
-  font-size: 1.8rem;
+  font-size: 2.2rem; /* INCREASED TITLE SIZE */
   color: var(--white);
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .card-text-alt {
   font-family: var(--ff-mulish);
-  font-size: 1.4rem;
+  font-size: 1.6rem; /* INCREASED TEXT SIZE */
   color: var(--cadet-blue-creyola);
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .btn-link-alt {
@@ -94,7 +88,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color: var(--international-orange-engineering);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
   position: relative;
   width: max-content;
