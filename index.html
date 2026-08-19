@@ -43,6 +43,131 @@
   -->
   <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
 
+  <style>
+    /* -----------------------------------*\
+      #CORE PHASES REDESIGN (ICON-DRIVEN)
+    \*-----------------------------------*/
+    .phases-container {
+      background-color: #000;
+      padding-block: 80px;
+    }
+
+    .phases-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr;
+      list-style: none;
+      padding: 0;
+      max-width: 1200px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .phases-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .phase-card-alt {
+      background-color: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 50px 30px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .phase-card-alt::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--international-orange-engineering);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+      transform-origin: left;
+    }
+
+    .phase-card-alt:hover {
+      background-color: #0a0a0a;
+      border-color: rgba(234, 40, 6, 0.2);
+      transform: translateY(-10px);
+    }
+
+    .phase-card-alt:hover::before {
+      transform: scaleX(1);
+    }
+
+    .phase-icon-alt {
+      width: 80px;
+      height: 80px;
+      margin-inline: auto;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #111;
+      border-radius: 50%;
+      color: var(--international-orange-engineering);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .phase-icon-alt .material-symbols-rounded {
+      font-size: 3.5rem;
+    }
+
+    .phase-card-alt:hover .phase-icon-alt {
+      background-color: var(--international-orange-engineering);
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(234, 40, 6, 0.4);
+      transform: rotate(10deg);
+    }
+
+    .phase-title-alt {
+      font-family: var(--ff-chakra-petch);
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .phase-text-alt {
+      font-family: var(--ff-mulish);
+      font-size: 1.5rem;
+      color: var(--cadet-blue-creyola);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+
+    .phase-link-alt {
+      font-family: var(--ff-chakra-petch);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      font-size: 1.3rem;
+      padding-bottom: 5px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      width: max-content;
+      margin-inline: auto;
+      transition: all 0.3s ease;
+    }
+
+    .phase-card-alt:hover .phase-link-alt {
+      color: var(--international-orange-engineering);
+      border-color: var(--international-orange-engineering);
+    }
+  </style>
+
 </head>
 
 <body>
@@ -140,63 +265,51 @@
 
 
       <!-- 
-        - #SERVICE
+        - #SERVICE (REDESIGNED: CORE PHASES)
       -->
 
-      <section class="section service has-bg-image" aria-labelledby="services" style="background-image: url('./assets/images/service-bg.jpg')">
+      <section class="section phases-container" id="services">
         <div class="container">
 
           <div class="service-header">
-            <h2 class="h1 section-title" id="services">Core Restoration Phases</h2>
+            <h2 class="h1 section-title">The Restoration Process</h2>
             <div class="service-paragraph">
-              <p>Our proven process for returning automotive icons to their former glory.</p>
+              <p>A systematic, no-compromise approach to returning automotive history to the road.</p>
             </div>
           </div>
 
-          <ul class="service-list wireframe-layout">
+          <ul class="phases-grid">
             
             <li>
-              <div class="service-card new-layout">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/engine-mustang.png" alt="Mechanical Restoration" class="card-img">
+              <div class="phase-card-alt">
+                <div class="phase-icon-alt">
+                  <span class="material-symbols-rounded">settings_suggest</span>
                 </div>
-                <div class="card-content-wrapper">
-                  <h3 class="h3 card-title">Mechanical Restoration</h3>
-                  <div class="card-text-wrapper">
-                    <p class="card-text">Expert overhaul of engine, drivetrain, and suspension to ensure your classic is safe, reliable, and roadworthy.</p>
-                  </div>                  
-                  <a href="./restoration/mechanical.html" class="btn-link service-read-more">Mechanical Details</a>
-                </div>
+                <h3 class="h3 phase-title-alt">Mechanical</h3>
+                <p class="phase-text-alt">Complete engine blueprinting, drivetrain overhaul, and precision suspension tuning to factory-new tolerances.</p>
+                <a href="./restoration/mechanical.html" class="phase-link-alt">Learn More</a>
               </div>
             </li>
 
             <li>
-              <div class="service-card new-layout">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/classic-mustang.png" alt="Bodywork & Respray" class="card-img">
+              <div class="phase-card-alt">
+                <div class="phase-icon-alt">
+                  <span class="material-symbols-rounded">imagesmode</span>
                 </div>
-                <div class="card-content-wrapper">
-                  <h3 class="h3 card-title">Bodywork & Respray</h3>
-                  <div class="card-text-wrapper">
-                    <p class="card-text">Specialized rust repair, precision panel matching, and flawless, period-correct paint applications.</p>
-                  </div>
-                  <a href="./restoration/bodywork.html" class="btn-link service-read-more">Bodywork Details</a>
-                </div>
+                <h3 class="h3 phase-title-alt">Body & Paint</h3>
+                <p class="phase-text-alt">Traditional lead loading, precision metal fabrication, and multi-stage, period-correct paint applications.</p>
+                <a href="./restoration/bodywork.html" class="phase-link-alt">Learn More</a>
               </div>
             </li>
 
             <li>
-              <div class="service-card new-layout">
-                <div class="card-image-wrapper">
-                  <img src="./assets/images/detail-mustang.png" alt="Polish & Protection" class="card-img">
+              <div class="phase-card-alt">
+                <div class="phase-icon-alt">
+                  <span class="material-symbols-rounded">verified_user</span>
                 </div>
-                <div class="card-content-wrapper">
-                  <h3 class="h3 card-title">Final Polish & Protection</h3>
-                  <div class="card-text-wrapper">
-                    <p class="card-text">Every restoration concludes with a master-level detail and premium Ceramic Coating to preserve the finish.</p>
-                  </div>
-                  <a href="./restoration/protection.html" class="btn-link service-read-more">Protection Details</a>
-                </div>
+                <h3 class="h3 phase-title-alt">Final Finish</h3>
+                <p class="phase-text-alt">Master-level interior re-trimming and multi-stage paint correction finished with premium ceramic protection.</p>
+                <a href="./restoration/protection.html" class="phase-link-alt">Learn More</a>
               </div>
             </li>
 
