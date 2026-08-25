@@ -45,7 +45,7 @@
   width: 100%;
   height: 380px; /* INCREASED IMAGE HEIGHT FOR VERTICAL STRETCH */
   overflow: hidden;
-  border-bottom: 2px solid var(--international-orange-engineering);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .card-img-alt img {
@@ -89,7 +89,7 @@
   font-family: var(--ff-chakra-petch);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--international-orange-engineering);
+  color: var(--white);
   font-size: 1.4rem;
   transition: all 0.3s ease;
   position: relative;
@@ -103,7 +103,7 @@
   left: 0;
   width: 20px;
   height: 2px;
-  background-color: var(--international-orange-engineering);
+  background-color: var(--white);
   transition: width 0.3s ease;
 }
 

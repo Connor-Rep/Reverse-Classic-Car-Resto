@@ -116,12 +116,12 @@ if (counters.length) {
   const animateCounter = (el) => {
     const target = parseInt(el.dataset.countTo, 10);
     const suffix = el.dataset.suffix || '';
-    const duration = 1200;
+    const duration = 2400;
     const start = performance.now();
 
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const eased = 1 - Math.pow(1 - progress, 5); /* stronger ease-out: slows more as it nears the final value */
       el.textContent = Math.round(eased * target) + suffix;
 
       if (progress < 1) requestAnimationFrame(tick);

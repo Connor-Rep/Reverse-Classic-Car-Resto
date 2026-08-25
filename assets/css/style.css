@@ -522,7 +522,7 @@ body {
   margin-block-end: 7px;
 }
 
-.footer-list li:not(:first-child) { margin-block-start: 16px; }
+.footer-list li:not(:first-child) { margin-block-start: 10px; }
 
 .footer-link {
   display: flex;
@@ -533,7 +533,7 @@ body {
 .footer-link .material-symbols-rounded {
   flex-shrink: 0;
   font-size: 1.8rem;
-  color: var(--international-orange-engineering);
+  color: var(--white);
 }
 
 
@@ -1538,11 +1538,14 @@ body {
    1. GLOBAL HEADER CART BUTTON FIX
    ========================================= */
 .header-booking-btn {
-  gap: 12px !important; 
+  gap: 12px !important;
   transition: all 0.3s ease;
   display: flex !important;
   align-items: center !important;
   padding: 12px 24px !important;
+  background-color: var(--eerie-black) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--white) !important;
 }
 
 .cart-icon-wrapper {
@@ -1761,20 +1764,29 @@ a:focus, button:focus {
   color: var(--international-orange-engineering) !important;
 }
 
-/* Base state for the Quote & View All buttons to prevent jumping */
-.header-booking-btn, .repairs-section .btn {
-  border: 1px solid transparent !important; 
+/* Base state for the View All button to prevent jumping */
+.repairs-section .btn {
+  border: 1px solid transparent !important;
   transition: all 0.3s ease !important;
 }
 
-/* Eerie Black + Red Outline on hover */
-.header-booking-btn:hover, 
+.header-booking-btn { transition: all 0.3s ease !important; }
+
+/* Matches the "Get in Touch" button's white invert on hover */
+.header-booking-btn:hover {
+  background-color: var(--white) !important;
+  border-color: var(--white) !important;
+  color: #000 !important;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px); /* Tiny premium lift effect */
+}
+
 .repairs-section .btn:hover {
   background-color: var(--eerie-black) !important;
   border-color: var(--international-orange-engineering) !important;
   color: var(--white) !important;
-  box-shadow: 0 5px 15px rgba(234, 40, 6, 0.4) !important; /* Adds a subtle red glow */
-  transform: translateY(-2px); /* Tiny premium lift effect */
+  box-shadow: 0 5px 15px rgba(234, 40, 6, 0.4) !important;
+  transform: translateY(-2px);
 }
 
 /* --- 2. HOME PAGE REPAIRS GRID BREAK LINE --- */
@@ -1856,6 +1868,14 @@ figure {
   .footer-brand,
   .social-list,
   .footer-map { margin-inline: auto; }
+
+  /* The logo <a> is a block element, so text-align:center alone won't center it */
+  .footer-brand .logo {
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  .footer-brand .logo img { width: 120px; }
 
   .social-list { justify-content: center; }
 
