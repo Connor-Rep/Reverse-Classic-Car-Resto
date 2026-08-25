@@ -141,3 +141,32 @@ if (counters.length) {
 
   counters.forEach((el) => counterObserver.observe(el));
 }
+
+
+/**
+ * MAILTO FORM HANDLER (Consultation + Contact forms)
+ * Static site, no backend: this opens the visitor's own email client with a
+ * pre-filled message addressed to the shop. They still have to hit "send"
+ * themselves — it is not a fully automatic server-side email.
+ */
+function wireMailtoForm(form, to, subjectPrefix) {
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const lines = [];
+    data.forEach((value, key) => {
+      if (String(value).trim()) lines.push(`${key}: ${value}`);
+    });
+
+    const subject = encodeURIComponent(`${subjectPrefix} - ${data.get('name') || 'New enquiry'}`);
+    const body = encodeURIComponent(lines.join('\n'));
+
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+}
+
+wireMailtoForm(document.getElementById('consultation-form'), 'info@safetay.uk', 'Free Consultation Request');
+wireMailtoForm(document.getElementById('contact-form'), 'info@safetay.uk', 'Website Contact Form');

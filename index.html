@@ -69,7 +69,7 @@
     }
 
     .phase-card-alt {
-      background-color: #050505;
+      background-color: #0a0a0a;
       border: 1px solid rgba(255, 255, 255, 0.03);
       padding: 50px 30px;
       text-align: center;
@@ -89,14 +89,14 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: var(--international-orange-engineering);
+      background-color: var(--white);
       transform: scaleX(0);
       transition: transform 0.4s ease;
       transform-origin: left;
     }
 
     .phase-card-alt:hover {
-      background-color: #0a0a0a;
+      background-color: #141414;
       border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-10px);
     }
@@ -125,15 +125,16 @@
     }
 
     .phase-card-alt:hover .phase-icon-alt {
-      background-color: var(--international-orange-engineering);
-      color: var(--white);
-      box-shadow: 0 0 20px rgba(234, 40, 6, 0.4);
+      background-color: var(--white);
+      color: #000;
+      border-color: var(--white);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
       transform: rotate(10deg);
     }
 
     .phase-title-alt {
       font-family: var(--ff-chakra-petch);
-      font-size: 2.2rem;
+      font-size: calc(2.2rem * 1.1);
       color: var(--white);
       margin-bottom: 15px;
       text-transform: uppercase;
@@ -184,7 +185,7 @@
       }
 
       .phase-title-alt {
-        font-size: 1.8rem;
+        font-size: calc(1.8rem * 1.1);
         margin-bottom: 10px;
       }
 
@@ -195,6 +196,99 @@
 
       .phase-link-alt {
         font-size: 1.2rem;
+      }
+    }
+
+    /* -----------------------------------*\
+      #FREE CONSULTATION
+    \*-----------------------------------*/
+    .consultation-section {
+      background-color: #0a0a0a;
+    }
+
+    .consultation-container {
+      display: grid;
+      gap: 50px;
+      max-width: 1100px;
+    }
+
+    .consultation-intro .section-title {
+      font-size: calc(var(--fs-2) * 1.1);
+    }
+
+    .consultation-form {
+      background-color: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .consultation-form-title {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .consultation-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .consultation-field label {
+      font-family: var(--ff-chakra-petch);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--cadet-blue-creyola);
+    }
+
+    .consultation-field input,
+    .consultation-field textarea {
+      background-color: #111;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      padding: 14px 16px;
+      color: var(--white);
+      font-family: var(--ff-mulish);
+      font-size: 1.5rem;
+      transition: border-color 0.25s ease;
+      resize: vertical;
+    }
+
+    .consultation-field input:focus,
+    .consultation-field textarea:focus {
+      outline: none;
+      border-color: var(--white);
+    }
+
+    .consultation-submit {
+      background-color: var(--eerie-black);
+      color: var(--white);
+      border: 1px solid var(--white);
+      justify-content: center;
+      align-self: center;
+      margin-top: 10px;
+      transition: var(--transition);
+    }
+
+    .consultation-submit:hover {
+      background-color: var(--white);
+      color: #000;
+    }
+
+    @media (min-width: 992px) {
+      .consultation-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+
+      .consultation-intro,
+      .consultation-intro .section-title {
+        text-align: left;
       }
     }
   </style>
@@ -277,7 +371,7 @@
 </p>
             
   <div class="hero-btn-group">
-  <a href="#services" class="btn btn-outline">Restoration Phases</a>
+  <a href="#consultation" class="btn btn-outline">Get in Touch</a>
 </div>
 
 </div>
@@ -342,6 +436,52 @@
           </div>
       </section>
 
+      <!-- #FREE CONSULTATION -->
+      <section class="section consultation-section" id="consultation">
+        <div class="container consultation-container">
+
+          <div class="consultation-intro">
+            <h2 class="h1 section-title">Ready to Bring Your Classic Back to Life?</h2>
+            <p class="section-text">
+              Every restoration starts with a conversation. Tell us about your vehicle, its history, and the vision you have for it, and one of our specialists will walk you through the right restoration path, a realistic timeline, and an honest cost estimate — no obligation.
+            </p>
+            <p class="section-text">
+              Whether you're chasing a full ground-up rebuild or targeted mechanical and cosmetic work, a free consultation is the fastest way to get a straight answer from people who've spent over a decade doing exactly this.
+            </p>
+          </div>
+
+          <form id="consultation-form" class="consultation-form">
+            <h3 class="h3 consultation-form-title">Schedule a Free Consultation</h3>
+
+            <div class="consultation-field">
+              <label for="consult-name">Name</label>
+              <input type="text" id="consult-name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-phone">Phone Number</label>
+              <input type="tel" id="consult-phone" name="phone" placeholder="Your phone number" required>
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-email">Email</label>
+              <input type="email" id="consult-email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-notes">Notes</label>
+              <textarea id="consult-notes" name="notes" rows="4" placeholder="Tell us about your vehicle and what you're looking to have done..."></textarea>
+            </div>
+
+            <button type="submit" class="btn consultation-submit">
+              <span class="span">Schedule Consultation</span>
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </button>
+          </form>
+
+        </div>
+      </section>
+
       <!-- #RECENT PROJECTS -->
       <section class="section recent-projects" id="projects" style="background-color: #050505;">
         <div class="container">
@@ -382,16 +522,6 @@
                   <h3 class="h3 card-title-alt">1961 Jaguar E-Type</h3>
                   <p class="card-text-alt">Engine-out service, suspension rebuild, heavy paint correction, and final detail.</p>
                   <a href="./projects.html" class="btn-link-alt">See Gallery</a>
-                </div>
-            </li>
-            <li class="project-card-alt">
-                <div class="card-img-alt">
-                  <img src="./assets/images/classic-mustang.png" alt="Coming Soon">
-                </div>
-                <div class="card-info-alt">
-                  <h3 class="h3 card-title-alt">Next Project</h3>
-                  <p class="card-text-alt">Currently accepting inquiries for our next major restoration project. Contact us to discuss your vehicle.</p>
-                  <a href="./contact.html" class="btn-link-alt">Inquire Now</a>
                 </div>
             </li>
           </ul>
