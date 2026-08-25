@@ -1851,3 +1851,95 @@ a:focus, button:focus {
   width: 80% !important; /* Keeps it slightly inset like the popular cards */
   margin-inline: auto !important;
 }
+
+
+/*-----------------------------------*\
+  #MOBILE RESPONSIVENESS
+\*-----------------------------------*/
+
+/* --- FLUID IMAGES: stops any image/figure from causing horizontal scroll --- */
+img,
+figure {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Bigger tap area on the hamburger icon itself (works at any width) --- */
+.nav-toggle-btn {
+  padding: 12px;
+  margin: -12px;
+}
+
+@media (max-width: 767px) {
+
+  /* --- MOBILE NAV: wider, easier-to-tap dropdown menu --- */
+  .navbar {
+    width: min(80%, 300px);
+    min-width: unset;
+    right: 16px;
+    top: 90px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar-list { width: 100%; }
+
+  .navbar-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding-block: 12px;
+  }
+
+  /* --- SECTION EDGE PADDING: keeps text off the screen edges --- */
+  .container { padding-inline: 20px; }
+
+  /* --- HERO: text on top, image stacked below --- */
+  .hero .container { grid-template-columns: 1fr !important; }
+
+  /* --- RESTORATION PROCESS: single column --- */
+  .phases-grid { grid-template-columns: 1fr !important; }
+
+  /* --- RECENT PROJECTS: single column --- */
+  .projects-grid-alt { grid-template-columns: 1fr !important; }
+
+  /* --- WHY CHOOSE US: image above text, single column --- */
+  .about .container { grid-template-columns: 1fr !important; }
+
+  .about-list { grid-template-columns: 1fr !important; }
+
+  /* --- FOOTER: stack Logo / Hours / Contact / Map columns --- */
+  .footer-top .container {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .social-list,
+  .footer-map { margin-inline: auto; }
+
+  .social-list { justify-content: center; }
+
+  .footer-link { justify-content: center; }
+
+  /* --- TOUCH TARGETS: minimum 44x44px hit area --- */
+  .footer-link,
+  .btn,
+  .btn-outline,
+  .phase-link-alt,
+  .btn-link-alt,
+  .service-read-more,
+  .header-booking-btn {
+    min-height: 44px;
+  }
+
+  .footer-link { padding-block: 10px; }
+
+  .phase-link-alt,
+  .btn-link-alt {
+    display: inline-flex;
+    align-items: center;
+    padding-block: 10px;
+  }
+}

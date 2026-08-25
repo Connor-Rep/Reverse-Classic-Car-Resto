@@ -64,9 +64,12 @@ const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 
 if (navbar && navToggler) {
+  navToggler.setAttribute("aria-expanded", "false");
+
   navToggler.addEventListener("click", function () {
-    navbar.classList.toggle("active");
+    const isActive = navbar.classList.toggle("active");
     this.classList.toggle("active");
+    this.setAttribute("aria-expanded", String(isActive));
   });
 }
 
