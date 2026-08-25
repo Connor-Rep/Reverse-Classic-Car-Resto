@@ -334,7 +334,7 @@ body {
   position: absolute;
   top: 100px;
   right: 30px;
-  background-color: #000000;
+  background-color: #111111;
   min-width: max-content;
   width: 30%;
   transform: translateY(20px);
@@ -505,10 +505,20 @@ body {
 }
 
 .social-link {
-  background-color: #000000;
+  background-color: var(--eerie-black);
+  border: 1px solid var(--white);
   padding: 14px;
   border-radius: var(--radius-circle);
   transition: var(--transition);
+}
+
+.social-link:hover {
+  background-color: var(--white);
+  transform: translateY(-3px);
+}
+
+.social-link:hover img {
+  filter: invert(1);
 }
 
 .footer .h3 {
@@ -658,7 +668,7 @@ body {
 
 @media (max-width: 575px) {
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/mobile-hero-bg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/mobile-hero-bg.jpg');
   }
 }
 
@@ -1569,7 +1579,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--international-orange-engineering); 
+  border: 2px solid var(--white);
   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
@@ -1759,9 +1769,9 @@ a:focus, button:focus {
 /* =========================================
    5. PREMIUM HOVER EFFECTS (NAV & BUTTONS)
    ========================================= */
-/* Navbar links turn red on hover */
+/* Navbar links dim to a soft grey on hover, in line with the new theme */
 .navbar-link:hover {
-  color: var(--international-orange-engineering) !important;
+  color: var(--cadet-blue-creyola) !important;
 }
 
 /* Base state for the View All button to prevent jumping */
