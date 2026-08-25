@@ -11,7 +11,7 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding-block: calc(var(--section-padding) + 110px) var(--section-padding);
+  padding-block: calc(var(--section-padding) + 110px) calc(var(--section-padding) + 30px);
 }
 
 .detail-hero-bg {
@@ -50,7 +50,18 @@
   margin-block-end: 50px;
 }
 
-.detail-intro .section-title { margin-block-end: 16px; }
+.detail-kicker {
+  display: block;
+  font-family: var(--ff-chakra-petch);
+  font-size: 1.4rem;
+  font-weight: var(--fw-600);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--international-orange-engineering);
+  margin-block-end: 14px;
+}
+
+.detail-intro .section-title { margin-block-end: 26px; }
 
 .detail-grid {
   display: grid;
