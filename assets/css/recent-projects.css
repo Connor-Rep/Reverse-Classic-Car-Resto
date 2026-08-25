@@ -36,7 +36,7 @@
 }
 
 .project-card-alt:hover {
-  border-color: var(--international-orange-engineering);
+  border-color: var(--white);
   transform: translateY(-5px);
 }
 
@@ -109,4 +109,29 @@
 
 .project-card-alt:hover .btn-link-alt::after {
   width: 100%;
+}
+
+/* Smaller, less "in your face" cards on mobile */
+@media (max-width: 767px) {
+  .project-card-alt {
+    min-height: unset;
+  }
+
+  .card-img-alt {
+    height: 220px;
+  }
+
+  .card-info-alt {
+    padding: 20px;
+  }
+
+  .card-title-alt {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .card-text-alt {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
 }

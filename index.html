@@ -97,7 +97,7 @@
 
     .phase-card-alt:hover {
       background-color: #0a0a0a;
-      border-color: rgba(234, 40, 6, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-10px);
     }
 
@@ -164,7 +164,38 @@
 
     .phase-card-alt:hover .phase-link-alt {
       color: var(--international-orange-engineering);
-      border-color: var(--international-orange-engineering);
+      border-color: var(--white);
+    }
+
+    /* Smaller, less "in your face" cards on mobile */
+    @media (max-width: 767px) {
+      .phase-card-alt {
+        padding: 28px 20px;
+      }
+
+      .phase-icon-alt {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 16px;
+      }
+
+      .phase-icon-alt .material-symbols-rounded {
+        font-size: 2.4rem;
+      }
+
+      .phase-title-alt {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .phase-text-alt {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+      }
+
+      .phase-link-alt {
+        font-size: 1.2rem;
+      }
     }
   </style>
 
@@ -247,7 +278,6 @@
             
   <div class="hero-btn-group">
   <a href="#services" class="btn btn-outline">Restoration Phases</a>
-  <a href="./projects.html" class="btn btn-outline">Our Portfolio</a>
 </div>
 
 </div>
@@ -387,10 +417,10 @@
             </p>
 
             <ul class="about-list">
-              <li class="about-item"><p><strong class="display-1 strong">15+</strong> Years Mastery</p></li>
-              <li class="about-item"><p><strong class="display-1 strong">50+</strong> Classics Restored</p></li>
-              <li class="about-item"><p><strong class="display-1 strong">100%</strong> Authentic Parts</p></li>
-              <li class="about-item"><p><strong class="display-1 strong">100%</strong> Passion Driven</p></li>
+              <li class="about-item"><p><strong class="display-1 strong" data-count-to="15" data-suffix="+">15+</strong> Years Mastery</p></li>
+              <li class="about-item"><p><strong class="display-1 strong" data-count-to="50" data-suffix="+">50+</strong> Classics Restored</p></li>
+              <li class="about-item"><p><strong class="display-1 strong" data-count-to="100" data-suffix="%">100%</strong> Authentic Parts</p></li>
+              <li class="about-item"><p><strong class="display-1 strong" data-count-to="100" data-suffix="%">100%</strong> Passion Driven</p></li>
             </ul>
 
           </div>

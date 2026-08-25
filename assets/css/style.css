@@ -262,9 +262,9 @@ body {
 
 
 .btn.btn-outline {
-  background-color: var(--international-orange-engineering) !important; /* Your signature red */
+  background-color: var(--eerie-black) !important; /* Grey theme instead of solid red */
   color: var(--white) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* A tiny white highlight on the edge */
+  border: 1px solid var(--white) !important; /* White outline instead of red */
   font-family: var(--ff-chakra-petch);
   font-weight: var(--fw-600);
   text-transform: uppercase;
@@ -277,10 +277,10 @@ body {
 }
 
 .btn.btn-outline:hover {
-  background-color: var(--eerie-black) !important; /* Swaps to dark grey on hover */
-  border-color: var(--international-orange-engineering) !important;
+  background-color: #1a1a1a !important; /* Slightly lighter grey on hover */
+  border-color: var(--white) !important;
   transform: translateY(-4px); /* Lifts up more when hovered */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(234, 40, 6, 0.4) !important; /* Deepens the shadow and adds a red glow */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 255, 255, 0.3) !important; /* White glow instead of red */
 }
 
 
@@ -298,7 +298,7 @@ body {
   width: 100%;
   padding: 20px 15px; /* Slightly reduced padding so it takes up less screen space when scrolling */
   padding-inline-start: 40px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0) 100%); /* Transparent overlay so the hero image shows through */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 75%, rgba(0, 0, 0, 0.15) 100%); /* Transparent overlay, tinted a little darker so the hero image shows through more subtly */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* Optional: adds a nice drop shadow */
   z-index: 50; /* Increased to ensure it stays above overlays and flipped cards */
 }
@@ -450,24 +450,22 @@ body {
 
 .about-list {
   display: grid;
-  gap: 25px;
+  gap: 12px;
   margin-block-start: 25px;
 }
 
 .about-item {
-  background-color: var(--eerie-black); /* Swapped from #000000 */
-  padding: 40px 20px;
-  transition: var(--transition);
+  padding-block: 12px;
 }
 
-.about-item:hover {
-  background-color: var(--international-orange-engineering);
-  transform: translateY(-8px);
+.about-item p {
+  font-size: 2rem;
 }
 
 .about-item .strong {
   display: block;
   line-height: 1.1;
+  font-size: calc(var(--fs-1) * 1.15);
 }
 
 
@@ -614,10 +612,8 @@ body {
 
   .about-list {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 14px;
   }
-
-  .about-item { padding-block: 20px; }
 
 
 
@@ -878,8 +874,9 @@ body {
     z-index: 1;
   }
 
-  .about,
-  .about .section-title { text-align: left; }
+  .about { text-align: left; }
+
+  .about .section-title { text-align: center; }
 
   .about .container {
     grid-template-columns: 1fr 0.75fr;

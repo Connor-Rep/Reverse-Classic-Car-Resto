@@ -103,5 +103,41 @@ const headerBookingBtn = document.getElementById("header-booking-btn");
 headerBookingBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     // No matter what is in the basket, go straight to the checkout page!
-    window.location.href = "./quote.html"; 
+    window.location.href = "./quote.html";
 });
+
+
+/**
+ * "WHY CHOOSE US" STAT COUNTER ANIMATION
+ */
+const counters = document.querySelectorAll('[data-count-to]');
+
+if (counters.length) {
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.countTo, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach((el) => counterObserver.observe(el));
+}
