@@ -260,14 +260,6 @@ body {
   margin-inline: auto;
 }
 
-/* Aligns buttons to the left on desktop to match the rest of your hero text */
-@media (min-width: 992px) {
-  .hero-btn-group {
-    justify-content: flex-start;
-    margin-inline: 0;
-  }
-}
-
 
 .btn.btn-outline {
   background-color: var(--international-orange-engineering) !important; /* Your signature red */
@@ -306,7 +298,7 @@ body {
   width: 100%;
   padding: 20px 15px; /* Slightly reduced padding so it takes up less screen space when scrolling */
   padding-inline-start: 40px;
-  background-color: #000000; /* Added background to hide scrolling content */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0) 100%); /* Transparent overlay so the hero image shows through */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* Optional: adds a nice drop shadow */
   z-index: 50; /* Increased to ensure it stays above overlays and flipped cards */
 }
@@ -376,7 +368,11 @@ body {
 
 .hero {
   position: relative;
-  padding-block-start: calc(var(--section-padding) + 70px);
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  padding-block: calc(var(--section-padding) + 110px) var(--section-padding);
   text-align: center;
   z-index: 1;
   overflow: hidden;
@@ -386,7 +382,9 @@ body {
 .hero .btn { margin-inline: auto; }
 
 .hero .container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 30px;
 }
 
@@ -396,20 +394,6 @@ body {
   margin-block: 20px 30px;
   max-width: 600px; /* Limits width for better readability */
   margin-inline: auto;
-}
-
-.hero-banner { 
-  position: relative; /* Contains the image */
-  aspect-ratio: var(--width) / var(--height); 
-  margin-block-start: 40px; /* Gives some breathing room under the button */
-}
-
-.hero-banner img {
-  /* Removed position: absolute for mobile so it stacks neatly */
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  z-index: 1;
 }
 
 
@@ -850,45 +834,19 @@ body {
    * HERO
    */
 
-  .hero {
-    text-align: left;
-    padding-block-end: 80px;
-  }
-
   .hero.has-bg-image {
-    /* This resets the image back to normal for laptops and desktops */
-    background-position: left center; 
+    /* Keeps the full car/trailer image centered behind the headline on larger screens */
+    background-position: center;
   }
-
 
   .hero .container {
     max-width: 960px;
-    grid-template-columns: 1fr 1fr;
   }
 
-  .hero :is(.section-subtitle, .btn) { margin-inline: 0; }
-
- .hero .section-title {
-    white-space: nowrap;
+  .hero .section-title {
     max-width: 100%;
     margin-inline: auto;
     line-height: 1.2;
-  }
-
-  /* On very small mobile screens, allow it to wrap so it doesn't overflow the screen */
-@media (max-width: 480px) {
-  .hero .section-title {
-    white-space: normal;
-    font-size: var(--fs-2); /* Slightly smaller font for mobile wrap */
-  }
-}
-
-  .hero-banner img { 
-    position: absolute; /* Re-applies the floating effect for desktop */
-    bottom: 0; 
-    right: 0;
-    width: 55%; 
-    z-index: -1;
   }
 
 
@@ -1011,14 +969,9 @@ body {
 
   .hero { padding-block: 250px 180px; }
 
-  .hero .container { grid-template-columns: 1fr 0.9fr; }
-
   .hero .section-text {
     font-size: 2rem;
-    padding-inline-end: 120px;
   }
-
-  .hero-banner img { width: 70%; }
 
 
 
@@ -1125,10 +1078,6 @@ body {
    */
 
   .hero { padding-block: 280px; }
-
-  .hero .section-text { padding-inline-end: 90px; }
-
-  .hero-banner img { width: 75%; }
 
 
 
@@ -1780,31 +1729,6 @@ a:focus, button:focus {
   }
 }
 
-/* =========================================
-   3. MOBILE FIX: LEFT-ALIGNED HERO BUTTONS (FIXED)
-   ========================================= */
-@media (max-width: 575px) {
-  .hero-btn-group {
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: flex-start !important; 
-    width: 100% !important;
-    gap: 12px !important;
-    margin-inline: 0 !important; 
-  }
-
-  /* Adding ".hero" here overpowers the old centering rule! */
-  .hero .btn.btn-outline {
-    width: 100% !important;
-    margin-inline: 0 !important; /* Physically kills the center lock */
-    display: flex !important;
-    justify-content: space-between !important; 
-    align-items: center !important;
-    text-align: left !important; 
-    padding: 16px 24px !important; 
-    font-size: 1.4rem !important;
-  }
-}
 
 /* =========================================
    4. BASKET ICON SCALING
@@ -1893,9 +1817,6 @@ figure {
 
   /* --- SECTION EDGE PADDING: keeps text off the screen edges --- */
   .container { padding-inline: 20px; }
-
-  /* --- HERO: text on top, image stacked below --- */
-  .hero .container { grid-template-columns: 1fr !important; }
 
   /* --- RESTORATION PROCESS: single column --- */
   .phases-grid { grid-template-columns: 1fr !important; }
