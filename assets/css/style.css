@@ -542,8 +542,22 @@ body {
 
 .footer-link .material-symbols-rounded {
   flex-shrink: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--white);
+  background-color: var(--eerie-black);
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.footer-link:hover .material-symbols-rounded {
+  background-color: var(--white);
+  color: #000;
 }
 
 
@@ -1830,6 +1844,12 @@ figure {
 @media (max-width: 991px) {
   .navbar-list li:not(:last-child) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* A clear highlighted row on hover/tap, instead of a subtle text color shift */
+  .navbar-link:hover {
+    background-color: var(--white) !important;
+    color: #000 !important;
   }
 }
 
