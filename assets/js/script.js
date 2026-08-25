@@ -144,6 +144,25 @@ if (counters.length) {
 
 
 /**
+ * TEXT REVEAL ON SCROLL
+ */
+const revealEls = document.querySelectorAll('.reveal');
+
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+}
+
+
+/**
  * MAILTO FORM HANDLER (Consultation + Contact forms)
  * Static site, no backend: this opens the visitor's own email client with a
  * pre-filled message addressed to the shop. They still have to hit "send"

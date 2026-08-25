@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
 
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/restoration-detail.css">
 </head>
 
 <body style="background-color: #000000;">
@@ -52,39 +53,55 @@
 
   <main>
     <article>
-      <section class="section service-hero">
-        <div class="container services-header-bubble">
+      <section class="detail-hero">
+        <div class="detail-hero-bg">
+          <img src="../assets/images/classic-mustang.jpg" alt="" role="presentation">
+        </div>
+        <div class="container">
           <h1 class="h1 section-title">Mechanical Restoration</h1>
-          <p class="section-text">The heart of every restoration: Precision engineering and period-correct mechanical renewal.</p>
+          <p class="section-text">Precision engineering and period-correct mechanical renewal — the heart of every restoration.</p>
         </div>
       </section>
 
       <section class="section">
-        <div class="container main-bubble">
-          <h2 class="h2 section-title" style="margin-bottom: 30px;">Engineering Excellence</h2>
-          <div class="restoration-content-grid" style="display: grid; gap: 40px; grid-template-columns: 1fr;">
-            
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Engine Blueprinting</h3>
-              <p class="section-text">Our engine restoration process goes beyond a standard rebuild. We perform full blueprinting to original factory specifications, ensuring every component meets Concours-level tolerances. From block machining to period-correct component sourcing, we bring classic power back to life.</p>
-            </div>
+        <div class="container">
 
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Drivetrain & Transmission</h3>
-              <p class="section-text">Total renewal of the drivetrain system. We specialize in the overhaul of vintage gearboxes, differentials, and final drives, ensuring smooth power delivery and mechanical longevity. Every seal, bearing, and gear is inspected and replaced where necessary.</p>
-            </div>
-
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Suspension & Braking</h3>
-              <p class="section-text">Safety and handling are paramount. We restore suspension systems to their original geometry, utilizing period-correct bushings and dampers. Braking systems are fully renewed, balancing original aesthetic with modern reliability.</p>
-            </div>
-
+          <div class="detail-intro">
+            <h2 class="h1 section-title">Built To Run Right</h2>
+            <p class="section-text">A car that looks the part but hesitates under load isn't finished. Every mechanical restoration ends with a vehicle that drives the way it was designed to, not just one that starts.</p>
           </div>
 
-          <a href="../quote.html" class="btn btn-primary" style="margin-inline: auto; margin-top: 50px;">
-            <span class="span">Inquire About Your Project</span>
-            <span class="material-symbols-rounded">send</span>
-          </a>
+          <ul class="detail-grid">
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">precision_manufacturing</span>
+              </div>
+              <h3 class="h3 detail-card-title">Engine Blueprinting</h3>
+              <p class="detail-card-text">Every engine is blueprinted to factory tolerances before it goes back in the bay — block machined, components matched, nothing left to guesswork.</p>
+            </li>
+
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">settings</span>
+              </div>
+              <h3 class="h3 detail-card-title">Drivetrain & Transmission</h3>
+              <p class="detail-card-text">Gearboxes, differentials and final drives come apart completely. Bearings, seals and synchros are replaced on condition, not on a schedule.</p>
+            </li>
+
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">speed</span>
+              </div>
+              <h3 class="h3 detail-card-title">Suspension & Braking</h3>
+              <p class="detail-card-text">Suspension geometry is set back to spec with period-correct bushings and dampers. Brakes are rebuilt for how the car actually gets driven.</p>
+            </li>
+          </ul>
+
+          <div class="detail-cta">
+            <a href="../quote.html" class="btn btn-outline">
+              <span class="span">Inquire About This Restoration</span>
+            </a>
+          </div>
         </div>
       </section>
     </article>

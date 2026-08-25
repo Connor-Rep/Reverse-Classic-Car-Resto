@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
 
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/restoration-detail.css">
 </head>
 
 <body style="background-color: #000000;">
@@ -52,39 +53,55 @@
 
   <main>
     <article>
-      <section class="section service-hero">
-        <div class="container services-header-bubble">
+      <section class="detail-hero">
+        <div class="detail-hero-bg">
+          <img src="../assets/images/engine-mustang.jpg" alt="" role="presentation">
+        </div>
+        <div class="container">
           <h1 class="h1 section-title">Bodywork & Respray</h1>
-          <p class="section-text">Perfecting the lines of history: Artisan coachwork and period-correct paint finishes.</p>
+          <p class="section-text">Artisan coachwork and period-correct paint finishes — perfecting the lines of history.</p>
         </div>
       </section>
 
       <section class="section">
-        <div class="container main-bubble">
-          <h2 class="h2 section-title" style="margin-bottom: 30px;">Artisan Craftsmanship</h2>
-          <div class="restoration-content-grid" style="display: grid; gap: 40px; grid-template-columns: 1fr;">
-            
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Panel Fabrication & Lead Loading</h3>
-              <p class="section-text">We reject modern plastic fillers. Our craftsmen utilize traditional panel beating and lead loading techniques to ensure seamless metal transitions and long-term structural integrity. Every curve and line is painstakingly restored to original factory profiles.</p>
-            </div>
+        <div class="container">
 
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Period-Correct Paint Matching</h3>
-              <p class="section-text">Utilizing advanced spectroscopy and historical color archives, we replicate original factory finishes. Whether it's a deep nitrocellulose lacquer effect or a modern, high-durability equivalent, our paintwork is flawless and era-appropriate.</p>
-            </div>
-
-            <div class="content-item">
-              <h3 class="h3" style="color: var(--international-orange-engineering); margin-bottom: 15px;">Rust Remediation & Protection</h3>
-              <p class="section-text">Restoration begins with a clean slate. We perform comprehensive rust removal via specialized blasting media that preserves original metal. Finished bodywork is treated with modern anti-corrosion systems for lifetime preservation.</p>
-            </div>
-
+          <div class="detail-intro">
+            <h2 class="h1 section-title">Every Panel, By Hand</h2>
+            <p class="section-text">Paint only ever looks as good as what's underneath it. Before a single coat goes on, every panel is put right the way the factory built it — not the way it's quickest to fix.</p>
           </div>
 
-          <a href="../quote.html" class="btn btn-primary" style="margin-inline: auto; margin-top: 50px;">
-            <span class="span">Inquire About Your Project</span>
-            <span class="material-symbols-rounded">send</span>
-          </a>
+          <ul class="detail-grid">
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">construction</span>
+              </div>
+              <h3 class="h3 detail-card-title">Panel Fabrication & Lead Loading</h3>
+              <p class="detail-card-text">Filler doesn't get near these panels. Metal is beaten and lead-loaded back to its original profile, the way it was built before plastic fillers existed.</p>
+            </li>
+
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">palette</span>
+              </div>
+              <h3 class="h3 detail-card-title">Period-Correct Paint Matching</h3>
+              <p class="detail-card-text">Colour is matched against factory archives and period samples, then applied in lacquer or a modern equivalent — whichever suits the car.</p>
+            </li>
+
+            <li class="detail-card">
+              <div class="detail-card-icon">
+                <span class="material-symbols-rounded">security</span>
+              </div>
+              <h3 class="h3 detail-card-title">Rust Remediation & Protection</h3>
+              <p class="detail-card-text">Corrosion is media-blasted back to clean steel, not skimmed over. Modern anti-rust treatment goes on before a single coat of primer.</p>
+            </li>
+          </ul>
+
+          <div class="detail-cta">
+            <a href="../quote.html" class="btn btn-outline">
+              <span class="span">Inquire About This Restoration</span>
+            </a>
+          </div>
         </div>
       </section>
     </article>

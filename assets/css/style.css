@@ -1931,3 +1931,74 @@ figure {
     padding-block: 10px;
   }
 }
+
+
+/*-----------------------------------*\
+  #UPPERCASE TEXT (home page only, for now)
+\*-----------------------------------*/
+.uppercase-page :where(h1, h2, h3, h4, p, a, li, label, button, input, textarea, span:not(.material-symbols-rounded)) {
+  text-transform: uppercase;
+}
+
+
+/*-----------------------------------*\
+  #TEXT REVEAL ("inspection scan" fade-in)
+  A precision-inspection light sweep passes over the text as it
+  comes into focus, in place of a plain generic fade.
+\*-----------------------------------*/
+.reveal {
+  position: relative;
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.has-js .reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.has-js .reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  left: -30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.has-js .reveal.in-view {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.has-js .reveal.in-view::after {
+  animation: reveal-sweep 1.1s ease-out forwards;
+}
+
+@keyframes reveal-sweep {
+  0% { opacity: 0; left: -30%; }
+  15% { opacity: 0.9; }
+  60% { opacity: 0.4; }
+  100% { opacity: 0; left: 110%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-js .reveal {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    transition: none;
+  }
+
+  .has-js .reveal::after { display: none; }
+}
