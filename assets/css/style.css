@@ -538,6 +538,10 @@ body {
 
 .footer-list li:has(.footer-link):not(:first-child) { margin-block-start: 4px; }
 
+.footer-list li.footer-social-item { margin-block-start: 22px; }
+
+.footer-social-item .social-list { margin-block-start: 2px; }
+
 .footer-link {
   display: flex;
   align-items: center;
