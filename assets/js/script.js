@@ -1,27 +1,6 @@
 'use strict';
 
 /**
- * SERVICE CARD OVERLAY LOGIC
- */
-const serviceReadMoreBtns = document.querySelectorAll(".service-read-more");
-const serviceCloseBtns = document.querySelectorAll(".close-overlay");
-
-serviceReadMoreBtns.forEach(btn => {
-  btn.addEventListener("click", function() {
-    const overlay = this.closest(".service-card").querySelector(".card-overlay");
-    if (overlay) overlay.classList.add("active");
-  });
-});
-
-serviceCloseBtns.forEach(btn => {
-  btn.addEventListener("click", function() {
-    this.closest(".card-overlay").classList.remove("active");
-  });
-});
-
-
-
-/**
  * SMOOTH SCROLLING FOR ALL INTERNAL ANCHOR LINKS
  */
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -85,42 +64,6 @@ window.addEventListener("load", () => {
 
 
 /**
- * "WHY CHOOSE US" STAT COUNTER ANIMATION
- */
-const counters = document.querySelectorAll('[data-count-to]');
-
-if (counters.length) {
-  const animateCounter = (el) => {
-    const target = parseInt(el.dataset.countTo, 10);
-    const suffix = el.dataset.suffix || '';
-    const duration = 2400;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 5); /* stronger ease-out: slows more as it nears the final value */
-      el.textContent = Math.round(eased * target) + suffix;
-
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-
-  counters.forEach((el) => counterObserver.observe(el));
-}
-
-
-/**
  * TEXT REVEAL ON SCROLL
  */
 const revealEls = document.querySelectorAll('.reveal');
@@ -165,4 +108,3 @@ function wireMailtoForm(form, to, subjectPrefix) {
 }
 
 wireMailtoForm(document.getElementById('consultation-form'), 'info@safetay.uk', 'Free Consultation Request');
-wireMailtoForm(document.getElementById('contact-form'), 'info@safetay.uk', 'Website Contact Form');

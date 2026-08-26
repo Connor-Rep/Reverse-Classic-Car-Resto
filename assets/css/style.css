@@ -160,39 +160,14 @@ body {
   background-position: left;
 }
 
-.section-subtitle {
-  max-width: max-content;
-  font-family: var(--ff-chakra-petch);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-600);
-  text-transform: uppercase;
-  margin-block-end: 12px;
-  margin-inline: auto;
-}
-
-.section-subtitle::before {
-  content: "";
-  display: inline-block;
-  height: 15px;
-  width: 30px;
-  margin-block-end: -2px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
 .section-title { text-align: center; }
 
 .h1,
-.h2,
-.h3,
-.display-1 {
+.h3 {
   font-family: var(--ff-chakra-petch);
   font-weight: var(--fw-700);
   text-transform: uppercase;
 }
-
-.display-1 { font-size: var(--fs-1); }
 
 .h1 {
   color: var(--white);
@@ -201,19 +176,11 @@ body {
   letter-spacing: 1px;
 }
 
-.h2 {
-  color: var(--eerie-white);
-  font-weight: var(--fw-600);
-  line-height: 1.2;
-}
-
 .h3 {
   color: var(--white);
   font-weight: var(--fw-600);
   line-height: 1.2;
 }
-
-.h2 { font-size: var(--fs-3); }
 
 .h3 { font-size: var(--fs-4); }
 
@@ -242,15 +209,6 @@ body {
 }
 
 .section { padding-block: var(--section-padding); }
-
-.btn-link {
-  font-family: var(--ff-chakra-petch);
-  text-transform: uppercase;
-  color: var(--international-orange-engineering);
-  font-weight: var(--fw-700);
-}
-
-.w-100 { width: 100%; }
 
 /* --- HERO BUTTON GROUP --- */
 .hero-btn-group {
@@ -394,8 +352,6 @@ body {
 
 .hero .section-title { font-size: calc(var(--fs-2) * 1.15); }
 
-.hero .section-subtitle { text-transform: unset; }
-
 .hero .section-text {
   margin-block: 20px 30px;
   max-width: 600px; /* Limits width for better readability */
@@ -407,80 +363,10 @@ body {
 
 
 
-/*-----------------------------------*\
-  #SERVICE
-\*-----------------------------------*/
-
-.service { text-align: center; }
-
-.service-list {
-  gap: 0;
-  margin-block-end: 40px;
-}
-
-.service-card .card-icon {
-  max-width: max-content;
-  margin-inline: auto;
-  margin-block-end: 24px;
-}
-
-.service-card .card-text {
-  line-height: 1.2;
-  margin-block: 8px;
-}
-
-.service .btn { margin-inline: auto; }
-
-
-
-
-
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
-
-.about {
-  background-color: #000000; /* Swapped from var(--eerie-black) */
-  color: var(--white);
-  text-align: center;
-}
-
-.about .container {
-  display: grid;
-  gap: 50px;
-}
-
-.about .section-title {
-  color: var(--white);
-  font-size: calc(var(--fs-2) * 1.1);
-  margin-block-end: 20px;
-}
 
 .phases-container .section-title,
 .recent-projects .section-title {
   font-size: calc(var(--fs-2) * 1.1);
-}
-
-.about .section-text:nth-child(3) { margin-block: 12px 8px; }
-
-.about-list {
-  display: grid;
-  gap: 12px;
-  margin-block-start: 25px;
-}
-
-.about-item {
-  padding-block: 12px;
-}
-
-.about-item p {
-  font-size: 2rem;
-}
-
-.about-item .strong {
-  display: block;
-  line-height: 1.1;
-  font-size: calc(var(--fs-1) * 1.15);
 }
 
 
@@ -611,12 +497,6 @@ body {
     margin-inline: auto;
   }
 
-  .section-subtitle { --fs-5: 1.6rem; }
-
-  .h2 { font-weight: var(--fw-700); }
-
-
-
   /**
    * HERO
    */
@@ -629,32 +509,6 @@ body {
   }
 
   .hero .section-text { font-size: 1.8rem; }
-
-
-
-  /**
-   * SERVICE
-   */
-
-  .service .section-title { margin-block-end: 30px; }
-
-  .service-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-block-end: 40px;
-  }
-
-  
-
-  /**
-   * ABOUT
-   */
-
-  .about-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
 
 
 
@@ -727,8 +581,6 @@ body {
 
   .btn { padding: 16px 32px; }
 
-  .section-subtitle { --fs-5: 1.8rem; }
-
   .section-title:not(.h1) {
     max-width: 500px;
     margin-inline: auto;
@@ -749,27 +601,6 @@ body {
   }
 
   .hero .section-text { margin-block-end: 30px; }
-
-
-
-  /**
-   * SERVICE
-   */
-
-  .service-list { grid-template-columns: repeat(3, 1fr); }
-
-
-
-  /**
-   * ABOUT
-   */
-   
-  .about-banner { max-width: max-content; }
-
-  .about-banner,
-  .about .section-text { margin-inline: auto; }
-
-  .about .section-text { max-width: 520px; }
 
 
 
@@ -888,65 +719,6 @@ body {
 
 
 
-  /**
-   * SERVICE
-   */
-
-  .service-card .card-text {
-    padding-inline: 25px;
-    line-height: 1.45;
-    margin-block-end: 15px;
-  }
-
-  .service-list li:nth-child(-2n+3) { margin-block-start: 90px; }
-
-  .service-list li:nth-child(4) { margin-inline-end: 60px; }
-
-  .service-list li:nth-child(6) { margin-inline-start: 60px; }
-
-
-
-  /**
-   * ABOUT
-   */
-
-  .about {
-    position: relative;
-    z-index: 1;
-  }
-
-  .about { text-align: left; }
-
-  .about .section-title { text-align: center; }
-
-  .about .container {
-    grid-template-columns: 1fr 0.75fr;
-    gap: 30px;
-  }
-
-  .about .section-subtitle { margin-inline: 0; }
-
-  .about-banner,
-  .about-banner .w-100 { margin-inline: auto 0; }
-
-  .about-banner .w-100 { width: 40%; }
-
-  .about-item { text-align: center; }
-
-  .about::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-image: url('../images/about-abs-banner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
-    z-index: -1;
-  }
-
 }
 
 
@@ -1014,23 +786,6 @@ body {
 
 
   /**
-   * SERVICE
-   */
-
-  .service .section-title { max-width: 700px; }
-
-  .service-list { margin-block-end: 70px; }
-
-  .service-list li:nth-child(2) .card-text {
-    padding-inline: 50px;
-  }
-
-  .service-list li:nth-child(-2n+3) {
-    margin-block-start: 110px;
-  }
-
-
-  /**
    * FOOTER
    */
 
@@ -1042,19 +797,6 @@ body {
     z-index: 1;
     background-color: #000000;
   }
-
-  .footer :is(.shape-1, .shape-2) {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 50%;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .footer .shape-1 { left: -100px; }
-
-  .footer .shape-2 { left: -50px; }
 
 }
 
@@ -1096,11 +838,6 @@ body {
 
   :is(.header, .hero) .container { max-width: 1280px; }
 
-  .section-subtitle::before {
-    height: 20px;
-    margin-inline-end: 5px;
-  }
-
 
 
   /**
@@ -1120,14 +857,6 @@ body {
 
 
   /**
-   * ABOUT
-   */
-
-  .about::before { width: 55%; }
-
-  .about-banner .w-100 { width: 50%; }
-
-  /**
    * FOOTER
    */
 
@@ -1135,248 +864,10 @@ body {
 
 }
 
-  .service-list li:nth-child(2) .card-overlay {
-    align-items: flex-start; /* Resets the desktop center alignment */
-    justify-content: flex-start; /* Resets the desktop center alignment */
-  }
-
-
-
-
-/* --- CARD FLIP SYSTEM --- */
-
-/* --- MEMBERSHIP SECTION & FLIP SYSTEM --- */
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.card-front, .card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: var(--radius-16);
-  /* CRITICAL: Allows the half-off box and shadows to show without scrollbars */
-  overflow: visible !important; 
-}
-
-/* BACK SIDE */
-.card-back {
-  background-color: #000000 !important;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid var(--international-orange-engineering);
-  border-radius: var(--radius-16);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  /* Ensures nothing covers the back content */
-  z-index: 5;
-  pointer-events: all; 
-}
-
-
-/* --- Updated SERVICE CARD OVERLAY SYSTEM --- */
-
-.service-card {
-  position: relative; 
-  overflow: hidden;   
-  background-color: var(--black); 
-  padding: 40px 20px;
-  border-radius: 8px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center;
-}
-
-.card-overlay {
-  position: absolute;
-  top: 100%; /* Keeps it hidden until 'active' class is added */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--eerie-black); 
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Start text at top for easier reading */
-  align-items: flex-start;
-  padding: 50px 25px 25px; /* Top padding to avoid the 'X' button */
-  transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 5;
-}
-
-.card-overlay.active {
-  top: 0; /* Slides up when Read More is clicked */
-}
-
-/* New paragraph formatting */
-.overlay-content {
-  text-align: left;
-  width: 100%;
-}
-
-.overlay-content .h3 {
-  margin-block-end: 15px;
-  color: var(--international-orange-engineering);
-  font-size: var(--fs-4);
-}
-
-.overlay-content p {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: var(--white);
-  font-family: var(--ff-mulish);
-}
-
-.close-overlay {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: var(--international-orange-engineering);
-  font-size: 2.2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-}
-
-
-
-/* Mobile adjustments for Service Card height and Overlay size */
-@media (max-width: 575px) {
-
-  /* 1. Create the 2x2 Grid Layout */
-  .service-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px; /* Spacing between the columns/rows */
-  }
-
-  /* 2. Scale down the cards to fit nicely side-by-side */
-  .service-card {
-    min-height: 260px; 
-    padding: 20px 10px;
-  }
-
-  /* Scale down the icons so they don't break out of the card */
-  .service-card .card-icon img {
-    width: 65px; 
-    height: auto;
-  }
-
-  .service-card .card-title {
-    font-size: 1.6rem;
-  }
-
-  /* 3. Setup the Side-Swipe Overlay Logic */
-  .card-overlay {
-    height: 100%;
-    top: 0 !important; /* Force to top instead of starting at bottom */
-    border-radius: 8px;
-    /* Transition transform (X-axis) instead of top (Y-axis) */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important; 
-  }
-
-  /* Left Column Cards (Items 1, 3) slide in from the Left */
-  .service-list li:nth-child(odd) .card-overlay {
-    transform: translateX(-100%);
-  }
-
-  /* Right Column Cards (Items 2, 4) slide in from the Right */
-  .service-list li:nth-child(even) .card-overlay {
-    transform: translateX(100%);
-  }
-
-  /* Exception: Because Item 5 (the car banner) is hidden on mobile, 
-     Item 6 shifts into the left column visually. 
-     We manually override it so it slides in from the left. */
-  .service-list li:nth-child(6) .card-overlay {
-    transform: translateX(-100%);
-  }
-
-  /* 4. When Read More is clicked (Active State) */
-  .card-overlay.active {
-    transform: translateX(0) !important; /* Slide to center */
-  }
-
-  /* 5. Scale down the overlay text to fit the narrower cards */
-  .overlay-content {
-    text-align: center;
-    padding-top: 30px; /* Push text down to avoid overlapping the X button */
-  }
-
-  .overlay-content p {
-    font-size: 1.2rem; 
-    line-height: 1.4;
-  }
-
-  .overlay-content .h3 {
-    font-size: 1.5rem;
-    margin-block-end: 10px;
-  }
-
-  /* Scale down the close button slightly */
-  .close-overlay {
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-  }
-}
-
-
-
-.service-list li:nth-child(2) .card-overlay {
-  height: 100%;
-  max-height: 100%;
-  overflow-y: auto; /* Allows scrolling only if the text is too long */
-  justify-content: flex-start; /* Keeps text at the top so it doesn't jump */
-}
-
-/* Optional: Style the scrollbar to match your theme */
-.service-list li:nth-child(2) .card-overlay::-webkit-scrollbar {
-  width: 5px;
-}
-
-.service-list li:nth-child(2) .card-overlay::-webkit-scrollbar-thumb {
-  background-color: var(--international-orange-engineering);
-  border-radius: 10px;
-}
-
-/* Specific alignment for the Brake Repair card overlay (2nd card) */
-.service-list li:nth-child(2) .card-overlay {
-  align-items: center;    /* Horizontally centers the content */
-  justify-content: center; /* Vertically centers the content */
-  text-align: center;      /* Centers the text lines */
-}
-
-/* Ensure the inner paragraph container also centers its text */
-.service-list li:nth-child(2) .overlay-content {
-  text-align: center;
-}
-
-
 
 /*-----------------------------------*\
  SERVICES
 \*-----------------------------------*/
-
-/* Reduce overall section height */
-.service.section {
-  padding-block: 60px;
-}
 
 /* Header & Paragraph */
 .service-header {
@@ -1394,84 +885,6 @@ body {
   max-width: 600px;
   text-align: center;
 }
-
-/* Override old staggered margins */
-@media (min-width: 992px) {
-  .service-list.wireframe-layout li:nth-child(-2n+3) { margin-block-start: 0 !important; }
-  .service-list.wireframe-layout li:nth-child(4) { margin-inline-end: 0 !important; }
-  .service-list.wireframe-layout li:nth-child(6) { margin-inline-start: 0 !important; }
-}
-@media (min-width: 1200px) {
-  .service-list.wireframe-layout li:nth-child(-2n+3) { margin-block-start: 0 !important; }
-}
-
-/* New 3-Column Grid */
-.service-list.wireframe-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-block-end: 50px;
-}
-@media (min-width: 768px) {
-  .service-list.wireframe-layout { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* New Card Layout */
-.service-card.new-layout {
-  border: 3px solid var(--eerie-black);
-  border-radius: 16px;
-  padding: 0;
-  background-color: var(--black); 
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden; 
-}
-
-/* Image section */
-.card-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  border-bottom: 3px solid var(--eerie-black);
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
-  background-color: var(--eerie-black);
-  flex-shrink: 0;
-}
-
-.card-image-wrapper .card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* Card Text Section */
-.card-content-wrapper {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center; 
-}
-
-.card-content-wrapper .card-title {
-  border-bottom: 3px solid var(--eerie-black);
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-.card-text-wrapper {
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.service-card.new-layout .service-read-more {
-  margin-top: auto; 
-}
-
 
 /* --- MOBILE HEADER LOGO ALIGNMENT FIX --- */
 @media (max-width: 768px) {
@@ -1533,210 +946,6 @@ body {
 }
 
 
-/* --- POPULAR SERVICES BUTTON UPGRADE --- */
-.service-read-more {
-  background-color: var(--eerie-black) !important;
-  color: var(--white) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important; /* Very subtle edge so it doesn't vanish into the black card */
-  padding: 12px 24px !important;
-  border-radius: 6px !important;
-  font-family: var(--ff-chakra-petch);
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-align: center;
-  width: 100%; /* Stretches the button to fill the bottom of the card */
-  margin-top: auto; 
-  text-decoration: none !important;
-  display: block !important;
-}
-
-.service-read-more:hover {
-  background-color: var(--eerie-black) !important;
-  border-color: var(--international-orange-engineering) !important;
-  color: var(--white) !important;
-  box-shadow: 0 5px 15px rgba(234, 40, 6, 0.4) !important; /* The glowing red highlight */
-  transform: translateY(-2px); /* Slight lift effect */
-  text-shadow: none !important; /* Removes the old text glow */
-}
-
-/* =========================================
-   1. GLOBAL HEADER CART BUTTON FIX
-   ========================================= */
-.header-booking-btn {
-  gap: 12px !important;
-  transition: all 0.3s ease;
-  display: flex !important;
-  align-items: center !important;
-  padding: 12px 24px !important;
-  background-color: var(--eerie-black) !important;
-  color: var(--white) !important;
-  border: 1px solid var(--white) !important;
-}
-
-.cart-icon-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  background-color: #000000; 
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 800;
-  font-family: var(--ff-chakra-petch);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-}
-
-
-/* =========================================
-   2. REPAIRS & SERVICES (STRICT 4x2 GRID)
-   ========================================= */
-.repairs-section {
-  padding-block: 60px;
-}
-
-.repairs-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important; /* STRICTLY forces 4 columns */
-  gap: 20px !important;
-  margin-block: 40px;
-  list-style: none;
-  padding: 0;
-}
-
-.repair-card {
-  background-color: var(--eerie-black);
-  border: 2px solid rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 30px 15px !important; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px !important; 
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.repair-card:hover {
-  border-color: var(--international-orange-engineering);
-  box-shadow: 0 0 15px rgba(234, 40, 6, 0.4); 
-  transform: translateY(-3px);
-}
-
-/* FIX: Nuke the background circle, increase icon size */
-.repair-card .card-icon {
-  background: transparent !important; 
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
-  box-shadow: none !important;
-}
-
-.repair-card .card-icon img {
-  width: 75px !important; /* Much bigger icon */
-  height: 75px !important;
-  object-fit: contain;
-}
-
-/* FIX: Massive title, tiny subtext */
-.repair-card .card-title {
-  font-size: 2.4rem !important; /* Huge bump in size so it commands attention */
-  color: var(--white);
-  font-family: var(--ff-chakra-petch);
-  margin: 0;
-  text-align: center;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.find-out-more-text {
-  font-size: 0.95rem !important; 
-  color: var(--light-gray) !important;
-  font-family: var(--ff-mulish);
-  text-transform: uppercase;
-  font-weight: 700;
-  opacity: 0.6;
-  transition: var(--transition);
-  margin-top: 2px;
-}
-
-.repair-card:hover .find-out-more-text {
-  opacity: 1; /* Brightens on hover */
-}
-
-/* --- REPAIRS GRID MOBILE RESPONSIVENESS --- */
-@media (max-width: 991px) {
-  .repairs-grid {
-    grid-template-columns: repeat(3, 1fr) !important; 
-  }
-}
-
-@media (max-width: 575px) {
-  .repairs-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* 2x4 on mobile */
-  }
-}
-
-
-/* =========================================
-   3. WHY CHOOSE US (HEIGHT GAP FIX)
-   ========================================= */
-.about.section {
-  padding-block-start: 60px !important; 
-}
-
-@media (min-width: 992px) {
-  .about.section {
-    padding-block-start: 90px !important; /* Pushes the section down further */
-  }
-}
-
-/* --- MOBILE FLOATING ACTION BASKET (FAB) --- */
-@media (max-width: 768px) {
-  .header-booking-btn {
-    position: fixed !important;
-    bottom: 25px;
-    right: 25px;
-    border-radius: 50% !important; /* Makes it a perfect circle */
-    width: 65px !important;
-    height: 65px !important;
-    padding: 0 !important;
-    justify-content: center !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6) !important; /* Deep floating shadow */
-    z-index: 100;
-  }
-  
-  /* Hides the word "Quote" and the arrow on mobile, leaving just the basket */
-  .header-booking-btn #header-btn-text,
-  .header-booking-btn > .material-symbols-rounded:last-child {
-    display: none !important; 
-  }
-
-  /* Centers the basket inside the circle */
-  .cart-icon-wrapper {
-    margin: 0 !important;
-  }
-}
-
 /* =========================================
    1. GLOBAL FIX: STOP BLUE TAP HIGHLIGHT
    ========================================= */
@@ -1749,83 +958,12 @@ a:focus, button:focus {
 }
 
 /* =========================================
-   2. MOBILE FIX: PERFECT CIRCLE BASKET
-   ========================================= */
-@media (max-width: 768px) {
-  .header-booking-btn {
-    position: fixed !important;
-    bottom: 25px !important;
-    right: 25px !important;
-    border-radius: 50% !important; 
-    width: 65px !important;
-    height: 65px !important;
-    min-width: 65px !important; /* Physically prevents the oval squish */
-    min-height: 65px !important; /* Physically prevents the oval squish */
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6) !important; 
-    z-index: 100;
-  }
-}
-
-
-/* =========================================
-   4. BASKET ICON SCALING
-   ========================================= */
-.cart-icon-wrapper .material-symbols-rounded {
-  font-size: 2.2rem !important; /* Bumps up the size on desktop */
-}
-
-@media (max-width: 768px) {
-  .cart-icon-wrapper .material-symbols-rounded {
-    font-size: 3.2rem !important; /* Makes it massive to fill the mobile floating circle */
-  }
-}
-
-/* =========================================
    5. PREMIUM HOVER EFFECTS (NAV & BUTTONS)
    ========================================= */
 /* Navbar links dim to a soft grey on hover, in line with the new theme */
 .navbar-link:hover {
   color: var(--cadet-blue-creyola) !important;
 }
-
-/* Base state for the View All button to prevent jumping */
-.repairs-section .btn {
-  border: 1px solid transparent !important;
-  transition: all 0.3s ease !important;
-}
-
-.header-booking-btn { transition: all 0.3s ease !important; }
-
-/* Matches the "Get in Touch" button's white invert on hover */
-.header-booking-btn:hover {
-  background-color: var(--white) !important;
-  border-color: var(--white) !important;
-  color: #000 !important;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4) !important;
-  transform: translateY(-2px); /* Tiny premium lift effect */
-}
-
-.repairs-section .btn:hover {
-  background-color: var(--eerie-black) !important;
-  border-color: var(--international-orange-engineering) !important;
-  color: var(--white) !important;
-  box-shadow: 0 5px 15px rgba(234, 40, 6, 0.4) !important;
-  transform: translateY(-2px);
-}
-
-/* --- 2. HOME PAGE REPAIRS GRID BREAK LINE --- */
-.repair-card .card-title {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-  padding-bottom: 12px !important;
-  margin-bottom: 10px !important;
-  width: 80% !important; /* Keeps it slightly inset like the popular cards */
-  margin-inline: auto !important;
-}
-
 
 /*-----------------------------------*\
   #MOBILE RESPONSIVENESS
@@ -1887,11 +1025,6 @@ figure {
   /* --- RECENT PROJECTS: single column --- */
   .projects-grid-alt { grid-template-columns: 1fr !important; }
 
-  /* --- WHY CHOOSE US: image above text, single column --- */
-  .about .container { grid-template-columns: 1fr !important; }
-
-  .about-list { grid-template-columns: 1fr !important; }
-
   /* --- FOOTER: Logo and Map stay full-width, Hours and Contact sit side by side --- */
   .footer-top .container {
     grid-template-columns: 1fr 1fr !important;
@@ -1930,9 +1063,7 @@ figure {
   .btn,
   .btn-outline,
   .phase-link-alt,
-  .btn-link-alt,
-  .service-read-more,
-  .header-booking-btn {
+  .btn-link-alt {
     min-height: 44px;
   }
 
