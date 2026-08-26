@@ -1892,11 +1892,22 @@ figure {
 
   .about-list { grid-template-columns: 1fr !important; }
 
-  /* --- FOOTER: stack Logo / Hours / Contact / Map columns --- */
+  /* --- FOOTER: Logo and Map stay full-width, Hours and Contact sit side by side --- */
   .footer-top .container {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 20px !important;
     text-align: center;
+  }
+
+  .footer-brand,
+  .footer-map {
+    grid-column: 1 / -1;
+  }
+
+  /* Pages with only one footer-list (e.g. restoration pages, Contact Info
+     only) should still span full width instead of sitting in one column */
+  .footer-list:only-of-type {
+    grid-column: 1 / -1;
   }
 
   .footer-brand,
