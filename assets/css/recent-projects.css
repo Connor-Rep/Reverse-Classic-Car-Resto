@@ -48,6 +48,23 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
 
+.card-status-alt {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-family: var(--ff-chakra-petch);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(4px);
+}
+
 .card-img-alt img {
   width: 100%;
   height: 100%;
@@ -111,8 +128,16 @@
   width: 100%;
 }
 
+#portfolio-hero {
+  padding-block-start: 140px;
+}
+
 /* Smaller, less "in your face" cards on mobile */
 @media (max-width: 767px) {
+  #portfolio-hero {
+    padding-block-start: 120px !important;
+  }
+
   .project-card-alt {
     min-height: unset;
   }

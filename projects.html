@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafeTay - Our Projects</title>
+  <title>SafeTay - Restoration Portfolio</title>
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
 
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/projects-style.css">
+  <link rel="stylesheet" href="./assets/css/recent-projects.css">
 </head>
 
 <body style="background-color: #000000;">
@@ -34,7 +34,6 @@
         </ul>
       </nav>
 
-
       <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
         <span class="nav-toggle-icon icon-2"></span>
@@ -45,99 +44,63 @@
 
   <main>
     <article>
-      <!-- PROJECTS HERO -->
-      <section class="section service-hero" id="projects-hero">
-        <div class="container services-header-bubble">
-          <h1 class="h1 section-title">Restoration Portfolio</h1>
-          <p class="section-text">A showcase of automotive legends returned to their prime through meticulous craftsmanship and dedication.</p>
+
+      <!-- #PORTFOLIO HERO -->
+      <section class="section recent-projects" id="portfolio-hero" style="padding-block-end: 0;">
+        <div class="container">
+          <div class="service-header reveal">
+            <h1 class="h1 section-title">Restoration Portfolio</h1>
+            <div class="service-paragraph">
+              <p>A showcase of automotive legends returned to their prime through meticulous craftsmanship and dedication.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- PROJECTS GALLERY -->
-      <section class="section search-cards-bubble-section" id="projects-gallery">
-        <div class="container main-bubble">
-          
-          <div class="filter-menu">
-            <button class="filter-btn active" data-filter="all">All Eras</button>
-            <button class="filter-btn" data-filter="muscle">American Muscle</button>
-            <button class="filter-btn" data-filter="euro">European Classics</button>
-            <button class="filter-btn" data-filter="prewar">Pre-War</button>
-          </div>
+      <!-- #PORTFOLIO GALLERY -->
+      <section class="section recent-projects" id="portfolio-gallery">
+        <div class="container">
 
-          <ul class="projects-grid" id="projects-grid">
-            
-            <li class="project-item muscle">
-              <div class="project-card">
-                <div class="card-banner">
-                  <img src="./assets/images/classic-mustang.jpg" alt="1967 Ford Mustang GT" class="img-cover" loading="lazy" decoding="async">
-                  <div class="card-badge">Completed</div>
-                </div>
-                <div class="card-content">
-                  <h3 class="h3 card-title">1967 Ford Mustang GT</h3>
-                  <p class="card-text">Full nut-and-bolt restoration. Period-correct Highland Green respray and engine blueprinting.</p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">schedule</span>
-                      <span class="span">800+ Hours</span>
-                    </li>
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">star</span>
-                      <span class="span">Show Winner</span>
-                    </li>
-                  </ul>
-                </div>
+          <ul class="projects-grid-alt">
+
+            <li class="project-card-alt">
+              <div class="card-img-alt">
+                <img src="./assets/images/classic-mustang.jpg" alt="1967 Ford Mustang GT" loading="lazy" decoding="async">
+                <span class="card-status-alt">Completed</span>
+              </div>
+              <div class="card-info-alt">
+                <h3 class="h3 card-title-alt">1967 Ford Mustang GT</h3>
+                <p class="card-text-alt">Full nut-and-bolt restoration finished in a period-correct Highland Green respray with a fully blueprinted engine. 800+ hours of work, and a show winner.</p>
               </div>
             </li>
 
-            <li class="project-item euro">
-              <div class="project-card">
-                <div class="card-banner">
-                  <img src="./assets/images/engine-mustang.jpg" alt="1961 Jaguar E-Type" class="img-cover" loading="lazy" decoding="async">
-                  <div class="card-badge">In Progress</div>
-                </div>
-                <div class="card-content">
-                  <h3 class="h3 card-title">1961 Jaguar E-Type</h3>
-                  <p class="card-text">Series 1 Roadster restoration. Focusing on coachwork and original interior preservation.</p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">construction</span>
-                      <span class="span">Stage: Body</span>
-                    </li>
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">history</span>
-                      <span class="span">Original UK Car</span>
-                    </li>
-                  </ul>
-                </div>
+            <li class="project-card-alt">
+              <div class="card-img-alt">
+                <img src="./assets/images/engine-mustang.jpg" alt="1961 Jaguar E-Type" loading="lazy" decoding="async">
+                <span class="card-status-alt">In Progress</span>
+              </div>
+              <div class="card-info-alt">
+                <h3 class="h3 card-title-alt">1961 Jaguar E-Type</h3>
+                <p class="card-text-alt">An original UK Series 1 Roadster, currently in the bodywork stage with the coachwork and original interior being carefully preserved.</p>
               </div>
             </li>
 
-            <li class="project-item euro">
-              <div class="project-card">
-                <div class="card-banner">
-                  <img src="./assets/images/detail-mustang.jpg" alt="1974 Porsche 911 Carrera" class="img-cover" loading="lazy" decoding="async">
-                  <div class="card-badge">Completed</div>
-                </div>
-                <div class="card-content">
-                  <h3 class="h3 card-title">1974 Porsche 911 Carrera</h3>
-                  <p class="card-text">Mechanical overhaul and paint correction. Restored to a Concours-level preservation state.</p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">workspace_premium</span>
-                      <span class="span">Concours Ready</span>
-                    </li>
-                    <li class="card-meta-item">
-                      <span class="material-symbols-rounded">palette</span>
-                      <span class="span">Original Paint</span>
-                    </li>
-                  </ul>
-                </div>
+            <li class="project-card-alt">
+              <div class="card-img-alt">
+                <img src="./assets/images/detail-mustang.jpg" alt="1974 Porsche 911 Carrera" loading="lazy" decoding="async">
+                <span class="card-status-alt">Completed</span>
+              </div>
+              <div class="card-info-alt">
+                <h3 class="h3 card-title-alt">1974 Porsche 911 Carrera</h3>
+                <p class="card-text-alt">Mechanical overhaul and paint correction on the original factory finish, brought to a Concours-ready preservation standard.</p>
               </div>
             </li>
 
           </ul>
+
         </div>
       </section>
+
     </article>
   </main>
 
