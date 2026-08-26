@@ -13,8 +13,23 @@
   <title>SafeTay - Classic Car Restoration</title>
   <meta name="title" content="SafeTay - Classic Car Restoration">
   <meta name="description" content="Premium classic car restoration services. We specialize exclusively in bringing legendary vehicles back to life with meticulous craftsmanship.">
+  <link rel="canonical" href="https://safetay.uk/">
 
-  <!-- 
+  <!--
+    - social sharing (Open Graph / Twitter Card)
+  -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://safetay.uk/">
+  <meta property="og:site_name" content="SafeTay Classic Restoration">
+  <meta property="og:title" content="SafeTay - Classic Car Restoration">
+  <meta property="og:description" content="Premium classic car restoration services. We specialize exclusively in bringing legendary vehicles back to life with meticulous craftsmanship.">
+  <meta property="og:image" content="https://safetay.uk/assets/images/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SafeTay - Classic Car Restoration">
+  <meta name="twitter:description" content="Premium classic car restoration services. We specialize exclusively in bringing legendary vehicles back to life with meticulous craftsmanship.">
+  <meta name="twitter:image" content="https://safetay.uk/assets/images/hero-bg.jpg">
+
+  <!--
     - favicon
   -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -644,10 +659,45 @@
   </footer>
 
 
-  <!-- 
+  <!--
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+
+  <!--
+    - structured data (helps Google show hours/address/etc. in search)
+    - telephone omitted until a real number replaces the footer placeholder
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "SafeTay Classic Restoration",
+    "description": "Premium classic car restoration services, specializing in bringing legendary vehicles back to life with meticulous craftsmanship.",
+    "url": "https://safetay.uk/",
+    "image": "https://safetay.uk/assets/images/hero-bg.jpg",
+    "email": "info@safetay.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Blairgowrie",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "11:00",
+        "closes": "19:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+  </script>
 
 </body>
 
