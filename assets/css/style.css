@@ -536,23 +536,23 @@ body {
 
 .footer-list li:not(:first-child) { margin-block-start: 10px; }
 
-.footer-list li:has(.footer-link):not(:first-child) { margin-block-start: 4px; }
+.footer-list li:has(.footer-link):not(:first-child) { margin-block-start: 0; }
 
 .footer-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .footer-link .material-symbols-rounded {
   flex-shrink: 0;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: var(--white);
   background-color: var(--eerie-black);
   border: 1px solid var(--white);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1927,7 +1927,6 @@ figure {
   .footer-link { justify-content: center; }
 
   /* --- TOUCH TARGETS: minimum 44x44px hit area --- */
-  .footer-link,
   .btn,
   .btn-outline,
   .phase-link-alt,
@@ -1937,7 +1936,7 @@ figure {
     min-height: 44px;
   }
 
-  .footer-link { padding-block: 10px; }
+  .footer-link { padding-block: 4px; }
 
   .phase-link-alt,
   .btn-link-alt {
