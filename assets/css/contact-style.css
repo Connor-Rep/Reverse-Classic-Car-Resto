@@ -1,31 +1,13 @@
 /* GLOBAL DARK OVERRIDE */
 body { background-color: #000000 !important; color: var(--white); }
 
-/* SECTION PADDING FIXES (removes the gap between hero and form) */
-.service-hero {
-    padding-block-end: 0 !important;
-}
-
-/* Centers the paragraph text in the top bubble */
-.services-header-bubble .section-text {
-    text-align: center;
-}
-
-/* BUBBLE STYLING */
-.services-header-bubble {
-    background-color: var(--eerie-black);
-    border-radius: 24px;
-    padding: 30px 40px;
-    margin-bottom: 20px;
+/* Give the form room below the fixed header since there's no hero above it */
+.consultation-section {
+    padding-block-start: 140px;
 }
 
 @media (max-width: 768px) {
-    /* Adjust the spacing at the top of the contact hero section */
-    #contact-hero {
-        padding-block-start: 40px !important;
-    }
-
-    .services-header-bubble {
-        margin-top: 90px;
+    .consultation-section {
+        padding-block-start: 120px;
     }
 }
