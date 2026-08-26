@@ -536,6 +536,8 @@ body {
 
 .footer-list li:not(:first-child) { margin-block-start: 10px; }
 
+.footer-list li:has(.footer-link):not(:first-child) { margin-block-start: 4px; }
+
 .footer-link {
   display: flex;
   align-items: center;
@@ -1938,7 +1940,7 @@ figure {
 /*-----------------------------------*\
   #UPPERCASE TEXT (home page only, for now)
 \*-----------------------------------*/
-.uppercase-page :where(h1, h2, h3, h4, p, a, li, label, button, input, textarea, span:not(.material-symbols-rounded)) {
+.uppercase-page :where(h1, h2, h3, h4) {
   text-transform: uppercase;
 }
 
@@ -2003,4 +2005,83 @@ figure {
   }
 
   .has-js .reveal::after { display: none; }
+}
+
+
+/*-----------------------------------*\
+  #CONSULTATION FORM
+  Shared by the home page and the contact page so both present
+  the exact same "Schedule a Free Consultation" form.
+\*-----------------------------------*/
+.consultation-section {
+  background-color: #0a0a0a;
+}
+
+.consultation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+}
+
+.consultation-header .section-title {
+  font-size: calc(var(--fs-2) * 1.1);
+}
+
+.consultation-form {
+  background-color: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.consultation-form-title {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.consultation-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.consultation-field label {
+  font-family: var(--ff-chakra-petch);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cadet-blue-creyola);
+}
+
+.consultation-field input,
+.consultation-field textarea {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 14px 16px;
+  color: var(--white);
+  font-family: var(--ff-mulish);
+  font-size: 1.5rem;
+  transition: border-color 0.25s ease;
+  resize: vertical;
+}
+
+.consultation-field input:focus,
+.consultation-field textarea:focus {
+  outline: none;
+  border-color: var(--white);
+}
+
+.consultation-submit {
+  justify-content: center;
+  align-self: center;
+  margin-top: 10px;
 }

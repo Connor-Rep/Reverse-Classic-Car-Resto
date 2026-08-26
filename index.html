@@ -201,82 +201,6 @@
     }
 
     /* -----------------------------------*\
-      #FREE CONSULTATION
-    \*-----------------------------------*/
-    .consultation-section {
-      background-color: #0a0a0a;
-    }
-
-    .consultation-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      max-width: 900px;
-    }
-
-    .consultation-header .section-title {
-      font-size: calc(var(--fs-2) * 1.1);
-    }
-
-    .consultation-form {
-      background-color: #050505;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .consultation-form-title {
-      text-align: center;
-      margin-bottom: 5px;
-    }
-
-    .consultation-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      text-align: left;
-    }
-
-    .consultation-field label {
-      font-family: var(--ff-chakra-petch);
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--cadet-blue-creyola);
-    }
-
-    .consultation-field input,
-    .consultation-field textarea {
-      background-color: #111;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 4px;
-      padding: 14px 16px;
-      color: var(--white);
-      font-family: var(--ff-mulish);
-      font-size: 1.5rem;
-      transition: border-color 0.25s ease;
-      resize: vertical;
-    }
-
-    .consultation-field input:focus,
-    .consultation-field textarea:focus {
-      outline: none;
-      border-color: var(--white);
-    }
-
-    .consultation-submit {
-      justify-content: center;
-      align-self: center;
-      margin-top: 10px;
-    }
-
-    /* -----------------------------------*\
       #OUR WORK
     \*-----------------------------------*/
     .work-grid {
@@ -332,6 +256,7 @@
       color: var(--white);
       text-transform: uppercase;
       text-align: center;
+      font-size: 1.6rem;
     }
   </style>
 
@@ -372,14 +297,6 @@
         </ul>
       </nav>
 
-      <button id="header-booking-btn" class="btn btn-primary header-booking-btn">
-  <div class="cart-icon-wrapper">
-    <span class="material-symbols-rounded">shopping_cart</span>
-    <span class="cart-badge" id="cart-count">0</span>
-  </div>
-  <span class="span" id="header-btn-text">Quote</span>
-<span class="material-symbols-rounded">arrow_forward</span>
-</button>
 
       <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>

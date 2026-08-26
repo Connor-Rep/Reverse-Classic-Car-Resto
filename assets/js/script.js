@@ -83,29 +83,6 @@ window.addEventListener("load", () => {
 });
 
 
-/**
- * GLOBAL CART SYNC (Reads from Local Storage)
- */
-window.addEventListener('DOMContentLoaded', () => {
-  const cartBadge = document.getElementById('cart-count');
-  if (cartBadge) {
-      // Look in the browser memory for the cart, or use an empty array if nothing is there
-      const savedCart = JSON.parse(localStorage.getItem('safetay_cart')) || [];
-      cartBadge.innerText = savedCart.length; // Update the number!
-  }
-});
-
-/**
- * GLOBAL HEADER QUOTE BUTTON
- */
-const headerBookingBtn = document.getElementById("header-booking-btn");
-
-headerBookingBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    // No matter what is in the basket, go straight to the checkout page!
-    window.location.href = "./quote.html";
-});
-
 
 /**
  * "WHY CHOOSE US" STAT COUNTER ANIMATION
