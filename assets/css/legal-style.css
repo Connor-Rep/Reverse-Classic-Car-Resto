@@ -8,7 +8,7 @@
 }
 
 .legal-updated {
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
   font-size: 1.4rem;
   margin-block-start: 10px;
 }
@@ -31,7 +31,7 @@
 .legal-content h2:first-of-type { margin-block-start: 0; }
 
 .legal-content p {
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
   font-size: 1.6rem;
   line-height: 1.7;
   margin-block-end: 14px;
@@ -44,7 +44,7 @@
 }
 
 .legal-content li {
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
   font-size: 1.6rem;
   line-height: 1.7;
   margin-block-end: 8px;
@@ -57,7 +57,7 @@
 }
 
 .legal-content a:hover {
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
 }
 
 .legal-content strong {

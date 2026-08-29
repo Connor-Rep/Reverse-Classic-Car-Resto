@@ -5,15 +5,9 @@
    * colors
    */
 
-  --international-orange-engineering: hsl(1, 91%, 37%);
-  --cadet-blue-creyola: hsl(222, 14%, 69%);
-  --oxford-blue-1: hsl(222, 47%, 15%);
-  --oxford-blue-2: hsl(222, 44%, 14%);
-  --oxford-blue-3: hsl(222, 50%, 11%);
-  --sonic-silver: hsl(0, 0%, 44%);
-  --space-cadet: hsl(222, 44%, 18%);
-  --pastel-pink: hsl(1, 53%, 75%);
-  --eerie-black: hsl(0, 0%, 15%);
+  --brand-red: hsl(1, 91%, 37%);
+  --text-muted: hsl(222, 14%, 69%);
+  --surface-dark: hsl(0, 0%, 15%);
   --light-gray: hsl(0, 0%, 80%);
   --white: hsl(0, 0%, 100%);
 
@@ -185,7 +179,7 @@ body {
 .h3 { font-size: var(--fs-4); }
 
 .btn {
-  background-color: var(--international-orange-engineering);
+  background-color: var(--brand-red);
   color: var(--white);
   max-width: max-content;
   font-family: var(--ff-chakra-petch);
@@ -222,7 +216,7 @@ body {
 
 
 .btn.btn-outline {
-  background-color: var(--eerie-black) !important; /* Grey theme instead of solid red */
+  background-color: var(--surface-dark) !important; /* Grey theme instead of solid red */
   color: var(--white) !important;
   border: 1px solid var(--white) !important; /* White outline instead of red */
   font-family: var(--ff-chakra-petch);
@@ -378,7 +372,7 @@ body {
 
 .footer .shape { display: none; }
 
-.footer-top { background-color: var(--eerie-black); }
+.footer-top { background-color: var(--surface-dark); }
 
 .footer-top .container {
   display: grid;
@@ -393,7 +387,7 @@ body {
 }
 
 .social-link {
-  background-color: var(--eerie-black);
+  background-color: var(--surface-dark);
   border: 1px solid var(--white);
   padding: 14px;
   border-radius: var(--radius-circle);
@@ -434,7 +428,7 @@ body {
   flex-shrink: 0;
   font-size: 1.3rem;
   color: var(--white);
-  background-color: var(--eerie-black);
+  background-color: var(--surface-dark);
   border: 1px solid var(--white);
   border-radius: 50%;
   width: 24px;
@@ -962,7 +956,7 @@ a:focus, button:focus {
    ========================================= */
 /* Navbar links dim to a soft grey on hover, in line with the new theme */
 .navbar-link:hover {
-  color: var(--cadet-blue-creyola) !important;
+  color: var(--text-muted) !important;
 }
 
 /*-----------------------------------*\
@@ -1199,7 +1193,7 @@ figure {
   font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
 }
 
 .consultation-field input,

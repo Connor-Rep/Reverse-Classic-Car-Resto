@@ -96,7 +96,7 @@
 .card-text-alt {
   font-family: var(--ff-mulish);
   font-size: 1.6rem;
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 25px;
 }

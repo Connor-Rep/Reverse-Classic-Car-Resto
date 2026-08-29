@@ -23,15 +23,9 @@ Material icon font
 ## Colors
 
 ``` css
---international-orange-engineering: hsl(1, 91%, 37%);
---cadet-blue-creyola: hsl(222, 14%, 69%);
---oxford-blue-1: hsl(222, 47%, 15%);
---oxford-blue-2: hsl(222, 44%, 14%);
---oxford-blue-3: hsl(222, 50%, 11%);
---sonic-silver: hsl(0, 0%, 44%);
---space-cadet: hsl(222, 44%, 18%);
---pastel-pink: hsl(1, 53%, 75%);
---eerie-black: hsl(0, 0%, 15%);
+--brand-red: hsl(1, 91%, 37%);
+--text-muted: hsl(222, 14%, 69%);
+--surface-dark: hsl(0, 0%, 15%);
 --light-gray: hsl(0, 0%, 80%);
 --white: hsl(0, 0%, 100%);
 ```

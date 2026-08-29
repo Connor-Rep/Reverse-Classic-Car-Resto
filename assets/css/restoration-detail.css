@@ -57,7 +57,7 @@
   font-weight: var(--fw-600);
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--international-orange-engineering);
+  color: var(--brand-red);
   margin-block-end: 14px;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .detail-card-text {
-  color: var(--cadet-blue-creyola);
+  color: var(--text-muted);
   line-height: 1.6;
   font-size: 1.5rem;
 }
