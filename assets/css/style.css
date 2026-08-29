@@ -1012,9 +1012,6 @@ figure {
   /* --- SECTION EDGE PADDING: keeps text off the screen edges --- */
   .container { padding-inline: 20px; }
 
-  /* --- RESTORATION PROCESS: single column --- */
-  .phases-grid { grid-template-columns: 1fr !important; }
-
   /* --- RECENT PROJECTS: single column --- */
   .projects-grid-alt { grid-template-columns: 1fr !important; }
 
@@ -1068,6 +1065,11 @@ figure {
     align-items: center;
     padding-block: 10px;
   }
+}
+
+@media (max-width: 639px) {
+  /* --- RESTORATION PROCESS: single column below the 2-up tablet step --- */
+  .phases-grid { grid-template-columns: 1fr !important; }
 }
 
 

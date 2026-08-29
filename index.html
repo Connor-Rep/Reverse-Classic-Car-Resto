@@ -64,7 +64,13 @@
       margin-inline: auto;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 640px) {
+      .phases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
       .phases-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -216,7 +222,13 @@
       margin-inline: auto;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 640px) {
+      .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
       .work-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -226,7 +238,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .work-card-img {
@@ -260,6 +272,14 @@
       text-transform: uppercase;
       text-align: center;
       font-size: 1.4rem;
+    }
+
+    .work-card-text {
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      max-width: 320px;
     }
   </style>
 
@@ -459,18 +479,21 @@
                 <img src="./assets/images/work-1.jpg" alt="Rust Removal" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Rust Removal</h3>
+              <p class="work-card-text">Corrosion stripped back to clean, solid steel before any repair begins.</p>
             </li>
             <li class="work-card">
               <div class="work-card-img">
                 <img src="./assets/images/work-2.jpg" alt="Car Customisation" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Car Customisation</h3>
+              <p class="work-card-text">One-off styling and mechanical changes, built to the owner's spec.</p>
             </li>
             <li class="work-card">
               <div class="work-card-img">
                 <img src="./assets/images/work-3.jpg" alt="Mechanical Overhaul" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Mechanical Overhaul</h3>
+              <p class="work-card-text">Engines and drivetrains stripped down, rebuilt, and tested before going back in.</p>
             </li>
           </ul>
 
