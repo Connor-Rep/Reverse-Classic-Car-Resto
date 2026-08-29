@@ -5,7 +5,6 @@
    * colors
    */
 
-  --brand-red: hsl(1, 91%, 37%);
   --text-muted: hsl(222, 14%, 69%);
   --surface-dark: hsl(0, 0%, 15%);
   --light-gray: hsl(0, 0%, 80%);
@@ -15,8 +14,8 @@
    * typography
    */
 
-  --ff-chakra-petch: 'Chakra Petch', sans-serif;
-  --ff-mulish: 'Mulish', sans-serif;
+  --ff-display: 'Bebas Neue', sans-serif;
+  --ff-body: 'Work Sans', sans-serif;
   
   --fs-1: 3.5rem;
   --fs-2: 3rem;
@@ -97,7 +96,7 @@ button {
 address { font-style: normal; }
 
 html {
-  font-family: var(--ff-mulish);
+  font-family: var(--ff-body);
   font-size: 10px;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -121,14 +120,14 @@ body {
 
 /* --- CUSTOM TEXT HIGHLIGHT COLOR --- */
 ::selection {
-  background: hsl(1, 91%, 37%);
-  color: #ffffff; 
+  background: var(--white);
+  color: #000000;
 }
 
 /* For Mozilla Firefox compatibility */
 ::-moz-selection {
-  background: hsl(1, 91%, 37%);
-  color: #ffffff;
+  background: var(--white);
+  color: #000000;
 }
 
 
@@ -158,7 +157,7 @@ body {
 
 .h1,
 .h3 {
-  font-family: var(--ff-chakra-petch);
+  font-family: var(--ff-display);
   font-weight: var(--fw-700);
   text-transform: uppercase;
 }
@@ -179,12 +178,12 @@ body {
 .h3 { font-size: var(--fs-4); }
 
 .btn {
-  background-color: var(--brand-red);
-  color: var(--white);
+  background-color: var(--white);
+  color: #000000;
   max-width: max-content;
-  font-family: var(--ff-chakra-petch);
+  font-family: var(--ff-display);
   font-weight: var(--fw-600);
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -216,12 +215,12 @@ body {
 
 
 .btn.btn-outline {
-  background-color: var(--surface-dark) !important; /* Grey theme instead of solid red */
+  background-color: var(--surface-dark) !important;
   color: var(--white) !important;
-  border: 1px solid var(--white) !important; /* White outline instead of red */
-  font-family: var(--ff-chakra-petch);
+  border: 1px solid var(--white) !important;
+  font-family: var(--ff-display);
   font-weight: var(--fw-600);
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   padding: 12px 24px;
@@ -306,9 +305,9 @@ body {
 }
 
 .navbar-link {
-  font-family: var(--ff-chakra-petch);
+  font-family: var(--ff-display);
   font-size: var(--fs-5);
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: var(--white);
   padding: 10px 20px;
   transition: var(--transition);
@@ -1189,9 +1188,8 @@ figure {
 }
 
 .consultation-field label {
-  font-family: var(--ff-chakra-petch);
-  font-size: 1.3rem;
-  text-transform: uppercase;
+  font-family: var(--ff-display);
+  font-size: 1.4rem;
   letter-spacing: 0.5px;
   color: var(--text-muted);
 }
@@ -1203,7 +1201,7 @@ figure {
   border-radius: 4px;
   padding: 14px 16px;
   color: var(--white);
-  font-family: var(--ff-mulish);
+  font-family: var(--ff-body);
   font-size: 1.5rem;
   transition: border-color 0.25s ease;
   resize: vertical;

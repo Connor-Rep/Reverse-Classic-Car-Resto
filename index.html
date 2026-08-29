@@ -31,7 +31,7 @@
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Mulish&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- material icon font -->
@@ -122,8 +122,9 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .phase-icon-alt .material-symbols-rounded {
-      font-size: 3.5rem;
+    .phase-icon-alt .icon-svg {
+      width: 3.5rem;
+      height: 3.5rem;
     }
 
     .phase-card-alt:hover .phase-icon-alt {
@@ -135,7 +136,7 @@
     }
 
     .phase-title-alt {
-      font-family: var(--ff-chakra-petch);
+      font-family: var(--ff-display);
       font-size: calc(2.2rem * 1.1);
       color: var(--white);
       margin-bottom: 15px;
@@ -144,7 +145,7 @@
     }
 
     .phase-text-alt {
-      font-family: var(--ff-mulish);
+      font-family: var(--ff-body);
       font-size: 1.5rem;
       color: var(--text-muted);
       line-height: 1.6;
@@ -153,9 +154,9 @@
     }
 
     .phase-link-alt {
-      font-family: var(--ff-chakra-petch);
+      font-family: var(--ff-display);
       font-weight: 700;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: var(--white);
       font-size: 1.3rem;
       padding-bottom: 5px;
@@ -182,8 +183,9 @@
         margin-bottom: 16px;
       }
 
-      .phase-icon-alt .material-symbols-rounded {
-        font-size: 2.4rem;
+      .phase-icon-alt .icon-svg {
+        width: 2.4rem;
+        height: 2.4rem;
       }
 
       .phase-title-alt {
@@ -352,7 +354,9 @@
             <li>
               <div class="phase-card-alt">
                 <div class="phase-icon-alt">
-                  <span class="material-symbols-rounded">settings_suggest</span>
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  </svg>
                 </div>
                 <h3 class="h3 phase-title-alt">Mechanical</h3>
                 <p class="phase-text-alt">Engines, drivetrains and suspension, rebuilt to factory tolerances.</p>
@@ -363,7 +367,13 @@
             <li>
               <div class="phase-card-alt">
                 <div class="phase-icon-alt">
-                  <span class="material-symbols-rounded">imagesmode</span>
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="7" y="9" width="7" height="11" rx="1.5" />
+                    <path d="M9 9V6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3" />
+                    <path d="M17 6.5c1.2.6 1.2 2.4 0 3" />
+                    <circle cx="19.5" cy="4" r="0.6" fill="currentColor" stroke="none" />
+                    <circle cx="21" cy="6.8" r="0.5" fill="currentColor" stroke="none" />
+                  </svg>
                 </div>
                 <h3 class="h3 phase-title-alt">Body & Paint</h3>
                 <p class="phase-text-alt">Lead loading, metal fabrication and period-correct paint, done the traditional way.</p>
@@ -374,7 +384,11 @@
             <li>
               <div class="phase-card-alt">
                 <div class="phase-icon-alt">
-                  <span class="material-symbols-rounded">verified_user</span>
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 6a6 6 0 1 1-4.24 1.76" />
+                    <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+                  </svg>
                 </div>
                 <h3 class="h3 phase-title-alt">Final Finish</h3>
                 <p class="phase-text-alt">Interior re-trimming, paint correction, and ceramic protection to finish.</p>

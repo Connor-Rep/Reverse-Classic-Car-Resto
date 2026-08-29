@@ -52,12 +52,11 @@
 
 .detail-kicker {
   display: block;
-  font-family: var(--ff-chakra-petch);
-  font-size: 1.4rem;
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
   font-weight: var(--fw-600);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--brand-red);
+  letter-spacing: 1px;
+  color: var(--text-muted);
   margin-block-end: 14px;
 }
 
@@ -107,7 +106,7 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.detail-card-icon .material-symbols-rounded { font-size: 3rem; }
+.detail-card-icon .icon-svg { width: 3rem; height: 3rem; }
 
 .detail-card-title {
   color: var(--white);
