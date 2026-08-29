@@ -9,19 +9,14 @@
 
 .projects-grid-alt {
   display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.5vw, 30px);
+  /* min column width kept above 1/3 of the max container width so this
+     never grows past 2 columns, however wide the screen gets */
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
   list-style: none;
   padding: 0;
   max-width: 1200px;
   margin-inline: auto;
-}
-
-/* FORCING 2x2 GRID ON TABLETS AND DESKTOPS */
-@media (min-width: 768px) {
-  .projects-grid-alt {
-    grid-template-columns: 1fr 1fr !important; /* STRICTLY 2 COLUMNS */
-  }
 }
 
 .project-card-alt {
@@ -32,7 +27,6 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 600px; /* FORCING VERTICALLY LONGER CARDS */
 }
 
 .project-card-alt:hover {
@@ -43,7 +37,7 @@
 .card-img-alt {
   position: relative;
   width: 100%;
-  height: 380px; /* INCREASED IMAGE HEIGHT FOR VERTICAL STRETCH */
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
@@ -76,7 +70,7 @@
 }
 
 .card-info-alt {
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -85,7 +79,7 @@
 
 .card-title-alt {
   font-family: var(--ff-display);
-  font-size: calc(2.4rem * 1.1);
+  font-size: clamp(1.98rem, 1.75rem + 0.63vw, 2.64rem);
   color: var(--white);
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -94,7 +88,7 @@
 
 .card-text-alt {
   font-family: var(--ff-body);
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 1.33rem + 0.19vw, 1.6rem);
   color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 25px;
@@ -131,31 +125,8 @@
   padding-block-start: 140px;
 }
 
-/* Smaller, less "in your face" cards on mobile */
 @media (max-width: 767px) {
   #portfolio-hero {
     padding-block-start: 120px !important;
-  }
-
-  .project-card-alt {
-    min-height: unset;
-  }
-
-  .card-img-alt {
-    height: 220px;
-  }
-
-  .card-info-alt {
-    padding: 20px;
-  }
-
-  .card-title-alt {
-    font-size: calc(1.8rem * 1.1);
-    margin-bottom: 10px;
-  }
-
-  .card-text-alt {
-    font-size: 1.4rem;
-    margin-bottom: 16px;
   }
 }

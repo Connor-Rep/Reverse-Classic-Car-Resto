@@ -64,27 +64,19 @@
 
 .detail-grid {
   display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr;
+  gap: clamp(16px, 2.5vw, 30px);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   list-style: none;
   padding: 0;
   max-width: 1200px;
   margin-inline: auto;
 }
 
-@media (min-width: 640px) {
-  .detail-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 992px) {
-  .detail-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
 .detail-card {
   background-color: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px;
-  padding: 40px 28px;
+  padding: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 28px);
   text-align: center;
   height: 100%;
   transition: all 0.3s ease;

@@ -17,13 +17,13 @@
   --ff-display: 'Bebas Neue', sans-serif;
   --ff-body: 'Work Sans', sans-serif;
   
-  --fs-1: 3.5rem;
-  --fs-2: 3rem;
-  --fs-3: 2.4rem;
-  --fs-4: 1.8rem;
+  --fs-1: clamp(3.5rem, 3.33rem + 0.48vw, 4rem);
+  --fs-2: clamp(3rem, 1.96rem + 2.88vw, 6rem);
+  --fs-3: clamp(2.4rem, 1.64rem + 2.12vw, 4.6rem);
+  --fs-4: clamp(1.8rem, 1.66rem + 0.38vw, 2.2rem);
   --fs-5: 1.4rem;
   --fs-6: 1.2rem;
-  
+
   --fw-400: 400;
   --fw-600: 600;
   --fw-700: 700;
@@ -32,7 +32,7 @@
    * spacing
    */
 
-  --section-padding: 60px;
+  --section-padding: clamp(60px, 32px + 7.69vw, 140px);
 
   /**
    * box shadow
@@ -137,7 +137,12 @@ body {
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 16px; }
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 60px);
+}
 
 .material-symbols-rounded {
   --fs: 1em;
@@ -463,34 +468,6 @@ body {
 @media (min-width: 575px) {
 
   /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-2: 4rem;
-    --fs-3: 2.8rem;
-    --fs-4: 2rem;
-
-  }
-
-
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container {
-    max-width: 540px;
-    width: 100%;
-    margin-inline: auto;
-  }
-
-  /**
    * HERO
    */
 
@@ -548,28 +525,9 @@ body {
 @media (min-width: 768px) {
 
   /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-1: 4rem;
-    --fs-2: 5rem;
-    --fs-3: 3.4rem;
-
-  }
-
-
-
-  /**
    * REUSED STYLE
    */
 
-  .container,
   .hero-content { max-width: 720px; }
 
   .btn { padding: 16px 32px; }
@@ -618,34 +576,8 @@ body {
 @media (min-width: 992px) {
 
   /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-2: 4.4rem;
-    --fs-3: 3.8rem;
-    --fs-4: 2.2rem;
-
-    /**
-     * spacing
-     */
-
-    --section-padding: 100px;
-
-  }
-
-
-
-  /**
    * REUSED STYLE
    */
-
-  .container { max-width: 960px; }
 
   .section-text,
   .card-text { font-size: 1.8rem; }
@@ -722,27 +654,9 @@ body {
 @media (min-width: 1200px) {
 
   /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-2: 5rem;
-    --fs-3: 4.6rem;
-
-  }
-
-
-
-  /**
    * REUSED STYLE
    */
 
-  .container,
   .hero .container { max-width: 1140px; }
 
   .btn { padding: 18px 36px; }
@@ -804,32 +718,10 @@ body {
 @media (min-width: 1400px) {
 
   /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-2: 6rem;
-
-    /**
-     * spacing
-     */
-
-    --section-padding: 140px;
-
-  }
-
-
-
-  /**
    * REUSED STYLE
    */
 
-  :is(.header, .hero) .container { max-width: 1280px; }
+  .hero .container { max-width: 1280px; }
 
 
 
@@ -1009,12 +901,6 @@ figure {
     padding-block: 12px;
   }
 
-  /* --- SECTION EDGE PADDING: keeps text off the screen edges --- */
-  .container { padding-inline: 20px; }
-
-  /* --- RECENT PROJECTS: single column --- */
-  .projects-grid-alt { grid-template-columns: 1fr !important; }
-
   /* --- FOOTER: Logo and Map stay full-width, Hours and Contact sit side by side --- */
   .footer-top .container {
     grid-template-columns: 1fr 1fr !important;
@@ -1065,11 +951,6 @@ figure {
     align-items: center;
     padding-block: 10px;
   }
-}
-
-@media (max-width: 639px) {
-  /* --- RESTORATION PROCESS: single column below the 2-up tablet step --- */
-  .phases-grid { grid-template-columns: 1fr !important; }
 }
 
 

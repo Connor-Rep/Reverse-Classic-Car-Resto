@@ -56,30 +56,18 @@
 
     .phases-grid {
       display: grid;
-      gap: 30px;
-      grid-template-columns: 1fr;
+      gap: clamp(16px, 2.5vw, 30px);
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       list-style: none;
       padding: 0;
       max-width: 1200px;
       margin-inline: auto;
     }
 
-    @media (min-width: 640px) {
-      .phases-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 992px) {
-      .phases-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
     .phase-card-alt {
       background-color: #0a0a0a;
       border: 1px solid rgba(255, 255, 255, 0.03);
-      padding: 50px 30px;
+      padding: clamp(28px, 4vw, 50px) clamp(20px, 3vw, 30px);
       text-align: center;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
@@ -114,10 +102,10 @@
     }
 
     .phase-icon-alt {
-      width: 80px;
-      height: 80px;
+      width: clamp(56px, 6vw, 80px);
+      height: clamp(56px, 6vw, 80px);
       margin-inline: auto;
-      margin-bottom: 25px;
+      margin-bottom: clamp(16px, 2vw, 25px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -129,8 +117,8 @@
     }
 
     .phase-icon-alt .icon-svg {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: clamp(2.4rem, 2.6vw, 3.5rem);
+      height: clamp(2.4rem, 2.6vw, 3.5rem);
     }
 
     .phase-card-alt:hover .phase-icon-alt {
@@ -143,7 +131,7 @@
 
     .phase-title-alt {
       font-family: var(--ff-display);
-      font-size: calc(2.2rem * 1.1);
+      font-size: clamp(1.98rem, 1.7vw + 1.6rem, 2.42rem);
       color: var(--white);
       margin-bottom: 15px;
       text-transform: uppercase;
@@ -152,10 +140,10 @@
 
     .phase-text-alt {
       font-family: var(--ff-body);
-      font-size: 1.5rem;
+      font-size: clamp(1.3rem, 0.6vw + 1.15rem, 1.5rem);
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: clamp(18px, 2vw, 30px);
       flex-grow: 1;
     }
 
@@ -164,7 +152,7 @@
       font-weight: 700;
       letter-spacing: 0.5px;
       color: var(--white);
-      font-size: 1.3rem;
+      font-size: clamp(1.2rem, 0.3vw + 1.13rem, 1.3rem);
       padding-bottom: 5px;
       border-bottom: 2px solid rgba(255, 255, 255, 0.1);
       width: max-content;
@@ -177,61 +165,18 @@
       border-color: var(--white);
     }
 
-    /* Smaller, less "in your face" cards on mobile */
-    @media (max-width: 767px) {
-      .phase-card-alt {
-        padding: 28px 20px;
-      }
-
-      .phase-icon-alt {
-        width: 56px;
-        height: 56px;
-        margin-bottom: 16px;
-      }
-
-      .phase-icon-alt .icon-svg {
-        width: 2.4rem;
-        height: 2.4rem;
-      }
-
-      .phase-title-alt {
-        font-size: calc(1.8rem * 1.1);
-        margin-bottom: 10px;
-      }
-
-      .phase-text-alt {
-        font-size: 1.3rem;
-        margin-bottom: 18px;
-      }
-
-      .phase-link-alt {
-        font-size: 1.2rem;
-      }
-    }
 
     /* -----------------------------------*\
       #OUR WORK
     \*-----------------------------------*/
     .work-grid {
       display: grid;
-      gap: 30px;
-      grid-template-columns: 1fr;
+      gap: clamp(16px, 2.5vw, 30px);
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       list-style: none;
       padding: 0;
       max-width: 1200px;
       margin-inline: auto;
-    }
-
-    @media (min-width: 640px) {
-      .work-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 992px) {
-      .work-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
     }
 
     .work-card {
