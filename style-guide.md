@@ -7,7 +7,7 @@ Google font
 ``` html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"
   rel="stylesheet">
 ```
 
@@ -32,7 +32,7 @@ Material icon font
 ## Typography
 
 ``` css
---ff-display: 'Fredoka', sans-serif;
+--ff-display: 'Hanken Grotesk', sans-serif;
 --ff-body: 'Quicksand', sans-serif;
 --ff-subtitle: 'Quicksand', sans-serif;
 

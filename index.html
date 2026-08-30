@@ -31,7 +31,7 @@
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- custom css link -->
@@ -381,7 +381,18 @@
 
             <div class="consultation-field">
               <label for="consult-photos">Photos of Your Car (optional)</label>
-              <input type="file" id="consult-photos" name="attachment" accept="image/*" multiple>
+              <div class="file-upload">
+                <input type="file" id="consult-photos" name="attachment" accept="image/*" multiple class="file-upload-input" data-file-upload-input>
+                <label for="consult-photos" class="file-upload-btn">
+                  <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                  </svg>
+                  Choose Photos
+                </label>
+                <span class="file-upload-status" data-file-upload-status>No photos selected</span>
+              </div>
               <p class="consultation-field-hint">Up to 10MB total. JPG or PNG work best.</p>
             </div>
 
@@ -406,7 +417,7 @@
           <div class="service-header reveal">
             <h2 class="h1 section-title">Our Work</h2>
             <div class="service-paragraph">
-              <p>A few shots from recent jobs in the workshop.</p>
+              <p>A glimpse at the craftsmanship behind every restoration.</p>
             </div>
           </div>
 

@@ -172,6 +172,38 @@ function wireConsultationForm(form) {
 
 wireConsultationForm(document.getElementById('consultation-form'));
 
+/**
+ * FILE UPLOAD STATUS TEXT
+ * Native file inputs are visually hidden in favor of a styled trigger
+ * button, so reflect the current selection back to the visitor here.
+ */
+function wireFileUploadStatus(wrapper) {
+  const input = wrapper.querySelector('[data-file-upload-input]');
+  const status = wrapper.querySelector('[data-file-upload-status]');
+  if (!input || !status) return;
+
+  const defaultText = status.textContent;
+
+  input.addEventListener('change', () => {
+    const files = Array.from(input.files || []);
+    if (files.length === 0) {
+      status.textContent = defaultText;
+    } else if (files.length === 1) {
+      status.textContent = files[0].name;
+    } else {
+      status.textContent = `${files.length} photos selected`;
+    }
+  });
+
+  if (input.form) {
+    input.form.addEventListener('reset', () => {
+      status.textContent = defaultText;
+    });
+  }
+}
+
+document.querySelectorAll('.file-upload').forEach(wireFileUploadStatus);
+
 
 /**
  * COOKIE CONSENT + GOOGLE MAPS EMBED
