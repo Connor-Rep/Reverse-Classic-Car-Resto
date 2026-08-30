@@ -88,7 +88,15 @@ if (revealEls.length) {
  * attachments actually reach us — a mailto: link can't carry files.
  * Sent via fetch to FormSubmit's AJAX endpoint so the visitor stays on
  * the page; falls back to a normal page-navigating submit if that fails.
+ *
+ * FormSubmit's AJAX endpoint doesn't support file uploads at all, so when
+ * a photo is attached we skip the fetch entirely and let the form submit
+ * normally to the real (non-AJAX) endpoint. FormSubmit then redirects back
+ * here with a query flag, which we pick up on load to show the same
+ * thank-you message.
  */
+const CONSULTATION_SENT_PARAM = 'consultation_sent';
+
 function wireConsultationForm(form) {
   if (!form) return;
 
@@ -98,8 +106,29 @@ function wireConsultationForm(form) {
   const originalLabel = submitLabel ? submitLabel.textContent : '';
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
     if (!form.action) return;
+
+    const fileInputs = form.querySelectorAll('input[type="file"]');
+    const hasAttachment = Array.from(fileInputs).some((input) => input.files && input.files.length > 0);
+
+    if (hasAttachment) {
+      // Let the browser do a normal multipart POST straight to FormSubmit;
+      // its AJAX endpoint rejects file uploads.
+      let nextField = form.querySelector('input[name="_next"]');
+      if (!nextField) {
+        nextField = document.createElement('input');
+        nextField.type = 'hidden';
+        nextField.name = '_next';
+        form.appendChild(nextField);
+      }
+      const returnUrl = new URL(window.location.href);
+      returnUrl.hash = '';
+      returnUrl.searchParams.set(CONSULTATION_SENT_PARAM, '1');
+      nextField.value = returnUrl.toString();
+      return;
+    }
+
+    e.preventDefault();
 
     const formData = new FormData(form);
     const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
@@ -132,6 +161,15 @@ function wireConsultationForm(form) {
         if (submitLabel) submitLabel.textContent = originalLabel;
       });
   });
+
+  if (status && new URLSearchParams(window.location.search).get(CONSULTATION_SENT_PARAM) === '1') {
+    status.textContent = "Thanks — we've got your request and will be in touch shortly.";
+    status.hidden = false;
+
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete(CONSULTATION_SENT_PARAM);
+    history.replaceState(null, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+  }
 }
 
 wireConsultationForm(document.getElementById('consultation-form'));
