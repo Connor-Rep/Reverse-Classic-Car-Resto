@@ -149,17 +149,22 @@ function wireConsultationForm(form) {
       body: formData,
       headers: { Accept: 'application/json' }
     })
-      .then((res) => {
-        if (!res.ok) throw new Error('Submission failed');
+      .then(async (res) => {
+        if (!res.ok) {
+          const body = await res.text().catch(() => '');
+          throw new Error(`Submission failed (HTTP ${res.status}): ${body.slice(0, 300)}`);
+        }
         form.reset();
         if (status) {
           status.textContent = "Thanks — we've got your request and will be in touch shortly.";
           status.hidden = false;
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        // TEMPORARY: surfacing the real error on-screen while we debug
+        // delivery, since DevTools isn't available on mobile. Revert once fixed.
         if (status) {
-          status.textContent = "Something went wrong sending that. You can also email us directly at info@safetay.uk.";
+          status.textContent = `DEBUG — something went wrong: ${err && err.message ? err.message : err}`;
           status.hidden = false;
         }
       })
