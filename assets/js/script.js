@@ -90,12 +90,11 @@ if (revealEls.length) {
  * the page; falls back to a normal page-navigating submit if that fails.
  *
  * FormSubmit's AJAX endpoint doesn't support file uploads at all, so when
- * a photo is attached we skip the fetch entirely and let the form submit
- * normally to the real (non-AJAX) endpoint. FormSubmit then redirects back
- * here with a query flag, which we pick up on load to show the same
- * thank-you message.
+ * a photo is attached we submit the form to a hidden iframe instead —
+ * that's a real multipart POST (so attachments work) but it never
+ * navigates the visitor's own tab away to formsubmit.co.
  */
-const CONSULTATION_SENT_PARAM = 'consultation_sent';
+let consultationFrameId = 0;
 
 function wireConsultationForm(form) {
   if (!form) return;
@@ -105,26 +104,38 @@ function wireConsultationForm(form) {
   const submitLabel = submitBtn ? submitBtn.querySelector('.span') : null;
   const originalLabel = submitLabel ? submitLabel.textContent : '';
 
+  const iframeName = `consultation-frame-${consultationFrameId++}`;
+  const iframe = document.createElement('iframe');
+  iframe.name = iframeName;
+  iframe.hidden = true;
+  document.body.appendChild(iframe);
+
   form.addEventListener('submit', (e) => {
     if (!form.action) return;
 
     const fileInputs = form.querySelectorAll('input[type="file"]');
     const hasAttachment = Array.from(fileInputs).some((input) => input.files && input.files.length > 0);
 
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending...';
+    if (status) status.hidden = true;
+
     if (hasAttachment) {
-      // Let the browser do a normal multipart POST straight to FormSubmit;
-      // its AJAX endpoint rejects file uploads.
-      let nextField = form.querySelector('input[name="_next"]');
-      if (!nextField) {
-        nextField = document.createElement('input');
-        nextField.type = 'hidden';
-        nextField.name = '_next';
-        form.appendChild(nextField);
-      }
-      const returnUrl = new URL(window.location.href);
-      returnUrl.hash = '';
-      returnUrl.searchParams.set(CONSULTATION_SENT_PARAM, '1');
-      nextField.value = returnUrl.toString();
+      // Submit to the hidden iframe so the multipart POST (with the file)
+      // reaches FormSubmit without navigating the visitor away from the page.
+      form.target = iframeName;
+
+      const onLoad = () => {
+        iframe.removeEventListener('load', onLoad);
+        form.reset();
+        if (status) {
+          status.textContent = "Thanks — we've got your request and will be in touch shortly.";
+          status.hidden = false;
+        }
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitLabel) submitLabel.textContent = originalLabel;
+      };
+      iframe.addEventListener('load', onLoad);
       return;
     }
 
@@ -132,10 +143,6 @@ function wireConsultationForm(form) {
 
     const formData = new FormData(form);
     const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
-
-    if (submitBtn) submitBtn.disabled = true;
-    if (submitLabel) submitLabel.textContent = 'Sending...';
-    if (status) status.hidden = true;
 
     fetch(ajaxUrl, {
       method: 'POST',
@@ -161,15 +168,6 @@ function wireConsultationForm(form) {
         if (submitLabel) submitLabel.textContent = originalLabel;
       });
   });
-
-  if (status && new URLSearchParams(window.location.search).get(CONSULTATION_SENT_PARAM) === '1') {
-    status.textContent = "Thanks — we've got your request and will be in touch shortly.";
-    status.hidden = false;
-
-    const cleanUrl = new URL(window.location.href);
-    cleanUrl.searchParams.delete(CONSULTATION_SENT_PARAM);
-    history.replaceState(null, '', cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
-  }
 }
 
 wireConsultationForm(document.getElementById('consultation-form'));
