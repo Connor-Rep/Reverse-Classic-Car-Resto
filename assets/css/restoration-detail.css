@@ -52,8 +52,8 @@
 
 .detail-kicker {
   display: block;
-  font-family: var(--ff-display);
-  font-size: 1.6rem;
+  font-family: var(--ff-body);
+  font-size: 1.4rem;
   font-weight: var(--fw-600);
   letter-spacing: 1px;
   color: var(--text-muted);

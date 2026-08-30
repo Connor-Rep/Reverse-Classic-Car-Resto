@@ -44,7 +44,6 @@
    * border radius
    */
 
-  --radius-pill: 100px;
   --radius-circle: 50%;
 
   /**
@@ -186,17 +185,22 @@ body {
   background-color: var(--white);
   color: #000000;
   max-width: max-content;
-  font-family: var(--ff-display);
+  font-family: var(--ff-body);
   font-weight: var(--fw-600);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
   border: 1px solid transparent;
-  border-radius: var(--radius-pill);
+  border-radius: 4px;
   transition: var(--transition);
   will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .move-anim { animation: moving 2s ease-in-out infinite alternate; }
@@ -223,13 +227,12 @@ body {
   background-color: var(--surface-dark) !important;
   color: var(--white) !important;
   border: 1px solid var(--white) !important;
-  font-family: var(--ff-display);
+  font-family: var(--ff-body);
   font-weight: var(--fw-600);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   display: flex;
   align-items: center;
   padding: 12px 24px;
-  border-radius: 4px !important; /* Slightly softened corners so it doesn't look too rigid */
   transition: var(--transition);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8) !important; /* Deep black shadow to lift it off the image */
 }
@@ -288,9 +291,10 @@ body {
 
 .navbar-link {
   position: relative;
-  font-family: var(--ff-display);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-600);
   font-size: clamp(1.05rem, 0.6vw + 0.87rem, 1.5rem);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   color: var(--white);
   padding: 10px clamp(4px, 1.5vw, 20px);
   transition: var(--transition);
@@ -416,22 +420,22 @@ body {
   gap: 8px;
 }
 
-.footer-link .material-symbols-rounded {
+.footer-link .icon-svg {
   flex-shrink: 0;
-  font-size: 1.3rem;
   color: var(--white);
   background-color: var(--surface-dark);
   border: 1px solid var(--white);
   border-radius: 50%;
   width: 24px;
   height: 24px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
 }
 
-.footer-link:hover .material-symbols-rounded {
+.footer-link:hover .icon-svg {
   background-color: var(--white);
   color: #000;
 }
@@ -992,9 +996,10 @@ figure {
 }
 
 .consultation-field label {
-  font-family: var(--ff-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-600);
+  font-size: 1.4rem;
+  letter-spacing: 0.3px;
   color: var(--text-muted);
 }
 
