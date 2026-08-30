@@ -108,3 +108,85 @@ function wireMailtoForm(form, to, subjectPrefix) {
 }
 
 wireMailtoForm(document.getElementById('consultation-form'), 'info@safetay.uk', 'Free Consultation Request');
+
+
+/**
+ * COOKIE CONSENT + GOOGLE MAPS EMBED
+ * The Google Maps embed sets its own third-party cookies, so it's not
+ * loaded until the visitor accepts. Nothing else on the site sets
+ * cookies, so this is the only thing consent gates.
+ */
+(function () {
+  const CONSENT_KEY = 'safetay-cookie-consent';
+  const MAP_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35136.00287413038!2d-3.3762618!3d56.5916962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48866a745863c873%3A0xc3f58a8a30f3a61e!2sBlairgowrie!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk';
+
+  function getConsent() {
+    try {
+      return localStorage.getItem(CONSENT_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setConsent(value) {
+    try {
+      localStorage.setItem(CONSENT_KEY, value);
+    } catch (e) {
+      /* ignore - consent just won't persist across visits */
+    }
+  }
+
+  function loadMaps() {
+    document.querySelectorAll('[data-map-embed]').forEach((container) => {
+      if (container.querySelector('iframe')) return;
+      container.innerHTML = `<iframe src="${MAP_SRC}" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+    });
+  }
+
+  function hideBanner() {
+    const banner = document.querySelector('[data-cookie-banner]');
+    if (banner) banner.hidden = true;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const consent = getConsent();
+
+    if (consent === 'accepted') {
+      loadMaps();
+      hideBanner();
+    } else if (consent === 'declined') {
+      hideBanner();
+    } else {
+      const banner = document.querySelector('[data-cookie-banner]');
+      if (banner) banner.hidden = false;
+    }
+
+    const acceptBtn = document.querySelector('[data-cookie-accept]');
+    const declineBtn = document.querySelector('[data-cookie-decline]');
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        setConsent('accepted');
+        loadMaps();
+        hideBanner();
+      });
+    }
+
+    if (declineBtn) {
+      declineBtn.addEventListener('click', () => {
+        setConsent('declined');
+        hideBanner();
+      });
+    }
+
+    // Per-map "load it anyway" button, for a visitor who declined (or
+    // hasn't chosen yet) but wants to see the map on this one page.
+    document.querySelectorAll('[data-map-consent-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        setConsent('accepted');
+        loadMaps();
+        hideBanner();
+      });
+    });
+  });
+})();

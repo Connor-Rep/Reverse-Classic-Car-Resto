@@ -98,8 +98,8 @@
           <h2>6. Cookies and third-party embeds</h2>
           <p>This website does not use cookies for advertising or analytics tracking. It does load a small number of resources from third parties to work properly:</p>
           <ul>
-            <li><strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com) — used to display the site's typefaces. Loading these fonts sends your device's IP address to Google.</li>
-            <li><strong>Google Maps</strong> — embedded on our contact page to show our location. Interacting with the map is subject to Google's own cookie and privacy practices.</li>
+            <li><strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com) — used to display the site's typefaces. This loads on every page and sends your device's IP address to Google, but does not set any cookies.</li>
+            <li><strong>Google Maps</strong> — shows our location in the footer. Unlike the fonts, the map is <strong>not loaded automatically</strong>: you'll see a placeholder with a cookie notice, and the map (along with any cookies Google sets for it) only loads if you choose to accept it or click to load the map directly. If you decline, or don't choose either way, the map stays as a placeholder and no Maps cookie is set.</li>
           </ul>
           <p>We don't control what these third parties do with that data beyond what's described in their own privacy policies (see Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>).</p>
 
@@ -175,7 +175,12 @@
         </ul>
         <div class="footer-map">
           <p class="h3" style="color: var(--white); margin-block-end: 18px;">Find Us</p>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35136.00287413038!2d-3.3762618!3d56.5916962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48866a745863c873%3A0xc3f58a8a30f3a61e!2sBlairgowrie!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="footer-map-embed" data-map-embed>
+            <div class="footer-map-placeholder">
+              <p>The map is loaded from Google, which sets its own cookies once it's shown.</p>
+              <button type="button" class="btn btn-outline" data-map-consent-btn>Load Map</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -185,6 +190,17 @@
       </div>
     </div>
   </footer>
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+    <p class="cookie-banner-text">
+      We use a Google Maps embed to show our location, which sets its own cookies once loaded. See our
+      <a href="./privacy-policy.html">Privacy Policy</a> for details.
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-outline" data-cookie-decline>Decline</button>
+      <button type="button" class="btn btn-outline" data-cookie-accept>Accept</button>
+    </div>
+  </div>
 
   <script src="./assets/js/script.js"></script>
 </body>

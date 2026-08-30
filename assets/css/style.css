@@ -1140,3 +1140,65 @@ figure {
   align-self: center;
   margin-top: 10px;
 }
+
+
+/*-----------------------------------*\
+  #COOKIE CONSENT
+\*-----------------------------------*/
+
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(16px, 4vw, 40px);
+  background-color: var(--surface-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cookie-banner[hidden] { display: none; }
+
+.cookie-banner-text {
+  max-width: 640px;
+  font-family: var(--ff-body);
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.cookie-banner-text a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-banner-actions .btn {
+  padding: 10px 20px;
+}
+
+.footer-map-placeholder {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.footer-map-placeholder p {
+  font-family: var(--ff-body);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-block-end: 14px;
+}
