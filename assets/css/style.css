@@ -14,8 +14,9 @@
    * typography
    */
 
-  --ff-display: 'Bebas Neue', sans-serif;
-  --ff-body: 'Work Sans', sans-serif;
+  --ff-display: 'Fredoka', sans-serif;
+  --ff-body: 'Quicksand', sans-serif;
+  --ff-subtitle: 'Quicksand', sans-serif;
   
   --fs-1: clamp(3.5rem, 3.33rem + 0.48vw, 4rem);
   --fs-2: clamp(3rem, 1.96rem + 2.88vw, 6rem);
@@ -203,6 +204,12 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+.btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition-duration: 0.05s;
+}
+
 .move-anim { animation: moving 2s ease-in-out infinite alternate; }
 
 @keyframes moving {
@@ -233,7 +240,7 @@ body {
   display: flex;
   align-items: center;
   padding: 12px 24px;
-  transition: var(--transition);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8) !important; /* Deep black shadow to lift it off the image */
 }
 
@@ -243,6 +250,15 @@ body {
   border-color: var(--white) !important;
   transform: translateY(-4px); /* Lifts up more when hovered */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn.btn-outline:active {
+  background-color: var(--white) !important;
+  color: #000 !important;
+  border-color: var(--white) !important;
+  transform: translateY(-1px) scale(0.96); /* A distinct, immediate "pressed" feel on click/tap */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9) !important;
+  transition-duration: 0.05s;
 }
 
 
@@ -274,19 +290,47 @@ body {
 
 .logo img { width: clamp(56px, 9vw, 128px); }
 
-/* The nav is always the horizontal desktop layout, at every width, so
-   the hamburger button/drawer is never shown or needed. */
-.nav-toggle-btn { display: none; }
-
-.navbar {
-  display: block;
-  margin-inline-start: auto;
+.nav-toggle-icon {
+  width: 30px;
+  height: 2px;
+  background-color: var(--white);
+  transition: var(--transition);
 }
 
-.navbar-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+.nav-toggle-icon:not(:last-child) { margin-block-end: 7px; }
+
+.nav-toggle-btn.active .icon-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.nav-toggle-btn.active .icon-1 { transform: rotate(45deg) translate(8px, 8px); }
+
+.nav-toggle-btn.active .icon-3 { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* Below 768px (real phone screens) this is a dropdown menu opened by the
+   hamburger button. At 768px and up (tablets, "desktop site" mode on a
+   phone, and actual desktop) it becomes a plain horizontal nav instead -
+   see the min-width: 768px block below. */
+.navbar {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  background-color: #111111;
+  min-width: max-content;
+  width: 30%;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s var(--cubic-out);
+  z-index: 2;
+}
+
+.navbar.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition-duration: 0.5s;
 }
 
 .navbar-link {
@@ -300,15 +344,77 @@ body {
   transition: var(--transition);
 }
 
-.navbar-link::after {
-  content: url("../images/nav-before-img.png");
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
+/* --- Bigger tap area on the hamburger icon itself --- */
+.nav-toggle-btn {
+  padding: 12px;
+  margin: -12px;
 }
 
+/* --- MOBILE NAV (below 768px): dropdown menu opened by the hamburger --- */
+@media (max-width: 767px) {
+  .navbar-list li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* A clear highlighted row on hover/tap, instead of a subtle text color shift */
+  .navbar-link:hover {
+    background-color: var(--white) !important;
+    color: #000 !important;
+  }
+
+  .navbar {
+    width: min(80%, 300px);
+    min-width: unset;
+    right: 16px;
+    top: 90px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar-list { width: 100%; }
+
+  .navbar-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding-block: 12px;
+  }
+}
+
+/* --- DESKTOP-STYLE NAV (768px and up): tablets, "desktop site" mode on
+   a phone, and real desktop all get the plain horizontal nav instead of
+   the dropdown --- */
+@media (min-width: 768px) {
+  .nav-toggle-btn { display: none; }
+
+  .header .container { gap: clamp(10px, 3vw, 30px); }
+
+  .navbar {
+    all: unset;
+    display: block;
+    margin-inline-start: auto;
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .navbar-link {
+    position: relative;
+    font-size: clamp(1.05rem, 0.6vw + 0.87rem, 1.5rem);
+  }
+
+  .navbar-link::after {
+    content: url("../images/nav-before-img.png");
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
 
 
 
@@ -505,14 +611,8 @@ body {
 
 @media (max-width: 575px) {
   .hero {
-    min-height: auto;
-    padding-block: 130px 70px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/mobile-hero-bg.jpg');
   }
-
-  /* The -12vh trick below only makes sense for the full-height desktop
-     hero; on the shorter mobile hero it fights the padding above. */
-  .hero .container { margin-block-start: 0; }
 
   .hero .section-title { font-size: clamp(3.2rem, 8vw, 4rem); }
 
@@ -741,6 +841,12 @@ body {
 .service-paragraph {
   max-width: 600px;
   text-align: center;
+}
+
+.service-paragraph p {
+  font-family: var(--ff-subtitle);
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 /* --- MOBILE HEADER LOGO ALIGNMENT FIX --- */

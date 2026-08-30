@@ -31,7 +31,7 @@
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- custom css link -->
@@ -185,6 +185,8 @@
     .work-card-img {
       position: relative;
       width: 100%;
+      max-width: 280px;
+      margin-inline: auto;
       aspect-ratio: 1024 / 550;
       border-radius: 4px;
       overflow: hidden;
@@ -198,12 +200,12 @@
     }
 
     .work-card-title {
-      font-family: var(--ff-body);
-      font-weight: var(--fw-600);
-      color: var(--white);
+      font-family: var(--ff-subtitle);
+      font-weight: 500;
+      color: var(--text-muted);
       text-transform: uppercase;
       text-align: center;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   </style>
 
@@ -377,7 +379,7 @@
               <textarea id="consult-notes" name="notes" rows="4" placeholder="Tell us about your vehicle and what you're looking to have done..."></textarea>
             </div>
 
-            <button type="submit" class="btn consultation-submit">
+            <button type="submit" class="btn btn-outline consultation-submit">
               <span class="span">Schedule Consultation</span>
             </button>
           </form>
@@ -435,34 +437,25 @@
             <li class="project-card-alt">
                 <div class="card-img-alt">
                   <img src="./assets/images/classic-mustang.jpg" alt="1967 Ford Mustang Fastback" loading="lazy" decoding="async">
-                  <span class="card-status-alt">Completed</span>
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">1967 Ford Mustang Fastback</h3>
-                  <p class="card-text-alt">Bare-metal respray, engine rebuild, and a ceramic coat to finish.</p>
-                  <a href="./projects.html" class="btn-link-alt">View Build</a>
                 </div>
             </li>
             <li class="project-card-alt">
                 <div class="card-img-alt">
                   <img src="./assets/images/engine-mustang.jpg" alt="1969 Ford Mustang Mach 1" loading="lazy" decoding="async">
-                  <span class="card-status-alt">In Progress</span>
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">1969 Ford Mustang Mach 1</h3>
-                  <p class="card-text-alt">Rust repair, full interior re-trim, and a factory paint match.</p>
-                  <a href="./projects.html" class="btn-link-alt">View Build</a>
                 </div>
             </li>
             <li class="project-card-alt">
                 <div class="card-img-alt">
                   <img src="./assets/images/detail-mustang.jpg" alt="1966 Shelby GT350" loading="lazy" decoding="async">
-                  <span class="card-status-alt">Completed</span>
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">1966 Shelby GT350</h3>
-                  <p class="card-text-alt">Engine-out service, suspension rebuild, heavy paint correction, and final detail.</p>
-                  <a href="./projects.html" class="btn-link-alt">See Gallery</a>
                 </div>
             </li>
           </ul>
