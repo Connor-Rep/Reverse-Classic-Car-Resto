@@ -288,7 +288,7 @@ body {
   gap: clamp(6px, 3vw, 30px);
 }
 
-.logo img { width: clamp(56px, 9vw, 128px); }
+.logo img { width: clamp(92px, 9vw, 128px); }
 
 .nav-toggle-icon {
   width: 30px;
@@ -1117,9 +1117,16 @@ figure {
   padding: 14px 16px;
   color: var(--white);
   font-family: var(--ff-body);
+  font-weight: 500;
   font-size: 1.6rem;
   transition: border-color 0.25s ease;
   resize: vertical;
+}
+
+.consultation-field input::placeholder,
+.consultation-field textarea::placeholder {
+  color: var(--light-gray);
+  opacity: 1;
 }
 
 .consultation-field input:focus,

@@ -26,8 +26,8 @@
 .card-img-alt {
   position: relative;
   width: 100%;
-  max-width: 260px;
-  aspect-ratio: 4 / 3;
+  max-width: 340px;
+  aspect-ratio: 3 / 2;
   border-radius: 4px;
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -48,7 +48,7 @@
 
 .card-info-alt {
   width: 100%;
-  max-width: 260px;
+  max-width: 340px;
   margin-block-start: 12px;
 }
 
