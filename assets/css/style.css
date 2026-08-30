@@ -1135,10 +1135,42 @@ figure {
   border-color: var(--white);
 }
 
+.consultation-field input[type="file"] {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.consultation-field-hint {
+  font-family: var(--ff-subtitle);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.consultation-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.consultation-status {
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--light-gray);
+  text-align: center;
+}
+
 .consultation-submit {
   justify-content: center;
   align-self: center;
   margin-top: 10px;
+}
+
+.consultation-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 

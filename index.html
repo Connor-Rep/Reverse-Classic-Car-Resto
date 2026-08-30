@@ -356,7 +356,7 @@
             </div>
           </div>
 
-          <form id="consultation-form" class="consultation-form">
+          <form id="consultation-form" class="consultation-form" action="https://formsubmit.co/info@safetay.uk" method="POST" enctype="multipart/form-data">
             <h3 class="h3 consultation-form-title">Schedule a Free Consultation</h3>
 
             <div class="consultation-field">
@@ -379,9 +379,21 @@
               <textarea id="consult-notes" name="notes" rows="4" placeholder="Tell us about your vehicle and what you're looking to have done..."></textarea>
             </div>
 
+            <div class="consultation-field">
+              <label for="consult-photos">Photos of Your Car (optional)</label>
+              <input type="file" id="consult-photos" name="attachment" accept="image/*" multiple>
+              <p class="consultation-field-hint">Up to 10MB total. JPG or PNG work best.</p>
+            </div>
+
+            <input type="text" name="_honey" class="consultation-honeypot" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="New Consultation Request - SafeTay">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+
             <button type="submit" class="btn btn-outline consultation-submit">
               <span class="span">Schedule Consultation</span>
             </button>
+            <p class="consultation-status" data-consultation-status hidden></p>
           </form>
 
         </div>

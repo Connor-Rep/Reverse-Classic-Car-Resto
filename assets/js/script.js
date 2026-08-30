@@ -83,31 +83,58 @@ if (revealEls.length) {
 
 
 /**
- * MAILTO FORM HANDLER (Consultation + Contact forms)
- * Static site, no backend: this opens the visitor's own email client with a
- * pre-filled message addressed to the shop. They still have to hit "send"
- * themselves — it is not a fully automatic server-side email.
+ * CONSULTATION FORM HANDLER
+ * Submits straight to FormSubmit (https://formsubmit.co) so photo
+ * attachments actually reach us — a mailto: link can't carry files.
+ * Sent via fetch to FormSubmit's AJAX endpoint so the visitor stays on
+ * the page; falls back to a normal page-navigating submit if that fails.
  */
-function wireMailtoForm(form, to, subjectPrefix) {
+function wireConsultationForm(form) {
   if (!form) return;
+
+  const submitBtn = form.querySelector('.consultation-submit');
+  const status = form.querySelector('[data-consultation-status]');
+  const submitLabel = submitBtn ? submitBtn.querySelector('.span') : null;
+  const originalLabel = submitLabel ? submitLabel.textContent : '';
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!form.action) return;
 
-    const data = new FormData(form);
-    const lines = [];
-    data.forEach((value, key) => {
-      if (String(value).trim()) lines.push(`${key}: ${value}`);
-    });
+    const formData = new FormData(form);
+    const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
 
-    const subject = encodeURIComponent(`${subjectPrefix} - ${data.get('name') || 'New enquiry'}`);
-    const body = encodeURIComponent(lines.join('\n'));
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending...';
+    if (status) status.hidden = true;
 
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    fetch(ajaxUrl, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' }
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Submission failed');
+        form.reset();
+        if (status) {
+          status.textContent = "Thanks — we've got your request and will be in touch shortly.";
+          status.hidden = false;
+        }
+      })
+      .catch(() => {
+        if (status) {
+          status.textContent = "Something went wrong sending that. You can also email us directly at info@safetay.uk.";
+          status.hidden = false;
+        }
+      })
+      .finally(() => {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitLabel) submitLabel.textContent = originalLabel;
+      });
   });
 }
 
-wireMailtoForm(document.getElementById('consultation-form'), 'info@safetay.uk', 'Free Consultation Request');
+wireConsultationForm(document.getElementById('consultation-form'));
 
 
 /**
