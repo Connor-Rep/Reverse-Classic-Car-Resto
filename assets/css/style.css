@@ -14,10 +14,10 @@
    * typography
    */
 
-  --ff-display: 'Hanken Grotesk', sans-serif;
+  --ff-display: 'Poppins', sans-serif;
   --ff-body: 'Quicksand', sans-serif;
   --ff-subtitle: 'Quicksand', sans-serif;
-  
+
   --fs-1: clamp(3.5rem, 3.33rem + 0.48vw, 4rem);
   --fs-2: clamp(3rem, 1.96rem + 2.88vw, 6rem);
   --fs-3: clamp(2.4rem, 1.64rem + 2.12vw, 4.6rem);
@@ -28,6 +28,7 @@
   --fw-400: 400;
   --fw-600: 600;
   --fw-700: 700;
+  --fw-900: 900;
 
   /**
    * spacing
@@ -163,7 +164,7 @@ body {
 .h1,
 .h3 {
   font-family: var(--ff-display);
-  font-weight: var(--fw-700);
+  font-weight: var(--fw-900);
   text-transform: uppercase;
 }
 
@@ -176,7 +177,6 @@ body {
 
 .h3 {
   color: var(--white);
-  font-weight: var(--fw-600);
   line-height: 1.2;
 }
 
