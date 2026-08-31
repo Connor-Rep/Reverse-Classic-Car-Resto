@@ -159,7 +159,7 @@ function wireConsultationForm(form) {
       })
       .catch(() => {
         if (status) {
-          status.textContent = "Something went wrong sending that. You can also email us directly at info@safetay.uk.";
+          status.textContent = "Something went wrong sending that. You can also email us directly at info@reverseclassic.co.uk.";
           status.hidden = false;
         }
       })
@@ -212,7 +212,7 @@ document.querySelectorAll('.file-upload').forEach(wireFileUploadStatus);
  * cookies, so this is the only thing consent gates.
  */
 (function () {
-  const CONSENT_KEY = 'safetay-cookie-consent';
+  const CONSENT_KEY = 'reverse-cookie-consent';
   const MAP_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35136.00287413038!2d-3.3762618!3d56.5916962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48866a745863c873%3A0xc3f58a8a30f3a61e!2sBlairgowrie!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk';
 
   function getConsent() {

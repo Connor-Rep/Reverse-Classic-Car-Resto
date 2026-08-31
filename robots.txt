@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://safetay.uk/sitemap.xml
+Sitemap: https://reverseclassic.co.uk/sitemap.xml
