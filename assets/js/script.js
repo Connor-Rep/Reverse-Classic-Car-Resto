@@ -173,31 +173,87 @@ function wireConsultationForm(form) {
 wireConsultationForm(document.getElementById('consultation-form'));
 
 /**
- * FILE UPLOAD STATUS TEXT
+ * FILE UPLOAD STATUS + PREVIEWS
  * Native file inputs are visually hidden in favor of a styled trigger
- * button, so reflect the current selection back to the visitor here.
+ * button. Selected photos are tracked in our own array (rather than
+ * relying on the native FileList, which can't be edited) so visitors can
+ * see a thumbnail of each photo and remove individual ones before
+ * sending. The array is written back into the input via a DataTransfer
+ * so the eventual multipart form submission only includes what's left.
  */
 function wireFileUploadStatus(wrapper) {
   const input = wrapper.querySelector('[data-file-upload-input]');
   const status = wrapper.querySelector('[data-file-upload-status]');
+  const previews = wrapper.parentElement
+    ? wrapper.parentElement.querySelector('[data-file-upload-previews]')
+    : null;
   if (!input || !status) return;
 
   const defaultText = status.textContent;
+  let selectedFiles = [];
+  let objectUrls = [];
+
+  function clearObjectUrls() {
+    objectUrls.forEach((url) => URL.revokeObjectURL(url));
+    objectUrls = [];
+  }
+
+  function syncInputFiles() {
+    const dataTransfer = new DataTransfer();
+    selectedFiles.forEach((file) => dataTransfer.items.add(file));
+    input.files = dataTransfer.files;
+  }
+
+  function render() {
+    if (selectedFiles.length === 0) {
+      status.textContent = defaultText;
+    } else {
+      status.textContent = `${selectedFiles.length} photo${selectedFiles.length === 1 ? '' : 's'} selected`;
+    }
+
+    if (!previews) return;
+
+    clearObjectUrls();
+    previews.innerHTML = '';
+    previews.hidden = selectedFiles.length === 0;
+
+    selectedFiles.forEach((file, index) => {
+      const url = URL.createObjectURL(file);
+      objectUrls.push(url);
+
+      const item = document.createElement('div');
+      item.className = 'file-preview-item';
+
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = file.name;
+      item.appendChild(img);
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'file-preview-remove';
+      removeBtn.setAttribute('aria-label', `Remove ${file.name}`);
+      removeBtn.textContent = '×';
+      removeBtn.addEventListener('click', () => {
+        selectedFiles.splice(index, 1);
+        syncInputFiles();
+        render();
+      });
+      item.appendChild(removeBtn);
+
+      previews.appendChild(item);
+    });
+  }
 
   input.addEventListener('change', () => {
-    const files = Array.from(input.files || []);
-    if (files.length === 0) {
-      status.textContent = defaultText;
-    } else if (files.length === 1) {
-      status.textContent = files[0].name;
-    } else {
-      status.textContent = `${files.length} photos selected`;
-    }
+    selectedFiles = Array.from(input.files || []);
+    render();
   });
 
   if (input.form) {
     input.form.addEventListener('reset', () => {
-      status.textContent = defaultText;
+      selectedFiles = [];
+      render();
     });
   }
 }
