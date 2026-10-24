@@ -511,6 +511,7 @@ body {
 
 .footer-top .container {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 40px;
 }
 
@@ -976,7 +977,7 @@ figure {
 
   /* --- FOOTER: Logo and Map stay full-width, Hours and Contact sit side by side --- */
   .footer-top .container {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
     gap: 32px 20px !important;
     text-align: center;
   }
@@ -1423,3 +1424,6 @@ figure {
   gap: 14px;
   margin-top: 30px;
 }
+
+/* Let long footer contact details (the email address) wrap on narrow screens */
+.footer-link .span { overflow-wrap: anywhere; min-width: 0; }
