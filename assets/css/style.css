@@ -1603,3 +1603,16 @@ figure {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Print: no fixed bars or banners over the content, and nothing left waiting for a scroll reveal */
+@media print {
+  .header { position: static; background: none; box-shadow: none; }
+
+  .nav-toggle-btn,
+  .cookie-banner,
+  .mobile-cta { display: none !important; }
+
+  .has-js .reveal { opacity: 1; filter: none; transform: none; transition: none; }
+
+  .has-js .reveal::after { display: none; }
+}

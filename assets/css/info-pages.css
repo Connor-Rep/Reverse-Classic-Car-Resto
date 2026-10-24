@@ -295,3 +295,10 @@
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* print every answer, open or not (browsers without ::details-content print the questions only) */
+@media print {
+  .faq-item::details-content { content-visibility: visible; display: block; }
+
+  .faq-icon { display: none; }
+}
