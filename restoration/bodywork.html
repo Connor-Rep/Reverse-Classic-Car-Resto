@@ -5,7 +5,7 @@
   <script>document.documentElement.classList.add('has-js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse - Bodywork & Respray</title>
+  <title>Classic Car Bodywork &amp; Respray in Perthshire | Reverse</title>
   <meta name="description" content="Bodywork and respray work for classic cars: lead loading, metal fabrication and period-correct paint, done by Reverse Classic Car Restoration.">
   <link rel="canonical" href="https://reverseclassic.co.uk/restoration/bodywork.html">
 
@@ -13,18 +13,18 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reverseclassic.co.uk/restoration/bodywork.html">
   <meta property="og:site_name" content="Reverse Classic Car Restoration">
-  <meta property="og:title" content="Reverse - Bodywork & Respray">
+  <meta property="og:title" content="Classic Car Bodywork &amp; Respray in Perthshire | Reverse">
   <meta property="og:description" content="Bodywork and respray work for classic cars: lead loading, metal fabrication and period-correct paint, done by Reverse Classic Car Restoration.">
   <meta property="og:image" content="https://reverseclassic.co.uk/assets/images/engine-mustang.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reverse - Bodywork & Respray">
+  <meta name="twitter:title" content="Classic Car Bodywork &amp; Respray in Perthshire | Reverse">
   <meta name="twitter:description" content="Bodywork and respray work for classic cars: lead loading, metal fabrication and period-correct paint, done by Reverse Classic Car Restoration.">
   <meta name="twitter:image" content="https://reverseclassic.co.uk/assets/images/engine-mustang.jpg">
 
   <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- self-hosted fonts (@font-face lives in style.css) -->
+  <link rel="preload" href="../assets/fonts/poppins-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/restoration-detail.css">
@@ -39,7 +39,7 @@
         <img src="../assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
       </a>
 
-      <nav class="navbar" data-navbar>
+      <nav class="navbar" id="primary-navbar" aria-label="Main" data-navbar>
         <ul class="navbar-list">
           <li><a href="../index.html#services" class="navbar-link">The Process</a></li>
           <li><a href="../projects.html" class="navbar-link">Our Projects</a></li>
@@ -48,7 +48,7 @@
       </nav>
 
 
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+      <button class="nav-toggle-btn" aria-label="Toggle menu" aria-controls="primary-navbar" aria-expanded="false" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
         <span class="nav-toggle-icon icon-2"></span>
         <span class="nav-toggle-icon icon-3"></span>
@@ -115,7 +115,7 @@
 
           <div class="detail-cta">
             <a href="../contact.html#consultation" class="btn btn-outline">
-              <span class="span">Inquire About This Restoration</span>
+              <span class="span">Enquire About This Restoration</span>
             </a>
           </div>
         </div>
@@ -148,7 +148,7 @@
     </div>
   </footer>
 
-  <div class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner" role="region" aria-label="Cookie notice" data-cookie-banner hidden>
     <p class="cookie-banner-text">
       We use a Google Maps embed to show our location, which sets its own cookies once loaded. See our
       <a href="../privacy-policy.html">Privacy Policy</a> for details.

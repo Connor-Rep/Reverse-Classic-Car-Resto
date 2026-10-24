@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse - Contact for Restoration</title>
+  <title>Book a Free Classic Car Restoration Consultation | Reverse</title>
   <meta name="description" content="Get in touch with Reverse Classic Car Restoration in Blairgowrie to discuss your classic car restoration or detailing project and book a free consultation.">
   <link rel="canonical" href="https://reverseclassic.co.uk/contact.html">
 
@@ -12,24 +12,21 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reverseclassic.co.uk/contact.html">
   <meta property="og:site_name" content="Reverse Classic Car Restoration">
-  <meta property="og:title" content="Reverse - Contact for Restoration">
+  <meta property="og:title" content="Book a Free Classic Car Restoration Consultation | Reverse">
   <meta property="og:description" content="Get in touch with Reverse Classic Car Restoration in Blairgowrie to discuss your classic car restoration or detailing project and book a free consultation.">
   <meta property="og:image" content="https://reverseclassic.co.uk/assets/images/hero-bg.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reverse - Contact for Restoration">
+  <meta name="twitter:title" content="Book a Free Classic Car Restoration Consultation | Reverse">
   <meta name="twitter:description" content="Get in touch with Reverse Classic Car Restoration in Blairgowrie to discuss your classic car restoration or detailing project and book a free consultation.">
   <meta name="twitter:image" content="https://reverseclassic.co.uk/assets/images/hero-bg.jpg">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-
-  <!-- Custom CSS Links -->
+  <!-- self-hosted fonts (@font-face lives in style.css) -->
+  <link rel="preload" href="./assets/fonts/poppins-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Custom CSS Links -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/contact-style.css">
 </head>
@@ -43,7 +40,7 @@
         <img src="./assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
       </a>
 
-      <nav class="navbar" data-navbar>
+      <nav class="navbar" id="primary-navbar" aria-label="Main" data-navbar>
         <ul class="navbar-list">
           <li><a href="./index.html#services" class="navbar-link">The Process</a></li>
           <li><a href="./projects.html" class="navbar-link">Our Projects</a></li>
@@ -52,7 +49,7 @@
       </nav>
       
 
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+      <button class="nav-toggle-btn" aria-label="Toggle menu" aria-controls="primary-navbar" aria-expanded="false" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
         <span class="nav-toggle-icon icon-2"></span>
         <span class="nav-toggle-icon icon-3"></span>
@@ -70,13 +67,15 @@
         <div class="container consultation-container">
 
           <div class="service-header consultation-header reveal">
-            <h2 class="h1 section-title">Ready to Bring Your Classic Back to Life?</h2>
+            <h1 class="h1 section-title">Ready to Bring Your Classic Back to Life?</h1>
             <div class="service-paragraph">
               <p>Tell us about your car and what you're hoping to get done. We'll talk you through what's involved, roughly how long it'll take, and what it's likely to cost.</p>
             </div>
           </div>
 
-          <form id="consultation-form" class="consultation-form" action="https://formsubmit.co/info@safetay.uk" method="POST" enctype="multipart/form-data">
+          <!-- FormSubmit needs a one-off activation click: the first submission sends a confirmation email
+               to info@reverseclassic.co.uk, and the link in it must be clicked before forms are delivered. -->
+          <form id="consultation-form" class="consultation-form" action="https://formsubmit.co/info@reverseclassic.co.uk" method="POST" enctype="multipart/form-data">
             <h3 class="h3 consultation-form-title">Schedule a Free Consultation</h3>
 
             <div class="consultation-field">
@@ -114,7 +113,7 @@
                 <span class="file-upload-status" data-file-upload-status>No photos selected</span>
               </div>
               <div class="file-upload-previews" data-file-upload-previews hidden></div>
-              <p class="consultation-field-hint">Up to 10MB total. JPG or PNG work best.</p>
+              <p class="consultation-field-hint">Up to 10 photos and 10MB in total. JPG or PNG work best.</p>
             </div>
 
             <input type="text" name="_honey" class="consultation-honeypot" tabindex="-1" autocomplete="off">
@@ -122,10 +121,12 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
 
+            <p class="consultation-privacy">By sending this you agree to us using your details to reply to your enquiry. See our <a href="./privacy-policy.html">Privacy Policy</a>.</p>
+
             <button type="submit" class="btn btn-outline consultation-submit">
               <span class="span">Schedule Consultation</span>
             </button>
-            <p class="consultation-status" data-consultation-status hidden></p>
+            <p class="consultation-status" data-consultation-status role="status" aria-live="polite" hidden></p>
           </form>
 
         </div>
@@ -148,22 +149,21 @@
            Classic car restoration and detailing in Blairgowrie, Scotland.
           </p>
 
-          <!-- These social accounts don't exist yet. Keep them as "#" placeholders
-               until the user provides real profile URLs. -->
+          <!-- OWNER NOTE: placeholder social links - owner will replace with real profile URLs once the accounts exist -->
           <ul class="social-list">
             <li>
-              <a href="#" class="social-link">
-                <img src="./assets/images/facebook.svg" alt="facebook">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <img src="./assets/images/facebook.svg" alt="">
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
-                <img src="./assets/images/instagram.svg" alt="instagram">
+              <a href="#" class="social-link" aria-label="Instagram">
+                <img src="./assets/images/instagram.svg" alt="">
               </a>
             </li>
             <li>
-              <a href="#" class="social-link">
-                <img src="./assets/images/twitter.svg" alt="twitter">
+              <a href="#" class="social-link" aria-label="Twitter">
+                <img src="./assets/images/twitter.svg" alt="">
               </a>
             </li>
           </ul>
@@ -213,7 +213,7 @@
           <div class="footer-map-embed" data-map-embed>
             <div class="footer-map-placeholder">
               <p>The map is loaded from Google, which sets its own cookies once it's shown.</p>
-              <button type="button" class="btn btn-outline" data-map-consent-btn>Load Map</button>
+              <button type="button" class="btn btn-outline" data-map-consent-btn aria-label="Load Google Map (sets Google cookies)">Load Map</button>
             </div>
           </div>
         </div>
@@ -229,7 +229,7 @@
   </footer>
 
   <!-- Custom JS Links -->
-  <div class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner" role="region" aria-label="Cookie notice" data-cookie-banner hidden>
     <p class="cookie-banner-text">
       We use a Google Maps embed to show our location, which sets its own cookies once loaded. See our
       <a href="./privacy-policy.html">Privacy Policy</a> for details.
@@ -241,6 +241,42 @@
   </div>
 
   <script src="./assets/js/script.js"></script>
+
+  <!-- structured data (helps Google show hours/address/etc. in search) -->
+  <!-- Address is partial (no street address yet) - update once the user has it -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Reverse Classic Car Restoration",
+    "description": "Classic car restoration in Blairgowrie, Scotland, from full nut-and-bolt rebuilds to detailing and paint correction.",
+    "url": "https://reverseclassic.co.uk/",
+    "image": "https://reverseclassic.co.uk/assets/images/hero-bg.jpg",
+    "email": "info@reverseclassic.co.uk",
+    "telephone": "+447792372717",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Blairgowrie",
+      "addressRegion": "Perth and Kinross",
+      "postalCode": "PH10 7NJ",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "11:00",
+        "closes": "19:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "17:00"
+      }
+    ]
+  }
+  </script>
 </body>
 
 </html>

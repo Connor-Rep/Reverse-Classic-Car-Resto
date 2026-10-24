@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse - Restoration Portfolio</title>
+  <title>Classic Car Restoration Portfolio, Blairgowrie | Reverse</title>
   <meta name="description" content="Finished restorations and current projects from Reverse Classic Car Restoration, from full rebuilds to detailing work.">
   <link rel="canonical" href="https://reverseclassic.co.uk/projects.html">
 
@@ -12,18 +12,18 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reverseclassic.co.uk/projects.html">
   <meta property="og:site_name" content="Reverse Classic Car Restoration">
-  <meta property="og:title" content="Reverse - Restoration Portfolio">
+  <meta property="og:title" content="Classic Car Restoration Portfolio, Blairgowrie | Reverse">
   <meta property="og:description" content="Finished restorations and current projects from Reverse Classic Car Restoration, from full rebuilds to detailing work.">
   <meta property="og:image" content="https://reverseclassic.co.uk/assets/images/mustang-fastback-1970.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reverse - Restoration Portfolio">
+  <meta name="twitter:title" content="Classic Car Restoration Portfolio, Blairgowrie | Reverse">
   <meta name="twitter:description" content="Finished restorations and current projects from Reverse Classic Car Restoration, from full rebuilds to detailing work.">
   <meta name="twitter:image" content="https://reverseclassic.co.uk/assets/images/mustang-fastback-1970.jpg">
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- self-hosted fonts (@font-face lives in style.css) -->
+  <link rel="preload" href="./assets/fonts/poppins-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/recent-projects.css">
@@ -38,7 +38,7 @@
         <img src="./assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
       </a>
 
-      <nav class="navbar" data-navbar>
+      <nav class="navbar" id="primary-navbar" aria-label="Main" data-navbar>
         <ul class="navbar-list">
           <li><a href="./index.html#services" class="navbar-link">The Process</a></li>
           <li><a href="./projects.html" class="navbar-link">Our Projects</a></li>
@@ -46,7 +46,7 @@
         </ul>
       </nav>
 
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+      <button class="nav-toggle-btn" aria-label="Toggle menu" aria-controls="primary-navbar" aria-expanded="false" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
         <span class="nav-toggle-icon icon-2"></span>
         <span class="nav-toggle-icon icon-3"></span>
@@ -80,7 +80,7 @@
                 <img src="./assets/images/mustang-fastback-1970.jpg" alt="1970 Ford Mustang Fastback" loading="lazy" decoding="async">
               </div>
               <div class="card-info-alt">
-                <h3 class="h3 card-title-alt">1970 Ford Mustang Fastback</h3>
+                <h2 class="h3 card-title-alt">1970 Ford Mustang Fastback</h2>
               </div>
             </li>
 
@@ -89,7 +89,7 @@
                 <img src="./assets/images/escort-mk2.jpg" alt="Ford Escort Mk2" loading="lazy" decoding="async">
               </div>
               <div class="card-info-alt">
-                <h3 class="h3 card-title-alt">Ford Escort Mk2</h3>
+                <h2 class="h3 card-title-alt">Ford Escort Mk2</h2>
               </div>
             </li>
 
@@ -98,7 +98,7 @@
                 <img src="./assets/images/cobra-kit-car.jpg" alt="AC Cobra Kit Car" loading="lazy" decoding="async">
               </div>
               <div class="card-info-alt">
-                <h3 class="h3 card-title-alt">AC Cobra Kit Car</h3>
+                <h2 class="h3 card-title-alt">AC Cobra Kit Car</h2>
               </div>
             </li>
 
@@ -119,10 +119,11 @@
             <img src="./assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
           </a>
           <p class="footer-text">Classic car restoration and detailing in Blairgowrie, Scotland.</p>
+          <!-- OWNER NOTE: placeholder social links - owner will replace with real profile URLs once the accounts exist -->
           <ul class="social-list">
-            <li><a href="#" class="social-link"><img src="./assets/images/facebook.svg" alt="facebook"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/instagram.svg" alt="instagram"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/twitter.svg" alt="twitter"></a></li>
+            <li><a href="#" class="social-link" aria-label="Facebook"><img src="./assets/images/facebook.svg" alt=""></a></li>
+            <li><a href="#" class="social-link" aria-label="Instagram"><img src="./assets/images/instagram.svg" alt=""></a></li>
+            <li><a href="#" class="social-link" aria-label="Twitter"><img src="./assets/images/twitter.svg" alt=""></a></li>
           </ul>
         </div>
         <ul class="footer-list">
@@ -142,7 +143,7 @@
           <div class="footer-map-embed" data-map-embed>
             <div class="footer-map-placeholder">
               <p>The map is loaded from Google, which sets its own cookies once it's shown.</p>
-              <button type="button" class="btn btn-outline" data-map-consent-btn>Load Map</button>
+              <button type="button" class="btn btn-outline" data-map-consent-btn aria-label="Load Google Map (sets Google cookies)">Load Map</button>
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@
     </div>
   </footer>
 
-  <div class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner" role="region" aria-label="Cookie notice" data-cookie-banner hidden>
     <p class="cookie-banner-text">
       We use a Google Maps embed to show our location, which sets its own cookies once loaded. See our
       <a href="./privacy-policy.html">Privacy Policy</a> for details.

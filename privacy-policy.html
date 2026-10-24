@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse - Privacy Policy</title>
+  <title>Privacy Policy | Reverse Classic Car Restoration</title>
   <meta name="description" content="How Reverse Classic Car Restoration collects, uses, and protects your personal data, and how to exercise your data protection rights.">
   <link rel="canonical" href="https://reverseclassic.co.uk/privacy-policy.html">
   <meta name="robots" content="noindex, follow">
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- self-hosted fonts (@font-face lives in style.css) -->
+  <link rel="preload" href="./assets/fonts/poppins-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/quicksand-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/legal-style.css">
@@ -27,7 +27,7 @@
         <img src="./assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
       </a>
 
-      <nav class="navbar" data-navbar>
+      <nav class="navbar" id="primary-navbar" aria-label="Main" data-navbar>
         <ul class="navbar-list">
           <li><a href="./index.html#services" class="navbar-link">The Process</a></li>
           <li><a href="./projects.html" class="navbar-link">Our Projects</a></li>
@@ -35,7 +35,7 @@
         </ul>
       </nav>
 
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+      <button class="nav-toggle-btn" aria-label="Toggle menu" aria-controls="primary-navbar" aria-expanded="false" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
         <span class="nav-toggle-icon icon-2"></span>
         <span class="nav-toggle-icon icon-3"></span>
@@ -50,7 +50,7 @@
       <section class="section legal-hero">
         <div class="container">
           <h1 class="h1 section-title">Privacy Policy</h1>
-          <p class="legal-updated" style="text-align: center;">Last updated: 30 August 2026</p>
+          <p class="legal-updated" style="text-align: center;">Last updated: 24 October 2026</p>
         </div>
       </section>
 
@@ -62,6 +62,7 @@
 
           <h2>1. Who we are</h2>
           <p><strong>Reverse Classic Car Restoration</strong> is a classic car restoration and detailing business based in Blairgowrie, Scotland, United Kingdom.</p>
+          <!-- OWNER INPUT NEEDED: full business address -->
           <p>Registered/trading address: <em>[full business address to be added here]</em>.</p>
           <p>If you have any question about this policy or how we handle your data, contact us at: <a href="mailto:info@reverseclassic.co.uk">info@reverseclassic.co.uk</a>. As a small business, we don't have a dedicated Data Protection Officer — enquiries are handled directly by the business owner, who acts as our data protection contact.</p>
 
@@ -69,7 +70,7 @@
           <p>We only collect what we need to run the business and respond to you. Depending on how you interact with the site, that can include:</p>
           <ul>
             <li><strong>Contact and enquiry details</strong> you type into our consultation or contact forms: your name, phone number, email address, and any notes about your vehicle or project.</li>
-            <li><strong>Photos of your vehicle</strong>, if you choose to attach any when submitting a consultation or contact form. Attaching photos is entirely optional.</li>
+            <li><strong>Photos of your vehicle</strong>, if you choose to attach any when submitting a consultation or contact form. Attaching photos is entirely optional. Photos taken on a phone or camera can contain hidden information such as the location they were taken and the device used, and that information is included in what we receive unless you remove it first.</li>
             <li><strong>Correspondence</strong> you send us directly by email or phone, and our replies.</li>
             <li><strong>Technical data</strong> collected automatically by our web host as a normal part of running a website — things like your IP address, browser type, and pages visited, kept in standard server logs.</li>
           </ul>
@@ -97,10 +98,9 @@
           <p>We do not use your data for automated decision-making or profiling, and we don't currently run marketing emails or newsletters. If that changes, we'll only email you for marketing purposes with your consent, and this policy will be updated first.</p>
 
           <h2>6. Cookies and third-party embeds</h2>
-          <p>This website does not use cookies for advertising or analytics tracking. It does load a small number of resources from third parties to work properly:</p>
+          <p>This website does not use cookies for advertising or analytics tracking. The site's typefaces (Poppins and Quicksand) are served from our own hosting, so displaying them doesn't involve a request to Google or any other third party. The only third-party embed is the map:</p>
           <ul>
-            <li><strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com) — used to display the site's typefaces. This loads on every page and sends your device's IP address to Google, but does not set any cookies.</li>
-            <li><strong>Google Maps</strong> — shows our location in the footer. Unlike the fonts, the map is <strong>not loaded automatically</strong>: you'll see a placeholder with a cookie notice, and the map (along with any cookies Google sets for it) only loads if you choose to accept it or click to load the map directly. If you decline, or don't choose either way, the map stays as a placeholder and no Maps cookie is set.</li>
+            <li><strong>Google Maps</strong> — shows our location in the footer. The map is <strong>not loaded automatically</strong>: you'll see a placeholder with a cookie notice, and the map (along with any cookies Google sets for it) only loads if you choose to accept it or click to load the map directly. If you decline, or don't choose either way, the map stays as a placeholder and no Maps cookie is set.</li>
           </ul>
           <p>We don't control what these third parties do with that data beyond what's described in their own privacy policies (see Google's Privacy Policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>).</p>
 
@@ -110,13 +110,13 @@
             <li><strong>Our email provider</strong>, to send and receive messages with you.</li>
             <li><strong>FormSubmit</strong>, our form processing provider, which relays consultation and contact form submissions — including any photos attached — from this site to our inbox.</li>
             <li><strong>Our website hosting provider</strong>, which stores the site's files and standard access logs.</li>
-            <li><strong>Google</strong>, in the limited way described in Section 6 (fonts and maps).</li>
+            <li><strong>Google</strong>, in the limited way described in Section 6 (the map, if you choose to load it).</li>
             <li>Law enforcement or regulators, but only where we're legally required to.</li>
           </ul>
           <p>We don't currently use any analytics, advertising, or CRM tools — if we introduce any in future, we'll update this section first.</p>
 
           <h2>8. International data transfers</h2>
-          <p>Google, which provides the fonts and maps embedded on this site, is a US-based company. Where your data is transferred outside the UK or European Economic Area as a result, Google relies on its own safeguards (such as Standard Contractual Clauses) to protect it — see Google's privacy policy for details. Our email and hosting providers may also process data outside the UK/EEA depending on where their servers are located; we only use providers that offer appropriate contractual safeguards for this.</p>
+          <p>FormSubmit, the service that relays the consultation and contact forms (see Section 3), is hosted in the United States, so what you submit through those forms — including any photos — is transferred there on its way to our inbox. Google, which provides the map embedded on this site, is also a US-based company. Where your data is transferred outside the UK or European Economic Area as a result of the map, Google relies on its own safeguards (such as Standard Contractual Clauses) to protect it — see Google's privacy policy for details. Our email and hosting providers may also process data outside the UK/EEA depending on where their servers are located; we only use providers that offer appropriate contractual safeguards for this.</p>
 
           <h2>9. How long we keep your data</h2>
           <p>We keep enquiry and project-related emails for as long as reasonably necessary to respond to you, deliver any work agreed, and maintain basic business records afterwards — typically no longer than a few years, unless we're required to keep something longer (for example, for tax or accounting purposes). If you ask us to delete your information and we have no legal or contractual reason to keep it, we will.</p>
@@ -158,10 +158,11 @@
             <img src="./assets/images/logo.png" width="128" height="57" alt="Reverse Classic Car Restoration">
           </a>
           <p class="footer-text">Classic car restoration and detailing in Blairgowrie, Scotland.</p>
+          <!-- OWNER NOTE: placeholder social links - owner will replace with real profile URLs once the accounts exist -->
           <ul class="social-list">
-            <li><a href="#" class="social-link"><img src="./assets/images/facebook.svg" alt="facebook"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/instagram.svg" alt="instagram"></a></li>
-            <li><a href="#" class="social-link"><img src="./assets/images/twitter.svg" alt="twitter"></a></li>
+            <li><a href="#" class="social-link" aria-label="Facebook"><img src="./assets/images/facebook.svg" alt=""></a></li>
+            <li><a href="#" class="social-link" aria-label="Instagram"><img src="./assets/images/instagram.svg" alt=""></a></li>
+            <li><a href="#" class="social-link" aria-label="Twitter"><img src="./assets/images/twitter.svg" alt=""></a></li>
           </ul>
         </div>
         <ul class="footer-list">
@@ -181,7 +182,7 @@
           <div class="footer-map-embed" data-map-embed>
             <div class="footer-map-placeholder">
               <p>The map is loaded from Google, which sets its own cookies once it's shown.</p>
-              <button type="button" class="btn btn-outline" data-map-consent-btn>Load Map</button>
+              <button type="button" class="btn btn-outline" data-map-consent-btn aria-label="Load Google Map (sets Google cookies)">Load Map</button>
             </div>
           </div>
         </div>
@@ -194,7 +195,7 @@
     </div>
   </footer>
 
-  <div class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner" role="region" aria-label="Cookie notice" data-cookie-banner hidden>
     <p class="cookie-banner-text">
       We use a Google Maps embed to show our location, which sets its own cookies once loaded. See our
       <a href="./privacy-policy.html">Privacy Policy</a> for details.
