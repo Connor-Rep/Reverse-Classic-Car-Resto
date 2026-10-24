@@ -14,6 +14,7 @@ Then open http://localhost:8000.
 
 - `index.html` - home page: hero, restoration process, consultation form, our work, recent projects
 - `projects.html` - restoration portfolio
+- `projects/mustang-fastback-1970.html`, `projects/escort-mk2.html`, `projects/cobra-kit-car.html` - one page per project (before/after and build-notes blocks are hidden until the owner supplies photos and text; see the OWNER INPUT NEEDED comments in each file)
 - `contact.html` - consultation / contact form
 - `restoration/mechanical.html`, `restoration/bodywork.html`, `restoration/protection.html` - service detail pages
 - `privacy-policy.html`, `terms-and-conditions.html` - legal pages
