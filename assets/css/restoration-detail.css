@@ -122,3 +122,125 @@
 }
 
 .detail-cta .btn { margin-inline: auto; }
+
+/* "Talk to us about this" block */
+.detail-talk {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-block-start: 70px;
+  text-align: center;
+}
+
+.detail-talk-title {
+  color: var(--white);
+  text-transform: uppercase;
+  margin-block-end: 14px;
+}
+
+.detail-talk-text {
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.detail-talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin-block-start: 18px;
+}
+
+.detail-talk-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: var(--fw-600);
+  overflow-wrap: anywhere;
+}
+
+.detail-talk-link .icon-svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+.detail-talk-link:hover { color: var(--text-muted); }
+
+.detail-talk .detail-cta { margin-block-start: 28px; }
+
+/* Cross-links to the other two phases */
+.detail-stages {
+  max-width: 900px;
+  margin-inline: auto;
+  margin-block-start: 80px;
+  text-align: center;
+}
+
+.detail-stages-title {
+  color: var(--white);
+  text-transform: uppercase;
+  margin-block-end: 24px;
+}
+
+.detail-stages-grid {
+  display: grid;
+  gap: clamp(16px, 2.5vw, 30px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  list-style: none;
+  padding: 0;
+}
+
+.detail-stage-link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 24px 22px;
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.detail-stage-link:hover {
+  background-color: #141414;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.detail-stage-name {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-900);
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.detail-stage-text {
+  flex-grow: 1;
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.detail-stage-more {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.3rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-stages-more {
+  margin-block-start: 30px;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+}
+
+.detail-stages-more a {
+  display: inline;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
