@@ -380,6 +380,7 @@ body {
   width: 44px;
   height: 44px;
   margin-inline-start: auto;
+  margin-inline-end: 6px; /* the hamburger's tap area reaches 12px past its icon - keep the two from overlapping */
   color: var(--white);
   border: 1px solid var(--white);
   border-radius: var(--radius-circle);
@@ -440,7 +441,7 @@ body {
 
   .header .container { gap: clamp(10px, 3vw, 30px); }
 
-  .header-call { margin-inline-start: 0; }
+  .header-call { margin-inline: 0; }
 
   .navbar {
     all: unset;
