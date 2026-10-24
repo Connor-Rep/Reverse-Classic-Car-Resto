@@ -421,7 +421,14 @@ body {
     top: 90px;
     border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* short landscape phones: scroll the menu rather than run off the screen */
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
   }
+
+  /* while the menu is open, lift it above the sticky call bar (60) and cookie banner (100) */
+  .header:has(.navbar.active) { z-index: 110; }
 
   .navbar-list { width: 100%; }
 
