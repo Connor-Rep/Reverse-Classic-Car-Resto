@@ -179,14 +179,6 @@ body {
   padding-inline: clamp(16px, 4vw, 60px);
 }
 
-.material-symbols-rounded {
-  --fs: 1em;
-  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 40;
-  font-size: var(--fs);
-  width: 1em;
-  overflow: hidden;
-}
-
 .has-bg-image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -378,6 +370,31 @@ body {
   transition: var(--transition);
 }
 
+/* --- Click-to-call button: icon only on phones/tablets, number shown on wide screens --- */
+.header-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-inline-start: auto;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: var(--radius-circle);
+  transition: var(--transition);
+}
+
+.header-call .icon-svg { width: 20px; height: 20px; }
+
+.header-call-text { display: none; }
+
+.header-call:hover {
+  background-color: var(--white);
+  color: #000;
+}
+
 /* --- Bigger tap area on the hamburger icon itself --- */
 .nav-toggle-btn {
   padding: 12px;
@@ -422,6 +439,8 @@ body {
   .nav-toggle-btn { display: none; }
 
   .header .container { gap: clamp(10px, 3vw, 30px); }
+
+  .header-call { margin-inline-start: 0; }
 
   .navbar {
     all: unset;
@@ -736,6 +755,19 @@ body {
     font-size: var(--fs-5);
   }
 
+  /* room for the number next to the nav links */
+  .header-call {
+    width: auto;
+    padding-inline: 18px;
+    border-radius: 999px;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-600);
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  .header-call-text { display: inline; }
+
 
 
   /**
@@ -778,8 +810,6 @@ body {
   .hero .container { max-width: 1140px; }
 
   .btn { padding: 18px 36px; }
-
-  .btn .material-symbols-rounded { --fs: 1.3em; }
 
 
 
@@ -1057,6 +1087,7 @@ figure {
   opacity: 0;
   filter: blur(6px);
   transform: translateY(24px);
+  overflow-x: clip; /* the light sweep starts and ends outside the box - don't let it widen the page on phones */
   transition:
     opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1159,6 +1190,7 @@ figure {
 }
 
 .consultation-field input,
+.consultation-field select,
 .consultation-field textarea {
   background-color: #111;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1178,12 +1210,24 @@ figure {
   opacity: 1;
 }
 
+.consultation-field select {
+  appearance: none;
+  min-height: 52px;
+  padding-inline-end: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
 .consultation-field input:focus,
+.consultation-field select:focus,
 .consultation-field textarea:focus {
   border-color: var(--white);
 }
 
 .consultation-field input:focus-visible,
+.consultation-field select:focus-visible,
 .consultation-field textarea:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: 2px;
@@ -1423,6 +1467,66 @@ figure {
 
 
 /*-----------------------------------*\
+  #STICKY CALL / ENQUIRE BAR (phones only)
+  Hidden while the cookie banner is showing (they would sit on top of
+  each other) and while a form field has focus (so it never covers what
+  the visitor is typing). Body padding keeps the footer reachable.
+\*-----------------------------------*/
+.mobile-cta { display: none; }
+
+@media (max-width: 768px) {
+  html { scroll-padding-bottom: 90px; }
+
+  body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+
+  .mobile-cta {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 60; /* above the header (50), below the cookie banner (100) */
+    display: flex;
+    gap: 10px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background-color: rgba(10, 10, 10, 0.96);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-cta-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-600);
+    font-size: 1.6rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .mobile-cta-btn .icon-svg { width: 20px; height: 20px; }
+
+  .mobile-cta-call {
+    background-color: var(--surface-dark);
+    color: var(--white);
+  }
+
+  .mobile-cta-enquire {
+    background-color: var(--white);
+    color: #000;
+  }
+
+  body:has(.cookie-banner:not([hidden])) .mobile-cta,
+  body:has(.consultation-form :is(input, textarea, select):focus) .mobile-cta {
+    display: none;
+  }
+}
+
+
+/*-----------------------------------*\
   #404 PAGE
 \*-----------------------------------*/
 .not-found-actions {
@@ -1435,3 +1539,9 @@ figure {
 
 /* Let long footer contact details (the email address) wrap on narrow screens */
 .footer-link .span { overflow-wrap: anywhere; min-width: 0; }
+
+/* Dropdown list colours (where the browser lets them be styled) */
+.consultation-field select option {
+  background-color: #111;
+  color: var(--white);
+}

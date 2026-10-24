@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="./assets/css/recent-projects.css">
 
   <!-- preload images -->
-  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+  <!-- media attributes match the hero background breakpoint in style.css (575px) so each device only fetches its own image -->
+  <link rel="preload" as="image" href="./assets/images/mobile-hero-bg.jpg" media="(max-width: 575px)">
+  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg" media="(min-width: 576px)">
 
   <style>
     /* -----------------------------------*\
@@ -197,6 +199,60 @@
       object-fit: cover;
     }
 
+    .where-we-work {
+      max-width: 600px;
+      text-align: center;
+      font-family: var(--ff-subtitle);
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .where-we-work strong { color: var(--white); }
+
+
+    /* -----------------------------------*\
+      #TESTIMONIALS (hidden until real quotes exist)
+    \*-----------------------------------*/
+    .testimonials-section { background-color: #0a0a0a; }
+
+    .testimonials-section[hidden] { display: none; }
+
+    .testimonials-grid {
+      display: grid;
+      gap: clamp(16px, 2.5vw, 30px);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      list-style: none;
+      padding: 0;
+      max-width: 1100px;
+      margin-inline: auto;
+    }
+
+    .testimonial-card {
+      background-color: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: clamp(24px, 4vw, 36px) clamp(20px, 3vw, 30px);
+    }
+
+    .testimonial-card blockquote p {
+      font-family: var(--ff-body);
+      font-size: 1.6rem;
+      line-height: 1.7;
+      color: var(--light-gray);
+      overflow-wrap: anywhere;
+    }
+
+    .testimonial-card figcaption {
+      margin-block-start: 16px;
+      font-family: var(--ff-subtitle);
+      font-weight: var(--fw-600);
+      font-size: 1.4rem;
+      letter-spacing: 0.3px;
+      color: var(--text-muted);
+    }
+
     .work-card-title {
       font-family: var(--ff-subtitle);
       font-weight: 500;
@@ -238,6 +294,11 @@
         </ul>
       </nav>
 
+
+      <a href="tel:+447792372717" class="header-call" aria-label="Call us on +44 7792 372717">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="header-call-text" aria-hidden="true">+44 7792 372717</span>
+      </a>
 
       <button class="nav-toggle-btn" aria-label="Toggle menu" aria-controls="primary-navbar" aria-expanded="false" data-nav-toggler>
         <span class="nav-toggle-icon icon-1"></span>
@@ -350,7 +411,7 @@
           <div class="service-header consultation-header reveal">
             <h2 class="h1 section-title">Ready to Bring Your Classic Back to Life?</h2>
             <div class="service-paragraph">
-              <p>Tell us about your car and what you're hoping to get done. We'll talk you through what's involved, roughly how long it'll take, and what it's likely to cost.</p>
+              <p>Tell us about your car and what you're hoping to get done, and we'll get back to you to talk through what's involved.</p>
             </div>
           </div>
 
@@ -361,22 +422,44 @@
 
             <div class="consultation-field">
               <label for="consult-name">Name</label>
-              <input type="text" id="consult-name" name="name" placeholder="Your full name" required>
-            </div>
-
-            <div class="consultation-field">
-              <label for="consult-phone">Phone Number</label>
-              <input type="tel" id="consult-phone" name="phone" placeholder="Your phone number" required>
+              <input type="text" id="consult-name" name="name" placeholder="Your full name" autocomplete="name" required>
             </div>
 
             <div class="consultation-field">
               <label for="consult-email">Email</label>
-              <input type="email" id="consult-email" name="email" placeholder="you@example.com" required>
+              <input type="email" id="consult-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-phone">Phone Number (optional)</label>
+              <input type="tel" id="consult-phone" name="phone" placeholder="Your phone number" autocomplete="tel">
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-car">Car (make, model, year)</label>
+              <input type="text" id="consult-car" name="car" placeholder="e.g. Ford Escort Mk2, 1974" autocomplete="off">
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-service">What do you need?</label>
+              <select id="consult-service" name="service_needed">
+                <option value="">Choose one</option>
+                <option>Full restoration</option>
+                <option>Mechanical work</option>
+                <option>Bodywork &amp; paint</option>
+                <option>Detailing &amp; ceramic protection</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="consultation-field">
+              <label for="consult-location">Where is the car? (optional)</label>
+              <input type="text" id="consult-location" name="car_location" placeholder="Town or area" autocomplete="address-level2">
             </div>
 
             <div class="consultation-field">
               <label for="consult-notes">Notes</label>
-              <textarea id="consult-notes" name="notes" rows="4" placeholder="Tell us about your vehicle and what you're looking to have done..."></textarea>
+              <textarea id="consult-notes" name="notes" rows="4" placeholder="Tell us what you're looking to have done..."></textarea>
             </div>
 
             <div class="consultation-field">
@@ -398,7 +481,7 @@
             </div>
 
             <input type="text" name="_honey" class="consultation-honeypot" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="New Consultation Request - Reverse">
+            <input type="hidden" name="_subject" value="New enquiry from reverseclassic.co.uk">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
 
@@ -409,6 +492,9 @@
             </button>
             <p class="consultation-status" data-consultation-status role="status" aria-live="polite" hidden></p>
           </form>
+
+          <!-- OWNER INPUT NEEDED: if you can collect or deliver cars, add a sentence here saying so (and how far) - left out until confirmed -->
+          <p class="where-we-work"><strong>Where we work:</strong> our workshop is in rural Perthshire near Blairgowrie. We look after cars across Perthshire, Dundee, Edinburgh and Glasgow and the surrounding areas, and north towards Aberdeen.</p>
 
         </div>
       </section>
@@ -427,19 +513,19 @@
           <ul class="work-grid">
             <li class="work-card">
               <div class="work-card-img">
-                <img src="./assets/images/work-1.jpg" alt="Rust Removal" loading="lazy" decoding="async">
+                <img src="./assets/images/work-1.jpg" width="1024" height="550" alt="Rust Removal" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Rust Removal</h3>
             </li>
             <li class="work-card">
               <div class="work-card-img">
-                <img src="./assets/images/work-2.jpg" alt="Car Customisation" loading="lazy" decoding="async">
+                <img src="./assets/images/work-2.jpg" width="1024" height="550" alt="Car Customisation" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Car Customisation</h3>
             </li>
             <li class="work-card">
               <div class="work-card-img">
-                <img src="./assets/images/work-3.jpg" alt="Mechanical Overhaul" loading="lazy" decoding="async">
+                <img src="./assets/images/work-3.jpg" width="1024" height="550" alt="Mechanical Overhaul" loading="lazy" decoding="async">
               </div>
               <h3 class="h3 work-card-title">Mechanical Overhaul</h3>
             </li>
@@ -462,7 +548,7 @@
           <ul class="projects-grid-alt">
             <li class="project-card-alt">
                 <div class="card-img-alt">
-                  <img src="./assets/images/mustang-fastback-1970.jpg" alt="1970 Ford Mustang Fastback" loading="lazy" decoding="async">
+                  <img src="./assets/images/mustang-fastback-1970.jpg" width="900" height="1600" alt="1970 Ford Mustang Fastback" loading="lazy" decoding="async">
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">1970 Ford Mustang Fastback</h3>
@@ -470,7 +556,7 @@
             </li>
             <li class="project-card-alt">
                 <div class="card-img-alt">
-                  <img src="./assets/images/escort-mk2.jpg" alt="Ford Escort Mk2" loading="lazy" decoding="async">
+                  <img src="./assets/images/escort-mk2.jpg" width="900" height="1600" alt="Ford Escort Mk2" loading="lazy" decoding="async">
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">Ford Escort Mk2</h3>
@@ -478,12 +564,36 @@
             </li>
             <li class="project-card-alt">
                 <div class="card-img-alt">
-                  <img src="./assets/images/cobra-kit-car.jpg" alt="AC Cobra Kit Car" loading="lazy" decoding="async">
+                  <img src="./assets/images/cobra-kit-car.jpg" width="900" height="1600" alt="AC Cobra Kit Car" loading="lazy" decoding="async">
                 </div>
                 <div class="card-info-alt">
                   <h3 class="h3 card-title-alt">AC Cobra Kit Car</h3>
                 </div>
             </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS (switched off until there are real customer quotes)
+           OWNER: to turn this on, add real quotes as <li> items below (copy the example in the comment, with
+           the customer's permission and their exact words) and delete the word "hidden" from the <section> tag. -->
+      <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-title" hidden>
+        <div class="container">
+
+          <div class="service-header reveal">
+            <h2 class="h1 section-title" id="testimonials-title">What Our Customers Say</h2>
+          </div>
+
+          <ul class="testimonials-grid">
+            <!--
+            <li class="testimonial-card">
+              <figure>
+                <blockquote><p>The customer's own words go here.</p></blockquote>
+                <figcaption>Customer name, car (e.g. Ford Escort Mk2)</figcaption>
+              </figure>
+            </li>
+            -->
           </ul>
 
         </div>
@@ -519,19 +629,19 @@
 
             <li>
               <a href="#" class="social-link" aria-label="Facebook">
-                <img src="./assets/images/facebook.svg" alt="">
+                <img src="./assets/images/facebook.svg" width="14" height="14" alt="">
               </a>
             </li>
 
             <li>
               <a href="#" class="social-link" aria-label="Instagram">
-                <img src="./assets/images/instagram.svg" alt="">
+                <img src="./assets/images/instagram.svg" width="14" height="14" alt="">
               </a>
             </li>
 
             <li>
               <a href="#" class="social-link" aria-label="Twitter">
-                <img src="./assets/images/twitter.svg" alt="">
+                <img src="./assets/images/twitter.svg" width="14" height="14" alt="">
               </a>
             </li>
 
@@ -614,6 +724,12 @@
     </div>
   </footer>
 
+
+  <!-- STICKY CALL / ENQUIRE BAR (phones and small tablets only) -->
+  <div class="mobile-cta" data-mobile-cta>
+    <a href="tel:+447792372717" class="mobile-cta-btn mobile-cta-call"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Call</span></a>
+    <a href="#consultation" class="mobile-cta-btn mobile-cta-enquire">Enquire</a>
+  </div>
 
   <!-- custom js link -->
   <div class="cookie-banner" role="region" aria-label="Cookie notice" data-cookie-banner hidden>

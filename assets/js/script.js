@@ -121,13 +121,13 @@ function validatePhotos(files) {
 }
 
 /** Writes a message into the form's status line, optionally with the email/phone fallback. */
-function showFormStatus(status, message, { isError = false, withFallback = false } = {}) {
+function showFormStatus(status, message, { isError = false, withFallback = false, fallbackLead = ' If anything looks wrong, email ' } = {}) {
   if (!status) return;
   status.textContent = message;
   status.classList.toggle('is-error', isError);
 
   if (withFallback) {
-    status.appendChild(document.createTextNode(' If anything looks wrong, email '));
+    status.appendChild(document.createTextNode(fallbackLead));
     const mail = document.createElement('a');
     mail.href = `mailto:${CONTACT_FALLBACK}`;
     mail.textContent = CONTACT_FALLBACK;
@@ -210,18 +210,22 @@ function wireConsultationForm(form) {
       let settled = false;
       let timeoutId = null;
 
-      const finish = (message, isError) => {
+      const finish = (message, isError, fallbackLead) => {
         if (settled) return;
         settled = true;
         clearTimeout(timeoutId);
         iframe.removeEventListener('load', onLoad);
         window.removeEventListener('offline', onOffline);
         if (!isError) form.reset();
-        showFormStatus(status, message, { isError, withFallback: true });
+        showFormStatus(status, message, { isError, withFallback: true, fallbackLead });
         resetButton();
       };
 
-      const onLoad = () => finish('Thanks - your request has been sent.', false);
+      const onLoad = () => finish(
+        "Thanks - we'll be in touch soon.",
+        false,
+        " If you don't hear from us within a couple of working days, please email "
+      );
       const onOffline = () => finish("Your connection dropped while sending, so your request may not have gone through.", true);
 
       iframe.addEventListener('load', onLoad);
