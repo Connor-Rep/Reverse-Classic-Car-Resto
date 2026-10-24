@@ -19,7 +19,7 @@ Then open http://localhost:8000.
 - `how-we-work.html` - step-by-step timeline (confirmed steps only; optional extra steps are hidden), what to send us
 - `faq.html` - FAQ accordion (native details/summary) with FAQPage structured data for the visible questions; extra questions are hidden until the owner answers them
 - `restoration/mechanical.html`, `restoration/bodywork.html`, `restoration/protection.html` - service detail pages
-- `privacy-policy.html`, `terms-and-conditions.html` - legal pages
+- `privacy-policy.html`, `terms-and-conditions.html` - legal pages (noindex while the placeholders are unfilled, so not in the sitemap; add them back when the noindex is removed)
 - `404.html` - not-found page (noindex, not in the sitemap)
 - `sitemap.xml`, `robots.txt` - search engine files
 
