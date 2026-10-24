@@ -1,22 +1,8 @@
 # Essential Stuff
 
-## Html import links
+## Fonts
 
-Google font
-
-``` html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet">
-```
-
-Material icon font
-
-``` html
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
-```
+Fonts are self-hosted (see `@font-face` at the top of `assets/css/style.css`, files in `assets/fonts/`). There are no Google Fonts or Material Symbols links.
 
 ---
 
@@ -32,8 +18,8 @@ Material icon font
 ## Typography
 
 ``` css
---ff-display: 'Hanken Grotesk', sans-serif;
---ff-body: 'Quicksand', sans-serif;
+--ff-display: 'Poppins', sans-serif; /* weight 900 only */
+--ff-body: 'Quicksand', sans-serif; /* variable, 300-700 */
 --ff-subtitle: 'Quicksand', sans-serif;
 
 --fs-1: 3.5rem;

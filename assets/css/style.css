@@ -1411,3 +1411,15 @@ figure {
   color: var(--text-muted);
   margin-block-end: 14px;
 }
+
+
+/*-----------------------------------*\
+  #404 PAGE
+\*-----------------------------------*/
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
