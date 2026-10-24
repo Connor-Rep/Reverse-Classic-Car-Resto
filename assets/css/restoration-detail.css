@@ -128,6 +128,7 @@
   max-width: 700px;
   margin-inline: auto;
   margin-block-start: 70px;
+  padding-inline: 6px; /* .reveal clips sideways - leave room for the button's focus ring when it fills the width on phones */
   text-align: center;
 }
 
