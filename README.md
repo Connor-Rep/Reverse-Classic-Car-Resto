@@ -16,6 +16,8 @@ Then open http://localhost:8000.
 - `projects.html` - restoration portfolio
 - `projects/mustang-fastback-1970.html`, `projects/escort-mk2.html`, `projects/cobra-kit-car.html` - one page per project (before/after and build-notes blocks are hidden until the owner supplies photos and text; see the OWNER INPUT NEEDED comments in each file)
 - `contact.html` - consultation / contact form
+- `how-we-work.html` - step-by-step timeline (confirmed steps only; optional extra steps are hidden), what to send us
+- `faq.html` - FAQ accordion (native details/summary) with FAQPage structured data for the visible questions; extra questions are hidden until the owner answers them
 - `restoration/mechanical.html`, `restoration/bodywork.html`, `restoration/protection.html` - service detail pages
 - `privacy-policy.html`, `terms-and-conditions.html` - legal pages
 - `404.html` - not-found page (noindex, not in the sitemap)
@@ -41,6 +43,7 @@ Search the repo for `OWNER INPUT NEEDED` and `OWNER NOTE`:
 
 - `privacy-policy.html`, `terms-and-conditions.html` - business address, deposit, payment terms, cancellation terms, warranty period (shown as `[...]` in the text)
 - `index.html` - testimonials section is hidden until real quotes exist; add a sentence about collecting/delivering cars to the "Where we work" line if offered
+- `how-we-work.html`, `faq.html` - hidden extra steps / questions (written estimate, progress updates, handover, insurance, collection, timescales, part-finished projects); each has an OWNER INPUT NEEDED comment saying how to enable it
 - Every page footer - social links are `#` placeholders until the real profile URLs exist
 
 ## Notes
