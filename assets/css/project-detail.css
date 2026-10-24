@@ -163,14 +163,19 @@
 }
 
 /* Before & after / build notes (hidden until the owner supplies content) */
+/* always two columns from tablet up, so each before sits next to its after */
 .project-compare {
   display: grid;
   gap: clamp(16px, 2.5vw, 30px);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: 1fr;
   list-style: none;
   padding: 0;
   max-width: 1100px;
   margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .project-compare { grid-template-columns: repeat(2, 1fr); }
 }
 
 .project-compare figure { margin: 0; }
