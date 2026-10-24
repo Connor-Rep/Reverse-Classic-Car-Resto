@@ -162,6 +162,13 @@ function wireConsultationForm(form) {
     if (submitLabel) submitLabel.textContent = originalLabel;
   }
 
+  // A photo error is stale once the visitor changes their selection
+  form.addEventListener('change', (e) => {
+    if (e.target.type === 'file' && status && status.classList.contains('is-error')) {
+      status.hidden = true;
+    }
+  });
+
   form.addEventListener('submit', (e) => {
     if (!form.action) return;
 
@@ -323,7 +330,8 @@ function wireFileUploadStatus(wrapper) {
       removeBtn.addEventListener('click', () => {
         selectedFiles.splice(index, 1);
         syncInputFiles();
-        render();
+        // Fire "change" so this re-renders and the form clears any stale photo error
+        input.dispatchEvent(new Event('change', { bubbles: true }));
       });
       item.appendChild(removeBtn);
 
