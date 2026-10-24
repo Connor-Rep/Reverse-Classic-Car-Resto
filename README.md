@@ -27,7 +27,7 @@ Styles are in `assets/css/`, the script in `assets/js/script.js`, and fonts (Pop
 
 ## Contact forms
 
-Both forms (home and contact, kept identical) post to FormSubmit (https://formsubmit.co) and are delivered to info@reverseclassic.co.uk. Name and email are required; phone, car, service needed, car location, notes and photos are optional. FormSubmit needs a one-off activation: the first submission triggers a confirmation email, and its link must be clicked before forms are delivered.
+Both forms (home and contact, kept identical) post to FormSubmit (https://formsubmit.co) and are delivered to info@reverseclassic.co.uk. Name and email are required; phone, car, service needed, notes and photos are optional. FormSubmit needs a one-off activation: the first submission triggers a confirmation email, and its link must be clicked before forms are delivered.
 
 ## Call buttons
 
