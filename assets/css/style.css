@@ -624,6 +624,27 @@ body {
 
 .copyright a:hover { color: var(--text-muted); }
 
+/* "Explore" links above the copyright line */
+.footer-explore ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 clamp(14px, 3vw, 32px);
+  margin-block-end: 6px;
+}
+
+.footer-explore a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 4px;
+  font-size: 1.4rem;
+  font-weight: var(--fw-600);
+  color: var(--white);
+}
+
+.footer-explore a:hover { color: var(--text-muted); }
+
 
 
 /*-----------------------------------*\
@@ -1545,4 +1566,33 @@ figure {
 .consultation-field select option {
   background-color: #111;
   color: var(--white);
+}
+
+/* Small pointer to How We Work / FAQ under the home page process cards */
+.process-more {
+  margin-block-start: clamp(30px, 5vw, 50px);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.6rem;
+}
+
+.process-more a {
+  display: inline;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.consultation-faq-link {
+  margin-block-start: 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+}
+
+.consultation-faq-link a {
+  display: inline;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
