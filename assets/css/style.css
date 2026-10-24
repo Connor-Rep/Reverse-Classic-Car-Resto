@@ -1310,12 +1310,14 @@ figure {
 }
 
 .consultation-privacy a {
+  display: inline;
   color: var(--white);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 .consultation-status a {
+  display: inline;
   color: var(--white);
   text-decoration: underline;
   text-underline-offset: 2px;
