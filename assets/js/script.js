@@ -29,6 +29,7 @@ anchorLinks.forEach(link => {
         if (navbar && navbar.classList.contains('active')) {
           navbar.classList.remove('active');
           navToggler.classList.remove('active');
+          navToggler.setAttribute('aria-expanded', 'false');
         }
       }
     }
